@@ -17,9 +17,8 @@ void ofApp::update(){
 
 void ofApp::draw(){
     ofBackground(255);
-    for(auto zombie : zombies){
-        auto z = &zombie;
-        z.display();
+    for(auto z : zombies){
+        z.Entity::display();
     }
     
 }

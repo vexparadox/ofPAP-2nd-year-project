@@ -13,6 +13,7 @@
 Entity::Entity(int x, int y, bool visible, std::string imgPath): x(x), y(y), visible(visible), imgPath(imgPath){
     if(imgPath != ""){
         texture.loadImage(imgPath);
+        texture.resize(50,50);
     }
 }
 
