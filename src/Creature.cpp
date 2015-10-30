@@ -9,7 +9,7 @@
 #include "Creature.hpp"
 
 //the Creature class holds the Health, Speed, damage etc of the creature
-Creature::Creature(int x, int y, int movementSpeed, int health, bool visible = true, std::string imgPath): Entity(x, y, visible, imgPath), health(health), movementSpeed(movementSpeed){
+Creature::Creature(int x, int y, int movementSpeed, int health, bool visible = true, std::string imgPath = ""):Entity(x, y, visible, imgPath), health(health), movementSpeed(movementSpeed){
     
 }
 

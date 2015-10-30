@@ -12,8 +12,6 @@
 #include <stdio.h>
 #include "Entity.hpp"
 
-
-
 class Creature : public Entity{
 public:
     int health;

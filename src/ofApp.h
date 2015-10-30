@@ -4,6 +4,7 @@
 #include "Ball.hpp"
 #include <vector>
 #include "UI.hpp"
+#include "BasicZombie.hpp"
 
 using std::vector;
 
@@ -26,5 +27,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
         int state = 1;
-        UI u = UI(0, 0, 10, 10, "LO");
+        vector<BasicZombie> zombies;
 };

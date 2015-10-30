@@ -19,6 +19,7 @@ public:
     ofImage texture;
     std::string imgPath;
     Entity(int x, int y, bool visible, std::string imgPath);
+    void display();
 };
 
 #endif /* Entity_hpp */

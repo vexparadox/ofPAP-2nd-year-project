@@ -6,21 +6,20 @@ void ofApp::setup(){
     ofSetFrameRate(30);
     // No need to define the initial position of the ball
     // because the Ball constructor does it for yo
+    zombies.push_back(BasicZombie(0,0,10,100,true, "img.jpg"));
     
 }
 
 void ofApp::update(){
-    u.setX(mouseX);
-    u.setY(mouseY);
+
+    
 }
 
 void ofApp::draw(){
     ofBackground(255);
-    switch(state){
-        case 1:
-            u.display();
-            std::cout << u.x;
-            break;
+    for(auto zombie : zombies){
+        auto z = &zombie;
+        z.display();
     }
     
 }

@@ -12,7 +12,12 @@
 //the Entity class holds the position and visibility of the entity
 Entity::Entity(int x, int y, bool visible, std::string imgPath): x(x), y(y), visible(visible), imgPath(imgPath){
     if(imgPath != ""){
-        texture.load(imgPath);
+        texture.loadImage(imgPath);
     }
 }
 
+void Entity::display(){
+    if(visible){
+        texture.draw(x, y);
+    }
+}
