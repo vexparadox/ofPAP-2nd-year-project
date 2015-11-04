@@ -19,7 +19,7 @@ public:
     Creature(int x, int y, int movementSpeed, int health, bool visible, std::string imgPath);
     int getHealth();
     void takeDamage(int dmg);
-    void moveTo(int x, int y);
+    void moveTo(float x, float y);
 };
 
 #endif /* Creature_hpp */

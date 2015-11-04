@@ -6,13 +6,17 @@ void ofApp::setup(){
     ofSetFrameRate(30);
     // No need to define the initial position of the ball
     // because the Ball constructor does it for yo
-    zombies.push_back(BasicZombie(0,0,10,100,true, "img.jpg"));
+    for(int i = 0; i < 10; i ++){
+        zombies.push_back(BasicZombie((int)ofRandom(0, ofGetWidth()),(int)ofRandom(0, ofGetHeight()),10,100,true, "img.jpg"));
+    }
     
 }
 
 void ofApp::update(){
-
-    
+    for(auto &zombie : zombies){
+        auto z = &zombie;
+        z->Creature::moveTo(mouseX, mouseY);
+    }
 }
 
 void ofApp::draw(){

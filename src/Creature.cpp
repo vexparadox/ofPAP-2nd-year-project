@@ -17,10 +17,9 @@ void Creature::takeDamage(int dmg){
     health -= dmg;
 }
 
-void Creature::moveTo(int mX, int mY){
-    int tempX = x - mX;
-    int tempY = y - mY;
-    
-    x += tempX*movementSpeed;
-    x += tempY*movementSpeed;
+void Creature::moveTo(float mX, float mY){
+    float tempX = mX-x;
+    float tempY = mY-y;
+    x += tempX/movementSpeed;
+    y += tempY/movementSpeed;
 }
