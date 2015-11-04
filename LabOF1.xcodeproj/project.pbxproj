@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C27D317F1BEA369B00AFA04C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D317D1BEA369B00AFA04C /* State.cpp */; settings = {ASSET_TAGS = (); }; };
+		C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31801BEA36E100AFA04C /* GameState.cpp */; settings = {ASSET_TAGS = (); }; };
+		C27D31861BEA3A4600AFA04C /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31841BEA3A4600AFA04C /* MenuState.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C40C471BD156A9009AFB1C /* Creature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C40C451BD156A9009AFB1C /* Creature.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C828D31BD28926001B5145 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C828D11BD28926001B5145 /* Entity.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C828D91BD2B0FF001B5145 /* BasicZombie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C828D71BD2B0FF001B5145 /* BasicZombie.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +49,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C27D317D1BEA369B00AFA04C /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
+		C27D317E1BEA369B00AFA04C /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
+		C27D31801BEA36E100AFA04C /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
+		C27D31811BEA36E100AFA04C /* GameState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
+		C27D31841BEA3A4600AFA04C /* MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuState.cpp; sourceTree = "<group>"; };
+		C27D31851BEA3A4600AFA04C /* MenuState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuState.hpp; sourceTree = "<group>"; };
 		C2C40C451BD156A9009AFB1C /* Creature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Creature.cpp; sourceTree = "<group>"; };
 		C2C40C461BD156A9009AFB1C /* Creature.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Creature.hpp; sourceTree = "<group>"; };
 		C2C828D11BD28926001B5145 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
@@ -88,6 +97,35 @@
 			children = (
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		C27D317C1BEA35F100AFA04C /* States */ = {
+			isa = PBXGroup;
+			children = (
+				C27D317D1BEA369B00AFA04C /* State.cpp */,
+				C27D317E1BEA369B00AFA04C /* State.hpp */,
+				C27D31871BEA3A7000AFA04C /* Menu */,
+				C27D31831BEA37B400AFA04C /* Game */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
+		C27D31831BEA37B400AFA04C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C27D31801BEA36E100AFA04C /* GameState.cpp */,
+				C27D31811BEA36E100AFA04C /* GameState.hpp */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		C27D31871BEA3A7000AFA04C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C27D31841BEA3A4600AFA04C /* MenuState.cpp */,
+				C27D31851BEA3A4600AFA04C /* MenuState.hpp */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		C2C40C4B1BD15CC8009AFB1C /* Entities */ = {
@@ -170,6 +208,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				C27D317C1BEA35F100AFA04C /* States */,
 				C2C828DA1BD2B183001B5145 /* UI */,
 				C2C40C4C1BD15CDE009AFB1C /* Main */,
 				C2C40C4B1BD15CC8009AFB1C /* Entities */,
@@ -274,10 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C40C471BD156A9009AFB1C /* Creature.cpp in Sources */,
+				C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */,
 				C2C828DD1BD2B199001B5145 /* UI.cpp in Sources */,
 				C2C828D91BD2B0FF001B5145 /* BasicZombie.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				C27D317F1BEA369B00AFA04C /* State.cpp in Sources */,
 				C2C828D31BD28926001B5145 /* Entity.cpp in Sources */,
+				C27D31861BEA3A4600AFA04C /* MenuState.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

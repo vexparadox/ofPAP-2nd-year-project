@@ -9,22 +9,16 @@ void ofApp::setup(){
     for(int i = 0; i < 10; i ++){
         zombies.push_back(BasicZombie((int)ofRandom(0, ofGetWidth()),(int)ofRandom(0, ofGetHeight()),10,100,true, "img.jpg"));
     }
+    State().setState(mainGame);
     
 }
 
 void ofApp::update(){
-    for(auto &zombie : zombies){
-        auto z = &zombie;
-        z->Creature::moveTo(mouseX, mouseY);
-    }
+    State().getState().tick();
 }
 
 void ofApp::draw(){
-    ofBackground(255);
-    for(auto z : zombies){
-        z.Entity::display();
-    }
-    
+    State().getState().render();
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){

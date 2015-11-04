@@ -5,6 +5,8 @@
 #include <vector>
 #include "UI.hpp"
 #include "BasicZombie.hpp"
+#include "GameState.hpp"
+#include "MenuState.hpp"
 
 using std::vector;
 
@@ -28,4 +30,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         int state = 1;
         vector<BasicZombie> zombies;
+        GameState mainGame;
+        MenuState mainMenu;
 };
