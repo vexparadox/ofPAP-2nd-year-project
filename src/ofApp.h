@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "Ball.hpp"
-#include <vector>
 #include "UI.hpp"
 #include "BasicZombie.hpp"
 #include "GameState.hpp"
@@ -30,6 +29,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         int state = 1;
         vector<BasicZombie> zombies;
-        GameState mainGame;
-        MenuState mainMenu;
+        State *mainGame = new GameState;
+        State *mainMenu = new MenuState;
 };

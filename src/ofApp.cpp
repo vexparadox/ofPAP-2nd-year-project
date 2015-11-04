@@ -2,15 +2,7 @@
 
 
 void ofApp::setup(){
-    // Fixed framerate
-    ofSetFrameRate(30);
-    // No need to define the initial position of the ball
-    // because the Ball constructor does it for yo
-    for(int i = 0; i < 10; i ++){
-        zombies.push_back(BasicZombie((int)ofRandom(0, ofGetWidth()),(int)ofRandom(0, ofGetHeight()),10,100,true, "img.jpg"));
-    }
     State().setState(mainGame);
-    
 }
 
 void ofApp::update(){
@@ -35,7 +27,7 @@ void ofApp::mouseMoved(int x, int y ){
 
 }
 
-//--------------------------------------------------------------
+//---ß-----------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
 
 }

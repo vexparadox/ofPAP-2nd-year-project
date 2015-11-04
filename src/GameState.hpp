@@ -10,12 +10,16 @@
 #define GameState_hpp
 
 #include <stdio.h>
+#include <vector>
 #include "State.hpp"
+#include "BasicZombie.hpp"
 
 class GameState : public State{
 public:
-    virtual void tick();
-    virtual void render();
+    GameState();
+    void tick();
+    void render();
+    vector<BasicZombie> basicE;
 };
 
 #endif /* GameState_hpp */

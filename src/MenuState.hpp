@@ -14,8 +14,8 @@
 
 class MenuState{
 public:
-    virtual void tick();
-    virtual void render();
+    void tick();
+    void render();
 };
 
 #endif /* MenuState_hpp */
