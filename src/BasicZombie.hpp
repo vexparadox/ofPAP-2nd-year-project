@@ -15,7 +15,6 @@
 
 class BasicZombie : public Creature{
 public:
-    std::string imgUrl;
     BasicZombie(int x, int y, int movementSpeed, int health, bool visible, std::string imgPath);
 };
 

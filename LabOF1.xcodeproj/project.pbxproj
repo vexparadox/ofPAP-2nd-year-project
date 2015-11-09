@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23B51C41BF133A10093ED9A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23B51C21BF133A10093ED9A /* Player.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D317F1BEA369B00AFA04C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D317D1BEA369B00AFA04C /* State.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31801BEA36E100AFA04C /* GameState.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D31861BEA3A4600AFA04C /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31841BEA3A4600AFA04C /* MenuState.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C23B51C21BF133A10093ED9A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		C23B51C31BF133A10093ED9A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		C27D317D1BEA369B00AFA04C /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		C27D317E1BEA369B00AFA04C /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
 		C27D31801BEA36E100AFA04C /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 			children = (
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		C23B51C51BF133A50093ED9A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				C23B51C31BF133A10093ED9A /* Player.hpp */,
+				C23B51C21BF133A10093ED9A /* Player.cpp */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 		C27D317C1BEA35F100AFA04C /* States */ = {
@@ -155,6 +167,7 @@
 				C2C40C451BD156A9009AFB1C /* Creature.cpp */,
 				C2C40C461BD156A9009AFB1C /* Creature.hpp */,
 				C2C828D61BD28FAD001B5145 /* Enemies */,
+				C23B51C51BF133A50093ED9A /* Player */,
 			);
 			name = Creatures;
 			sourceTree = "<group>";
@@ -316,6 +329,7 @@
 				C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */,
 				C2C828DD1BD2B199001B5145 /* UI.cpp in Sources */,
 				C2C828D91BD2B0FF001B5145 /* BasicZombie.cpp in Sources */,
+				C23B51C41BF133A10093ED9A /* Player.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				C27D317F1BEA369B00AFA04C /* State.cpp in Sources */,
 				C2C828D31BD28926001B5145 /* Entity.cpp in Sources */,
