@@ -1,18 +1,16 @@
 #include "ofApp.h"
 
-
 void ofApp::setup(){
     //create basic zombies
     int maxBasic = 10;
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(0, 0, 10, 100, true, "img.jpg"));
+        basicE.push_back(BasicZombie(1, 1, 10, 100, true, "img.jpg"));
     }
 }
 
 void ofApp::update(){
     for(auto &e : basicE){
-        auto it = e;
-        it.moveTo(ofGetMouseX(), ofGetMouseY());
+        e.moveTo(mouseX, mouseY);
     }
 
 }
