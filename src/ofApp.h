@@ -4,6 +4,7 @@
 #include "Ball.hpp"
 #include "UI.hpp"
 #include "BasicZombie.hpp"
+#include <iostream>
 
 
 using std::vector;
