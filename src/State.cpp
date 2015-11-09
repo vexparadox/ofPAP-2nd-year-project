@@ -9,10 +9,18 @@
 #include "State.hpp"
 
 
-State State::getState(){
+State* State::getState(){
  return currentState;
 }
 
-void State::setState(State &state){
+void State::setState(State *state){
     currentState = state;
+}
+
+void State::render(){
+    
+}
+
+void State::tick(){
+    
 }
