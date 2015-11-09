@@ -1,0 +1,59 @@
+//
+//  Keyboard.cpp
+//  LabOF1
+//
+//  Created by William Meaton on 09/11/2015.
+//
+//
+
+#include "Keyboard.hpp"
+
+void Keyboard::keyDown(int key){
+    switch(key){
+        case 356:
+            LEFT = true;
+            break;
+        case 357:
+            UP = true;
+            break;
+        case 358:
+            RIGHT = true;
+            break;
+        case 359:
+            DOWN = true;
+            break;
+    }
+}
+
+void Keyboard::keyUp(int key){
+    switch(key){
+        case 356:
+            LEFT = false;
+            break;
+        case 357:
+            UP = false;
+            break;
+        case 358:
+            RIGHT = false;
+            break;
+        case 359:
+            DOWN = false;
+            break;
+    }
+}
+
+bool Keyboard::getUP(){
+    return UP;
+}
+
+bool Keyboard::getDOWN(){
+    return DOWN;
+}
+
+bool Keyboard::getLEFT(){
+    return LEFT;
+}
+
+bool Keyboard::getRIGHT(){
+    return RIGHT;
+}

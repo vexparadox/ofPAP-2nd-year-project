@@ -23,21 +23,12 @@ void ofApp::draw(){
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    switch(key){
-        case 356:
-            break;
-        case 357:
-            break;
-        case 358:
-            break;
-        case 359:
-            break;
-    }
+    keyboard.keyDown(key);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    keyboard.keyUp(key);
 }
 
 //--------------------------------------------------------------

@@ -4,7 +4,9 @@
 #include "Ball.hpp"
 #include "UI.hpp"
 #include "BasicZombie.hpp"
+#include "Keyboard.hpp"
 #include <iostream>
+
 
 
 using std::vector;
@@ -29,4 +31,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         int state = 1;
         vector<BasicZombie> basicE;
+        Keyboard keyboard;
 };
