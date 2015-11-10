@@ -2,9 +2,10 @@
 
 void ofApp::setup(){
     //create basic zombies
+    ofSetFrameRate(60);
     int maxBasic = 10;
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(1, 1, 10, 100, true, "img.jpg"));
+        basicE.push_back(BasicZombie(1, 1, 0.1, 100, true, "img.jpg"));
     }
     
 }
@@ -22,6 +23,7 @@ void ofApp::draw(){
         //display the enemies
         e.display();
     }
+    player.display();
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){

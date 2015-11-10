@@ -15,7 +15,7 @@
 
 class BasicZombie : public Creature{
 public:
-    BasicZombie(int x, int y, int movementSpeed, int health, bool visible, std::string imgPath);
+    BasicZombie(int x, int y, float movementSpeed, int health, bool visible, std::string imgPath);
 };
 
 #endif /* BasicZombie_hpp */

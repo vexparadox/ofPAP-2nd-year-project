@@ -31,5 +31,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         int state = 1;
         vector<BasicZombie> basicE;
-        Player player = *new Player(0, 0, 10, 200, true, "player.jpg");
+        Player player = *new Player(0, 0, 0.5, 200, true, "player.jpg");
 };
