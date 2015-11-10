@@ -13,11 +13,11 @@ void ofApp::update(){
 void ofApp::draw(){
     State::getState()->render();
 }
-//--------------------------------------------------------------
+
 void ofApp::keyPressed(int key){
     Keyboard::keyDown(key);
 }
-//--------------------------------------------------------------
+
 void ofApp::keyReleased(int key){
     Keyboard::keyUp(key);
 }
