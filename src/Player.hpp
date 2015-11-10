@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "Creature.hpp"
+#include "Keyboard.hpp"
 
 class Player : public Creature{
 public:

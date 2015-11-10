@@ -8,7 +8,15 @@
 
 #include "Keyboard.hpp"
 
+bool Keyboard::UP;
+bool Keyboard::LEFT;
+bool Keyboard::DOWN;
+bool Keyboard::RIGHT;
+bool Keyboard::AnyPRESSED;
+
+
 void Keyboard::keyDown(int key){
+    AnyPRESSED = true;
     switch(key){
         case 356:
             LEFT = true;
@@ -26,6 +34,7 @@ void Keyboard::keyDown(int key){
 }
 
 void Keyboard::keyUp(int key){
+    AnyPRESSED = true;
     switch(key){
         case 356:
             LEFT = false;
@@ -56,4 +65,7 @@ bool Keyboard::getLEFT(){
 
 bool Keyboard::getRIGHT(){
     return RIGHT;
+}
+bool Keyboard::getAnyPRESSED(){
+    return AnyPRESSED;
 }

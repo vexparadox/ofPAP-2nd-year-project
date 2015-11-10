@@ -10,20 +10,20 @@
 #define Keyboard_hpp
 
 #include <stdio.h>
-#include <vector>
-#include <iostream>
+
+//this class handles keyboard input with predefined buttons
 
 class Keyboard{
-private:
-    Keyboard();
 public:
-    static bool UP, LEFT, RIGHT, DOWN;
+    Keyboard();
+    static bool UP, LEFT, RIGHT, DOWN, AnyPRESSED;
     static void keyUp(int key);
     static void keyDown(int key);
     static bool getUP();
     static bool getLEFT();
     static bool getRIGHT();
     static bool getDOWN();
+    static bool getAnyPRESSED();
 };
 
 

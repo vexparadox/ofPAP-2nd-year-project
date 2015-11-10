@@ -12,4 +12,16 @@ Player::Player(int x, int y, int movementSpeed, int health, bool visible, std::s
 }
 
 void Player::move(){
+    if (Keyboard::getRIGHT()) {
+        x+=movementSpeed;
+    }
+    if(Keyboard::getLEFT()){
+        x-=movementSpeed;
+    }
+    if(Keyboard::getUP()){
+        y-=movementSpeed;
+    }
+    if(Keyboard::getDOWN()){
+        y+=movementSpeed;
+    }
 }

@@ -5,7 +5,7 @@
 #include "UI.hpp"
 #include "BasicZombie.hpp"
 #include "Keyboard.hpp"
-#include <iostream>
+#include "Player.hpp"
 
 
 
@@ -17,7 +17,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
+        
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y );
@@ -31,5 +31,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
         int state = 1;
         vector<BasicZombie> basicE;
-        Keyboard keyboard;
+        Player player = *new Player(0, 0, 10, 200, true, "player.jpg");
 };

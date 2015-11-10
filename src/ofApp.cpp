@@ -6,12 +6,14 @@ void ofApp::setup(){
     for(int i =0; i < maxBasic; i++){
         basicE.push_back(BasicZombie(1, 1, 10, 100, true, "img.jpg"));
     }
+    
 }
 
 void ofApp::update(){
     for(auto &e : basicE){
-        e.moveTo(mouseX, mouseY);
+        e.moveTo(player.x, player.y);
     }
+    player.move();
 
 }
 
@@ -23,12 +25,13 @@ void ofApp::draw(){
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    keyboard.keyDown(key);
+    Keyboard::keyDown(key);
 }
+
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-    keyboard.keyUp(key);
+    Keyboard::keyUp(key);
 }
 
 //--------------------------------------------------------------
