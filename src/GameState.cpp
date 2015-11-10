@@ -13,7 +13,7 @@ GameState::GameState(){
     //create basic zombies
     int maxBasic = 10;
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(0, 0, 10, 100, true, "img.jpg"));
+        basicE.push_back(BasicZombie(0, 0, 0.2, 100, true, "img.jpg"));
     }
 }
 
@@ -23,6 +23,7 @@ void GameState::render(){
         //display the enemies
         e.display();
     }
+    std::cout<< "working!";
 }
 
 void GameState::tick(){

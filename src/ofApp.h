@@ -6,6 +6,7 @@
 #include "BasicZombie.hpp"
 #include "Keyboard.hpp"
 #include "Player.hpp"
+#include "GameState.hpp"
 
 
 
@@ -32,4 +33,5 @@ class ofApp : public ofBaseApp{
         int state = 1;
         vector<BasicZombie> basicE;
         Player player = *new Player(0, 0, 0.5, 200, true, "player.jpg");
+        GameState gameState;
 };

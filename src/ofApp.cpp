@@ -7,7 +7,7 @@ void ofApp::setup(){
     for(int i =0; i < maxBasic; i++){
         basicE.push_back(BasicZombie(1, 1, 0.1, 100, true, "img.jpg"));
     }
-    
+    //State::setState(gameState);
 }
 
 void ofApp::update(){
@@ -15,7 +15,7 @@ void ofApp::update(){
         e.moveTo(player.x, player.y);
     }
     player.move();
-
+    //State::getState().tick();
 }
 
 void ofApp::draw(){
@@ -24,6 +24,7 @@ void ofApp::draw(){
         e.display();
     }
     player.display();
+    //State::getState().render();
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
