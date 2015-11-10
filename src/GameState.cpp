@@ -18,17 +18,16 @@ GameState::GameState(){
 }
 
 void GameState::render(){
-    //visibility is handled by the Entitiy controller
     for(auto e : basicE){
         //display the enemies
         e.display();
     }
-    std::cout<< "working!";
+    player.display();
 }
 
 void GameState::tick(){
     for(auto &e : basicE){
-        auto it = e;
-        it.moveTo(ofGetMouseX(), ofGetMouseY());
+        e.moveTo(player.x, player.y);
     }
+    player.move();
 }

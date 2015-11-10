@@ -13,13 +13,16 @@
 #include <vector>
 #include "State.hpp"
 #include "BasicZombie.hpp"
+#include "Player.hpp"
 
 class GameState : public State{
 public:
     GameState();
-    void tick();
-    void render();
     vector<BasicZombie> basicE;
+    Player player = *new Player(0, 0, 0.5, 200, true, "player.jpg");
+    void render();
+    void tick();
+    
 };
 
 #endif /* GameState_hpp */

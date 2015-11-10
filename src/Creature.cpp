@@ -20,7 +20,6 @@ void Creature::takeDamage(int dmg){
 void Creature::moveTo(float mX, float mY){
     float tempX = mX-x;
     float tempY = mY-y;
-    std::cout << movementSpeed <<  std::endl;
     x += tempX*movementSpeed;
     y += tempY*movementSpeed;
 }

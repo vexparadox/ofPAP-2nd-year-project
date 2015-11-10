@@ -8,20 +8,12 @@
 
 #include "State.hpp"
 
-State State::currentState;
+State* State::currentState = nullptr;
 
-State State::getState(){
+State* State::getState(){
  return currentState;
 }
 
 void State::setState(State &state){
-    currentState = state;
-}
-
-void State::render(){
-    std::cout << "not working";
-}
-
-void State::tick(){
-    
+    currentState = &state;
 }

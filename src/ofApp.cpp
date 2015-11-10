@@ -3,80 +3,21 @@
 void ofApp::setup(){
     //create basic zombies
     ofSetFrameRate(60);
-    int maxBasic = 10;
-    for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(1, 1, 0.1, 100, true, "img.jpg"));
-    }
-    //State::setState(gameState);
+    State::setState(gameState);
 }
 
 void ofApp::update(){
-    for(auto &e : basicE){
-        e.moveTo(player.x, player.y);
-    }
-    player.move();
-    //State::getState().tick();
+    State::getState()->tick();
 }
 
 void ofApp::draw(){
-    for(auto e : basicE){
-        //display the enemies
-        e.display();
-    }
-    player.display();
-    //State::getState().render();
+    State::getState()->render();
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     Keyboard::keyDown(key);
 }
-
-
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
     Keyboard::keyUp(key);
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-
-}
-
-//---ß-----------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
 }

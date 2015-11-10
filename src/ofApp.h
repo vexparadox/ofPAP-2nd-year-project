@@ -31,7 +31,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
         int state = 1;
-        vector<BasicZombie> basicE;
-        Player player = *new Player(0, 0, 0.5, 200, true, "player.jpg");
         GameState gameState;
 };

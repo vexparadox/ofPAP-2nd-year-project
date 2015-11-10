@@ -14,12 +14,12 @@
 
 class State{
 private:
-    static State currentState;
+    static State* currentState;
 public:
-    static State getState();
+    static State* getState();
     static void setState(State &state);
-    virtual void render();
-    virtual void tick();
+    virtual void render() = 0;
+    virtual void tick() = 0;
 };
 
 #endif /* State_hpp */
