@@ -30,6 +30,9 @@ void Keyboard::keyDown(int key){
         case 359:
             DOWN = true;
             break;
+        case 32:
+            SPACE = true;
+            break;
     }
 }
 
@@ -47,6 +50,9 @@ void Keyboard::keyUp(int key){
             break;
         case 359:
             DOWN = false;
+            break;
+        case 32:
+            SPACE = false;
             break;
     }
 }

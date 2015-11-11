@@ -32,5 +32,5 @@ void Player::action(){
 }
 
 void Player::fire(){
-    
+    bullets->push_back(StandardBullet(position.x, position.y, 0.2, true, "bullet.jpg"));
 }
