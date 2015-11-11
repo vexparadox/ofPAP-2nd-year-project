@@ -8,7 +8,7 @@
 
 #include "BasicZombie.hpp"
 
-BasicZombie::BasicZombie(int x, int y, float movementSpeed, int health, int attackDamage ,bool visible, std::string imgPath = "") : Creature(x, y, movementSpeed, health, visible, imgPath),  attackDamage(attackDamage){
+BasicZombie::BasicZombie(float x, float y, float movementSpeed, int health, int attackDamage ,bool visible, std::string imgPath = "") : Creature(x, y, movementSpeed, health, visible, imgPath),  attackDamage(attackDamage){
 }
 
 

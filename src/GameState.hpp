@@ -21,6 +21,7 @@ class GameState : public State{
 public:
     GameState();
     vector<BasicZombie> basicE;
+    //THE PLAYER OBJECT uses movement speed in a different way
     Player player = *new Player(2, 2, 10, 200, true, "player.jpg");
     void render();
     void tick();

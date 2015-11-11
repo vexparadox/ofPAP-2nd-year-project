@@ -8,7 +8,7 @@
 
 #include "Player.hpp"
 
-Player::Player(int x, int y, float movementSpeed, int health, bool visible, std::string imgPath) : Creature(x, y, movementSpeed, health, visible, imgPath){
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath) : Creature(x, y, movementSpeed, health, visible, imgPath){
 
 }
 

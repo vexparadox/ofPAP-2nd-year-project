@@ -15,7 +15,7 @@
 
 class Player : public Creature{
 public:
-    Player(int x, int y, float movementSpeed, int health, bool visible, std::string imgPath);
+    Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath);
     void move();
 };
 

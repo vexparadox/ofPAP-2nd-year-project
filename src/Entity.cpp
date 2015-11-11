@@ -10,7 +10,7 @@
 #include <iostream>
 
 //the Entity class holds the position and visibility of the entity
-Entity::Entity(int x, int y, bool visible, std::string imgPath): x(x), y(y), visible(visible), imgPath(imgPath){
+Entity::Entity(float x, float y, bool visible, std::string imgPath): x(x), y(y), visible(visible), imgPath(imgPath){
     
     //set the position of the entitiy
     position.x = this->x;
@@ -25,6 +25,6 @@ Entity::Entity(int x, int y, bool visible, std::string imgPath): x(x), y(y), vis
 void Entity::display(){
     //if it's set to be drawn
     if(visible){
-        texture.draw(x, y);
+        texture.draw(position.x, position.y);
     }
 }
