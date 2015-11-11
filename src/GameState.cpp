@@ -29,5 +29,5 @@ void GameState::tick(){
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
     }
-    player.move();
+    player.action();
 }

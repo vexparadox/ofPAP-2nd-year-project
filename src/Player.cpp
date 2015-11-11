@@ -12,8 +12,7 @@ Player::Player(float x, float y, float movementSpeed, int health, bool visible, 
 
 }
 
-void Player::move(){
-    
+void Player::action(){
     if (Keyboard::getRIGHT()) {
         position.x+=movementSpeed;
     }

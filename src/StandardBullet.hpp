@@ -11,8 +11,16 @@
 
 #include <stdio.h>
 #include "Entity.hpp"
+#include "Creature.hpp"
 
 class StandardBullet : public Entity{
+private:
+    int movementSpeed;
+//this is a standard bullet
+public:
+    StandardBullet(float x, float y, float movementSpeed, bool visible, std::string imgPath);
+    void moveTo(Creature &c);
+    
     
 };
 

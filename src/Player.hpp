@@ -16,7 +16,7 @@
 class Player : public Creature{
 public:
     Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath);
-    void move();
+    void action();
 };
 
 #endif /* Player_hpp */
