@@ -18,13 +18,11 @@ void Creature::takeDamage(int dmg){
 }
 
 void Creature::moveTo(float mX, float mY){
-    float x = position.x;
-    float y = position.y;
-    float tempX = mX-x;
-    float tempY = mY-y;
+    float tempX = mX-position.x;
+    float tempY = mY-position.y;
 //    float distance = sqrt((tempX*tempX) + (tempY*tempY));
 //    tempX = tempX/distance;
 //    tempY = tempY/distance;
-    x += tempX*movementSpeed;
-    y += tempY*movementSpeed;
+    position.x += tempX*movementSpeed;
+    position.y += tempY*movementSpeed;
 }

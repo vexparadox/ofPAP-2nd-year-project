@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "Entity.hpp"
 #include <math.h>
-
+//creatures are any organic entity in the game
 class Creature : public Entity{
 public:
     int health;

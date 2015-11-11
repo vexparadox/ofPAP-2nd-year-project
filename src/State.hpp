@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 #include "ofMain.h"
-
+//a state is what tick and render loops will currently be used
+//it's an abstract class and uses pointers to achieve it's goal
 class State{
 private:
     static State* currentState;
