@@ -13,6 +13,9 @@ Player::Player(int x, int y, float movementSpeed, int health, bool visible, std:
 }
 
 void Player::move(){
+    float x = position.x;
+    float y = position.y;
+    
     if (Keyboard::getRIGHT()) {
         x+=movementSpeed;
     }

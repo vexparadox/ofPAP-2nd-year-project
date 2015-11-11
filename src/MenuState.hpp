@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "State.hpp"
 
-class MenuState{
+class MenuState : public State{
 public:
     void tick();
     void render();

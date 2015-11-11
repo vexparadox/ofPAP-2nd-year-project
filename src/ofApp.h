@@ -1,12 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Ball.hpp"
-#include "UI.hpp"
-#include "BasicZombie.hpp"
 #include "Keyboard.hpp"
-#include "Player.hpp"
 #include "GameState.hpp"
+#include "MenuState.hpp"
 
 
 
@@ -22,4 +19,5 @@ class ofApp : public ofBaseApp{
 		void keyReleased(int key);
     
         GameState gameState;
+        MenuState menuState;
 };

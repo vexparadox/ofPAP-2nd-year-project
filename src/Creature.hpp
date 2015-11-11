@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "Entity.hpp"
+#include <math.h>
 
 class Creature : public Entity{
 public:

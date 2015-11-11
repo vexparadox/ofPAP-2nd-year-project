@@ -13,8 +13,10 @@
 #include "ofMain.h"
 
 class Entity{
-public:
+private:
     int x, y;
+public:
+    ofPoint position;
     bool visible;
     ofImage texture;
     std::string imgPath;

@@ -13,7 +13,7 @@ GameState::GameState(){
     //create basic zombies
     int maxBasic = 10;
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(0, 0, 0.2, 100, true, "img.jpg"));
+        basicE.push_back(BasicZombie(2, 2, 0.2, 100, 5, true, "img.jpg"));
     }
 }
 
@@ -27,7 +27,7 @@ void GameState::render(){
 
 void GameState::tick(){
     for(auto &e : basicE){
-        e.moveTo(player.x, player.y);
+        e.moveTo(ofGetMouseX(), ofGetMouseY());
     }
     player.move();
 }

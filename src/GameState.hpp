@@ -19,7 +19,7 @@ class GameState : public State{
 public:
     GameState();
     vector<BasicZombie> basicE;
-    Player player = *new Player(0, 0, 0.5, 200, true, "player.jpg");
+    Player player = *new Player(2, 2, 0.5, 200, true, "player.jpg");
     void render();
     void tick();
     
