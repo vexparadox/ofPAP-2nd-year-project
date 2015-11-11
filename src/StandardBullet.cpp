@@ -13,6 +13,5 @@ StandardBullet::StandardBullet(float x, float y, float movementSpeed, bool visib
 }
 
 void moveTo(Creature &c){
-    auto temp = &c;
-    
+
 }

@@ -22,6 +22,9 @@ void GameState::render(){
         //display the enemies
         e.display();
     }
+    for(auto b : stdBullet){
+        b.display();
+    }
     player.display();
 }
 
@@ -29,5 +32,6 @@ void GameState::tick(){
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
     }
+
     player.action();
 }
