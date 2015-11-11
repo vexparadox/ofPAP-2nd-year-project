@@ -13,7 +13,7 @@ bool Keyboard::LEFT;
 bool Keyboard::DOWN;
 bool Keyboard::RIGHT;
 bool Keyboard::AnyPRESSED;
-
+bool Keyboard::SPACE;
 
 void Keyboard::keyDown(int key){
     AnyPRESSED = true;

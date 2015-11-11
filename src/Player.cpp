@@ -8,8 +8,9 @@
 
 #include "Player.hpp"
 
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath) : Creature(x, y, movementSpeed, health, visible, imgPath){
 
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath, vector<StandardBullet> &bullets) : Creature(x, y, movementSpeed, health, visible, imgPath){
+    this->bullets = &bullets;
 }
 
 void Player::action(){
@@ -28,4 +29,8 @@ void Player::action(){
     if(Keyboard::getSPACE()){
         this->fire();
     }
+}
+
+void Player::fire(){
+    
 }
