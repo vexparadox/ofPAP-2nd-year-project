@@ -50,6 +50,9 @@ void Keyboard::keyUp(int key){
             break;
     }
 }
+bool Keyboard::getSPACE(){
+    return SPACE;
+}
 
 bool Keyboard::getUP(){
     return UP;

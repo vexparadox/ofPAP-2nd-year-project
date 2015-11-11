@@ -16,7 +16,7 @@
 class Keyboard{
 public:
     Keyboard();
-    static bool UP, LEFT, RIGHT, DOWN, AnyPRESSED;
+    static bool UP, LEFT, RIGHT, DOWN, AnyPRESSED, SPACE;
     static void keyUp(int key);
     static void keyDown(int key);
     static bool getUP();
@@ -24,6 +24,7 @@ public:
     static bool getRIGHT();
     static bool getDOWN();
     static bool getAnyPRESSED();
+    static bool getSPACE();
 };
 
 

@@ -25,4 +25,7 @@ void Player::action(){
     if(Keyboard::getDOWN()){
         position.y+=movementSpeed;
     }
+    if(Keyboard::getSPACE()){
+        this->fire();
+    }
 }
