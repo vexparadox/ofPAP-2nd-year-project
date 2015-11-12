@@ -18,18 +18,40 @@ bool Keyboard::SPACE;
 void Keyboard::keyDown(int key){
     AnyPRESSED = true;
     switch(key){
+            //LEFT ARROW
         case 356:
             LEFT = true;
             break;
+            //LETTER A
+        case 97:
+            LEFT = true;
+            break;
+            //UP ARROW
         case 357:
             UP = true;
             break;
+            //LETTER W
+        case 119:
+            UP = true;
+            break;
+            //RIGHT ARROW
         case 358:
             RIGHT = true;
             break;
+            //LETTER D
+        case 100:
+            RIGHT = true;
+            break;
+            //DOWN ARROR
+            
         case 359:
             DOWN = true;
             break;
+            //LETTER S
+        case 115:
+            DOWN = true;
+            break;
+            //SPACE BAR
         case 32:
             SPACE = true;
             break;

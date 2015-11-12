@@ -24,8 +24,7 @@ public:
     vector<BasicZombie> basicE;
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way
-    Player player = *new Player(2, 2, 10, 200, true, "player.jpg", stdBullet);
-    
+    Player player = Player(2, 2, 10, 200, true, "player.jpg", stdBullet);
     void render();
     void tick();
     

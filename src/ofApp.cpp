@@ -15,6 +15,7 @@ void ofApp::draw(){
 }
 
 void ofApp::keyPressed(int key){
+    std::cout << key << std::endl;
     Keyboard::keyDown(key);
 }
 
