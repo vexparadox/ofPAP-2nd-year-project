@@ -10,6 +10,7 @@
 ofImage texture;
 
 Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, movementSpeed, health), visible(visible){
+    
     this->bullets = &bullets;
 }
 
@@ -26,7 +27,7 @@ void Player::action(){
     if(Keyboard::getDOWN()){
         position.y+=movementSpeed;
     }
-    if(Keyboard::getSPACE()){
+    if(Keyboard::getMOUSE1()){
         this->fire();
     }
 }
@@ -38,5 +39,5 @@ void Player::display(){
 }
 
 void Player::fire(){
-    bullets->push_back(StandardBullet(position.x, position.y, 0.2, true));
+    bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.2, true));
 }

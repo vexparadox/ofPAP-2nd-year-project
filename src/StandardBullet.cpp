@@ -7,12 +7,10 @@
 //
 
 #include "StandardBullet.hpp"
-StandardBullet::StandardBullet(float x, float y, float movementSpeed, bool visible = true):Entity(x, y), movementSpeed(movementSpeed), visible(visible){
+StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible = true):
+
+Entity(position.x, position.y), movementSpeed(movementSpeed), visible(visible){
     
-}
-
-void StandardBullet::moveTo(Creature &c){
-
 }
 
 void StandardBullet::display(){

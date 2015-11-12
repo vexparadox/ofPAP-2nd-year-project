@@ -43,7 +43,6 @@ void Keyboard::keyDown(int key){
             RIGHT = true;
             break;
             //DOWN ARROR
-            
         case 359:
             DOWN = true;
             break;
@@ -76,6 +75,22 @@ void Keyboard::keyUp(int key){
         case 32:
             SPACE = false;
             break;
+            //LETTER S
+        case 115:
+            DOWN = false;
+            break;
+            //LETTER D
+        case 100:
+            RIGHT = false;
+            break;
+            //LETTER W
+        case 119:
+            UP = false;
+            break;
+            //LETTER A
+        case 97:
+            LEFT = false;
+            break;
     }
 }
 bool Keyboard::getSPACE(){
@@ -84,6 +99,10 @@ bool Keyboard::getSPACE(){
 
 bool Keyboard::getUP(){
     return UP;
+}
+
+bool Keyboard::getMOUSE1(){
+    return ofGetMousePressed();
 }
 
 bool Keyboard::getDOWN(){

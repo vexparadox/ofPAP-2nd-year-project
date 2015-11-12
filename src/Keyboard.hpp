@@ -10,6 +10,7 @@
 #define Keyboard_hpp
 
 #include <stdio.h>
+#include "ofMain.h"
 
 //this class handles keyboard input with predefined buttons
 
@@ -25,6 +26,7 @@ public:
     static bool getDOWN();
     static bool getAnyPRESSED();
     static bool getSPACE();
+    static bool getMOUSE1();
 };
 
 

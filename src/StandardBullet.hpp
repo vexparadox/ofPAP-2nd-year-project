@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Entity.hpp"
-#include "Creature.hpp"
 
 class StandardBullet : public Entity{
 private:
@@ -19,8 +18,8 @@ private:
     bool visible;
 //this is a standard bullet
 public:
-    StandardBullet(float x, float y, float movementSpeed, bool visible);
-    void moveTo(Creature &c);
+    StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible);
+    void update();
     void display();
 };
 
