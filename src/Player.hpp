@@ -17,11 +17,14 @@
 #include <vector>
 
 class Player : public Creature{
+private:
     vector<StandardBullet> *bullets;
+    bool visible;
 public:
-    Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath, vector<StandardBullet> &bullets);
+    Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets);
     void action();
     void fire();
+    void display();
 };
 
 #endif /* Player_hpp */

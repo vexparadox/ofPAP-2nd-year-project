@@ -7,11 +7,16 @@
 //
 
 #include "StandardBullet.hpp"
-
-StandardBullet::StandardBullet(float x, float y, float movementSpeed, bool visible = true, std::string imgPath = ""):Entity(x, y, visible, imgPath), movementSpeed(movementSpeed){
+StandardBullet::StandardBullet(float x, float y, float movementSpeed, bool visible = true):Entity(x, y), movementSpeed(movementSpeed), visible(visible){
     
 }
 
-void moveTo(Creature &c){
+void StandardBullet::moveTo(Creature &c){
 
+}
+
+void StandardBullet::display(){
+    if(visible){
+        Sprite::getTexture(stdBULLET).draw(position);
+    }
 }

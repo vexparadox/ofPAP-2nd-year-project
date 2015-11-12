@@ -11,17 +11,14 @@
 
 #include <stdio.h>
 #include "ofMain.h"
+#include "Sprite.hpp"
 
 class Entity{
 private:
     float x, y;
 public:
     ofPoint position;
-    bool visible;
-    ofImage texture;
-    std::string imgPath;
-    Entity(float x, float y, bool visible, std::string imgPath);
-    void display();
+    Entity(float x, float y);
 };
 
 #endif /* Entity_hpp */

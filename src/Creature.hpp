@@ -17,7 +17,7 @@ class Creature : public Entity{
 public:
     int health;
     float movementSpeed;
-    Creature(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath);
+    Creature(float x, float y, float movementSpeed, int health);
     int getHealth();
     void takeDamage(int dmg);
     void moveTo(float x, float y);

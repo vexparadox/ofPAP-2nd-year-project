@@ -16,12 +16,12 @@
 class StandardBullet : public Entity{
 private:
     int movementSpeed;
+    bool visible;
 //this is a standard bullet
 public:
-    StandardBullet(float x, float y, float movementSpeed, bool visible, std::string imgPath);
+    StandardBullet(float x, float y, float movementSpeed, bool visible);
     void moveTo(Creature &c);
-    
-    
+    void display();
 };
 
 

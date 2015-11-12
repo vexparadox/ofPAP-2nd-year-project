@@ -4,6 +4,7 @@ void ofApp::setup(){
     //create basic zombies
     ofSetFrameRate(60);
     State::setState(gameState);
+    Sprite::loadTextures(50, 50);
 }
 
 void ofApp::update(){
@@ -15,7 +16,6 @@ void ofApp::draw(){
 }
 
 void ofApp::keyPressed(int key){
-    std::cout << key << std::endl;
     Keyboard::keyDown(key);
 }
 

@@ -7,9 +7,9 @@
 //
 
 #include "Player.hpp"
+ofImage texture;
 
-
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, std::string imgPath, vector<StandardBullet> &bullets) : Creature(x, y, movementSpeed, health, visible, imgPath){
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, movementSpeed, health), visible(visible){
     this->bullets = &bullets;
 }
 
@@ -31,6 +31,12 @@ void Player::action(){
     }
 }
 
+void Player::display(){
+    if(visible){
+        Sprite::getTexture(PLAYER).draw(position);
+    }
+}
+
 void Player::fire(){
-    bullets->push_back(StandardBullet(position.x, position.y, 0.2, true, "bullet.jpg"));
+    bullets->push_back(StandardBullet(position.x, position.y, 0.2, true));
 }

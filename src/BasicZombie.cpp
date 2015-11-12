@@ -8,7 +8,14 @@
 
 #include "BasicZombie.hpp"
 
-BasicZombie::BasicZombie(float x, float y, float movementSpeed, int health, int attackDamage ,bool visible, std::string imgPath = "") : Creature(x, y, movementSpeed, health, visible, imgPath),  attackDamage(attackDamage){
+BasicZombie::BasicZombie(float x, float y, float movementSpeed, int health, int attackDamage ,bool visible) : Creature(x, y, movementSpeed, health),  attackDamage(attackDamage), visible(visible){
+    
+}
+
+void BasicZombie::display(){
+    if(visible){
+        Sprite::getTexture(BasicZOMBIE).draw(position);
+    }
 }
 
 
