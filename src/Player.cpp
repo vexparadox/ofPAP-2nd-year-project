@@ -44,5 +44,6 @@ void Player::display(){
 }
 
 void Player::fire(){
+    std::cout << "Bullet made";
     bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
 }
