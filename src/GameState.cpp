@@ -32,8 +32,11 @@ void GameState::tick(){
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
     }
-//    for(auto &b : stdBullet){
-//        b.update();
-//    }
+    for(auto &b : stdBullet){
+        b.update();
+    }
+    //check for out-of-screen bullets
+    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return b.onScreen();}), stdBullet.end());
+    
     player.action();
 }

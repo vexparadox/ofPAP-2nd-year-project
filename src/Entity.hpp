@@ -15,10 +15,11 @@
 
 class Entity{
 private:
-    float x, y;
+    float x, y, w, h;
 public:
     ofPoint position;
-    Entity(float x, float y);
+    Entity(float x, float y, float w, float h);
+    bool onScreen();
 };
 
 #endif /* Entity_hpp */

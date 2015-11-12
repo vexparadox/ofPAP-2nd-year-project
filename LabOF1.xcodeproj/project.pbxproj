@@ -114,8 +114,8 @@
 		C23B51C51BF133A50093ED9A /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				C23B51C31BF133A10093ED9A /* Player.hpp */,
 				C23B51C21BF133A10093ED9A /* Player.cpp */,
+				C23B51C31BF133A10093ED9A /* Player.hpp */,
 			);
 			name = Player;
 			sourceTree = "<group>";

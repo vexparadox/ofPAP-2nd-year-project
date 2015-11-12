@@ -8,7 +8,7 @@
 
 #include "BasicZombie.hpp"
 
-BasicZombie::BasicZombie(float x, float y, float movementSpeed, int health, int attackDamage ,bool visible) : Creature(x, y, movementSpeed, health),  attackDamage(attackDamage), visible(visible){
+BasicZombie::BasicZombie(float x, float y, float movementSpeed, int health, int attackDamage ,bool visible) : Creature(x, y, Sprite::getWidth(BasicZOMBIE), Sprite::getHeight(BasicZOMBIE), movementSpeed, health),  attackDamage(attackDamage), visible(visible){
     
 }
 

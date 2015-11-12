@@ -9,7 +9,7 @@
 #include "Creature.hpp"
 
 //the Creature class holds the Health, Speed, damage etc of the creature
-Creature::Creature(float x, float y, float movementSpeed, int health):Entity(x, y), health(health), movementSpeed(movementSpeed){
+Creature::Creature(float x, float y, float w, float h, float movementSpeed, int health):Entity(x, y, w, h), health(health), movementSpeed(movementSpeed){
     
 }
 

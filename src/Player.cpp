@@ -9,12 +9,17 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, movementSpeed, health), visible(visible){
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, Sprite::getWidth(PLAYER), Sprite::getHeight(PLAYER), movementSpeed, health), visible(visible){
     
     this->bullets = &bullets;
 }
 
 void Player::action(){
+    //don't move if you're off screen
+    if(!onScreen()){
+        return;
+    }
+    
     if (Keyboard::getRIGHT()) {
         position.x+=movementSpeed;
     }
@@ -39,5 +44,5 @@ void Player::display(){
 }
 
 void Player::fire(){
-    bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.2, true));
+    bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
 }
