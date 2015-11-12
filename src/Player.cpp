@@ -15,11 +15,7 @@ Player::Player(float x, float y, float movementSpeed, int health, bool visible, 
 }
 
 void Player::action(){
-    //don't move if you're off screen
-    if(!onScreen()){
-        return;
-    }
-    
+    //keyboard controls
     if (Keyboard::getRIGHT()) {
         position.x+=movementSpeed;
     }
@@ -43,7 +39,7 @@ void Player::display(){
     }
 }
 
+//create a bullet
 void Player::fire(){
-    std::cout << "Bullet made";
     bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
 }

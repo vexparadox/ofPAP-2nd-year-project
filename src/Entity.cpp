@@ -18,7 +18,7 @@ Entity::Entity(float x, float y, float w, float h): x(x), y(y), w(w), h(h){
 }
 
 bool Entity::onScreen(){
-    if(position.x < 0 || position.y < 0 || position.x > ofGetWidth() || position.y > ofGetHeight()){
+    if(position.x+w/2 < 0 || position.y+h/2 < 0 || position.x+w/2 > ofGetWidth() || position.y+h/2 > ofGetHeight()){
         return false;
     }
     return true;
