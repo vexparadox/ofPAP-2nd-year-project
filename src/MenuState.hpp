@@ -11,11 +11,14 @@
 
 #include <stdio.h>
 #include "State.hpp"
+#include "UI.hpp"
 
 class MenuState : public State{
 public:
     void tick();
     void render();
+    UI ui = UI(ofPoint(0, 0), ofPoint(50,50), "Hello");
+
 };
 
 #endif /* MenuState_hpp */

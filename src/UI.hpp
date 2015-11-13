@@ -17,11 +17,11 @@ private:
     std::string value;
     ofRectangle rect;
 public:
-    UI(int x, int y, int width, int height, std::string value);
+    UI(ofPoint position, ofPoint size, std::string value);
     void display();
     bool isClicked(int mousex, int mousey);
-    void setX(int x);
-    void setY(int y);
+    ofPoint position;
+    ofPoint size;
     int x, y, width, height;
 };
 

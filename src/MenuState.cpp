@@ -14,5 +14,5 @@ void MenuState::tick(){
 }
 
 void MenuState::render(){
-    std::cout << "menu render";
+    ui.display();
 }
