@@ -35,6 +35,8 @@ void GameState::tick(){
     for(auto &b : stdBullet){
         b.update();
     }
+    basicE.erase(std::remove_if(basicE.begin(), basicE.end(), [this](BasicZombie e){return !e.collide(&stdBullet);}), basicE.end());
+
     //check for out-of-screen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.onScreen();}), stdBullet.end());
     player.action();

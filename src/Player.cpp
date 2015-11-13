@@ -41,5 +41,7 @@ void Player::display(){
 
 //create a bullet
 void Player::fire(){
+    if(bullets->size() <= ammo){
     bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
+    }
 }

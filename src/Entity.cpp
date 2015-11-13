@@ -17,6 +17,7 @@ Entity::Entity(float x, float y, float w, float h): x(x), y(y), w(w), h(h){
     position.y = this->y;
 }
 
+//returns if the Entitiy is on screen or not
 bool Entity::onScreen(){
     if(position.x+w/2 < 0 || position.y+h/2 < 0 || position.x+w/2 > ofGetWidth() || position.y+h/2 > ofGetHeight()){
         return false;

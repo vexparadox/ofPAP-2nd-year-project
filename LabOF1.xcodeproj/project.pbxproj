@@ -175,8 +175,8 @@
 				C2C828D11BD28926001B5145 /* Entity.cpp */,
 				C2C828D21BD28926001B5145 /* Entity.hpp */,
 				C2B094721BF37E0400245E1E /* Amunition */,
-				C2C828D51BD28E62001B5145 /* Items */,
 				C2C828D41BD28E56001B5145 /* Creatures */,
+				C2C828D51BD28E62001B5145 /* Items */,
 			);
 			name = Entities;
 			sourceTree = "<group>";

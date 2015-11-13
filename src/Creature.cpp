@@ -23,3 +23,7 @@ void Creature::moveTo(float mX, float mY){
     position.x += tempX*movementSpeed;
     position.y += tempY*movementSpeed;
 }
+
+bool Creature::collide(vector<Entity> &v){
+    
+}
