@@ -25,5 +25,6 @@ void Creature::moveTo(float mX, float mY){
 }
 
 bool Creature::collide(vector<Entity> &v){
-    
+    //collision code goes here
+    return true;
 }

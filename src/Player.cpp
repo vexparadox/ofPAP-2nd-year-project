@@ -9,9 +9,7 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, Sprite::getWidth(PLAYER), Sprite::getHeight(PLAYER), movementSpeed, health), visible(visible){
-    
-    this->bullets = &bullets;
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, Sprite::getWidth(PLAYER), Sprite::getHeight(PLAYER), movementSpeed, health), visible(visible), bullets(bullets){
 }
 
 void Player::action(){
@@ -41,7 +39,7 @@ void Player::display(){
 
 //create a bullet
 void Player::fire(){
-    if(bullets->size() <= ammo){
-    bullets->push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
+    if(bullets.size() <= ammo){
+    bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
     }
 }

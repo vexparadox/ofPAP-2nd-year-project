@@ -10,11 +10,14 @@
 #include <iostream>
 
 
+
 //the Entity class holds the position and visibility of the entity
-Entity::Entity(float x, float y, float w, float h): x(x), y(y), w(w), h(h){
+Entity::Entity(float x, float y, float w, float h): x(x), y(y), w(w), h(h), collider(position, size){
     //set the position of the entitiy
-    position.x = this->x;
-    position.y = this->y;
+    position.x = x;
+    position.y = y;
+    size.x = w;
+    size.y = h;
 }
 
 //returns if the Entitiy is on screen or not

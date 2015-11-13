@@ -10,7 +10,9 @@
 #define Sprite_hpp
 
 #include <stdio.h>
+#include <vector>
 #include "ofMain.h"
+
 enum spriteCodes{
     PLAYER = 0,
     stdBULLET = 1,

@@ -12,12 +12,14 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include "Sprite.hpp"
+#include "Collider.hpp"
 
 class Entity{
 private:
     float x, y, w, h;
 public:
-    ofPoint position;
+    ofPoint position, size;
+    Collider collider;
     Entity(float x, float y, float w, float h);
     bool onScreen();
 };

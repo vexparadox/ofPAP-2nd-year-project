@@ -18,11 +18,11 @@
 
 class Player : public Creature{
 private:
-    vector<StandardBullet> *bullets;
+    vector<StandardBullet> &bullets;
     bool visible;
 public:
     int ammo = 5;
-    Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets);
+    Player(float x, float y, float movementSpeed, int health, bool visible,vector<StandardBullet> &bullets);
     void action();
     void fire();
     void display();
