@@ -27,6 +27,7 @@ public:
     Player player = Player(2, 2, 10, 200, true, stdBullet);
     void render();
     void tick();
+    void physicsUpdate();
     
 };
 
