@@ -9,7 +9,7 @@
 #include "UI.hpp"
 
 
-UI::UI(ofPoint position, ofPoint size, std::string value):x(x), y(y), width(width), height(height), value(value), position(position), size(size){
+UI::UI(ofPoint position, ofPoint size, std::string value):position(position), size(size){
 
     rect = ofRectangle(position, size.x, size.y);
     
@@ -21,6 +21,5 @@ void UI::display(){
 }
 
 bool UI::isClicked(int mousex, int mousey){
-
-
+    return rect.inside(mousex, mousey);
 }

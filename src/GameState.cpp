@@ -33,6 +33,7 @@ void GameState::physicsUpdate(){
 }
 
 void GameState::tick(){
+    this->physicsUpdate();
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
     }

@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "State.hpp"
+#include "Keyboard.hpp"
 #include "UI.hpp"
 
 class MenuState : public State{

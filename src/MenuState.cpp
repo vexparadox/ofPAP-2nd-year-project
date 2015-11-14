@@ -10,7 +10,9 @@
 
 
 void MenuState::tick(){
-    
+    if(Keyboard::getMOUSE1() && ui.isClicked(ofGetMouseX(), ofGetMouseY())){
+        std::cout << "clicked";
+    }
 }
 
 void MenuState::render(){

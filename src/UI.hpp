@@ -22,7 +22,6 @@ public:
     bool isClicked(int mousex, int mousey);
     ofPoint position;
     ofPoint size;
-    int x, y, width, height;
 };
 
 #endif /* UI_hpp */
