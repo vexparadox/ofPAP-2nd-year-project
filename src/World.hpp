@@ -12,13 +12,16 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include <fstream>
+#include <boost/lexical_cast.hpp>
+#include <vector>
 
 class World{
 public:
-    int scale;
+    int xSize, ySize;
     std::string path;
-    World(std::string path, int scale);
+    World(std::string path, int xScale, int yScale);
     void loadWorld();
+    vector< vector<int> > worldMatrix;
 };
 
 #endif /* World_hpp */
