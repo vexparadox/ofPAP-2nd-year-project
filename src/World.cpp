@@ -13,18 +13,20 @@ World::World(std::string path, int scale): scale(scale), path(path){
 }
 
 void World::loadWorld(){
-    std::cout << "loadWorld";
-    std::string line;
-    std::ifstream infile("test.txt");
-    infile.open("test.txt");
-    if(infile.is_open()){
-        std::cout << "File is opened";
-    }
-    for( std::string line; getline(infile, line ); )
+
+    std::ifstream textfile ("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
+    if (textfile.is_open()) //checks if the file is open??
     {
-        int temp;
-        infile >> temp;
-        std::cout << temp;
+        string str; //declare a string for storage
+        while (getline(textfile, str)){ //get a line from the file, put in the string
+            //loop through skipping all the spaces
+            int i = 0 ;
+            while(i <= str.length()){
+                std::cout << str[i];
+                i+=2;
+            }
+            std::cout << std::endl;
+        }
     }
 
 }
