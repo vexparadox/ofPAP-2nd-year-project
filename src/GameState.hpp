@@ -15,6 +15,7 @@
 #include "BasicZombie.hpp"
 #include "Player.hpp"
 #include "StandardBullet.hpp"
+#include "World.hpp"
 
 //the gamestate is the state that is run when the gmae is running
 //here the render and tick fucntions hold the data of the game
@@ -25,6 +26,7 @@ public:
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way
     Player player = Player(2, 2, 10, 200, true, stdBullet);
+    World world = World("test.txt", 5);
     void render();
     void tick();
     void physicsUpdate();
