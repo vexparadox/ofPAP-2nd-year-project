@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "ofMain.h"
 
+//this class will eventually handle all collision in the game..
 class Collider{
 private:
     ofPoint position, size;

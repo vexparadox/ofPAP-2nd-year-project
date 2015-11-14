@@ -19,6 +19,7 @@ private:
 public:
     static State* getState();
     static void setState(State &state);
+    //=0 means it's abstract
     virtual void render() = 0;
     virtual void tick() = 0;
 };

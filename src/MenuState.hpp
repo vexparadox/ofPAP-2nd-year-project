@@ -13,7 +13,7 @@
 #include "State.hpp"
 #include "Keyboard.hpp"
 #include "UI.hpp"
-
+ //this class is what is called when the program is in menu state 
 class MenuState : public State{
 public:
     void tick();

@@ -19,7 +19,7 @@ class ofApp : public ofBaseApp{
 		void draw();
 		void keyPressed(int key);
 		void keyReleased(int key);
-    
+        //two instances of the current states
         GameState gameState;
         MenuState menuState;
 };
