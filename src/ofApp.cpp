@@ -11,12 +11,12 @@ void ofApp::setup(){
 }
 
 void ofApp::update(){
-    //this uses Sprite to call the tick() method of the currentState
+    //this uses State to call the tick() method of the currentState
     State::getState()->tick();
 }
 
 void ofApp::draw(){
-    //this uses Sprite to call the render() method of the currentState
+    //this uses State to call the render() method of the currentState
     State::getState()->render();
 }
 
