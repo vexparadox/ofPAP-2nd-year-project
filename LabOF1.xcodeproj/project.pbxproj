@@ -133,8 +133,6 @@
 				C23B51C71BF1349E0093ED9A /* Keyboard.hpp */,
 				C2C1480E1BF4F169001C4D23 /* Sprite.cpp */,
 				C2C1480F1BF4F169001C4D23 /* Sprite.hpp */,
-				C2C148111BF6664F001C4D23 /* Collider.cpp */,
-				C2C148121BF6664F001C4D23 /* Collider.hpp */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -238,6 +236,8 @@
 		C2D242C11BF9352F00C9F746 /* World */ = {
 			isa = PBXGroup;
 			children = (
+				C2C148111BF6664F001C4D23 /* Collider.cpp */,
+				C2C148121BF6664F001C4D23 /* Collider.hpp */,
 				C2C148141BF79DAB001C4D23 /* World.cpp */,
 				C2C148151BF79DAB001C4D23 /* World.hpp */,
 			);

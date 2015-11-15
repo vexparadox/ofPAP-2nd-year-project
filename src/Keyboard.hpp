@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "ofMain.h"
 
-//this class handles keyboard input with predefined buttons
+//this class handles keyboard input with predefined buttons and static methods
 
 class Keyboard{
 public:

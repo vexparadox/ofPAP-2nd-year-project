@@ -12,4 +12,3 @@
 Collider::Collider(ofPoint position, ofPoint size):position(position), size(size){
     
 }
-
