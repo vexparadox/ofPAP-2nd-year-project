@@ -13,18 +13,16 @@ ofImage World::worldImg;
 int World::xSize;
 int World::ySize;
 
-World::World(std::string path, int xSize, int ySize):path(path){
-    this->xSize = xSize;
-    this->ySize = ySize;
-}
 
+//load the txt file and make the world vector
 void World::loadWorld(){
     std::ifstream textfile ("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
+        xSize = str.length();
         while (getline(textfile, str)){ //get a line from the file, put in the string
-
+            //loop through and push all the ints to a vector
             for(int i = 0; i <= str.length(); i+=2){
                 //convert the string into an int
                 int tempInt;
@@ -37,26 +35,27 @@ void World::loadWorld(){
                 }
                 worldMatrix.push_back(tempInt);
             }
+            ySize++;
         }
     }
-    this -> updateWorld();
+    World::updateWorldImg();
 }
-
-void World::updateWorld(){
+//get a new version of worldImg
+void World::updateWorldImg(){
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
             Sprite::getTexture(worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
-
     worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
 }
 
+//display the worldImg
 void World::display(){
     ofPushMatrix();
     ofRotate(180);
     ofTranslate(-ofGetWidth(), -ofGetHeight());
-    worldImg.draw(0, 0);
+    World::worldImg.draw(0, 0);
     ofPopMatrix();
 
 }

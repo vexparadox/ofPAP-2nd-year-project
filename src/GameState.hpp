@@ -28,7 +28,6 @@ public:
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way
     Player player = Player(2, 2, 10, 200, true, stdBullet);
-    World world = World("test.txt", 20, 20);
     void render();
     void tick();
     void physicsUpdate();

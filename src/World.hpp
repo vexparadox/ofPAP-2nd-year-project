@@ -19,12 +19,10 @@
 class World{
 public:
     static int xSize, ySize;
-    std::string path;
-    World(std::string path, int xScale, int yScale);
-    void loadWorld();
-    void display();
+    static void loadWorld();
+    static void display();
     static ofImage worldImg;
-    static void updateWorld();
+    static void updateWorldImg();
     static vector<int> worldMatrix;
 };
 
