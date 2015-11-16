@@ -42,7 +42,7 @@ void World::loadWorld(){
 void World::display(){
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
-            Sprite::getTexture(worldMatrix[i*xSize + j]).draw(i*SPRITE_SIZE, j*SPRITE_SIZE);
+            Sprite::getTexture(worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
 }
