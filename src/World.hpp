@@ -15,6 +15,11 @@
 #include <boost/lexical_cast.hpp>
 #include <vector>
 
+enum worldCodes{
+    GRASS_Tile = 0;
+    END_Tile = 1;
+};
+
 class World{
 public:
     int xSize, ySize;
