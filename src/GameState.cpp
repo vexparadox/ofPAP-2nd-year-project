@@ -38,6 +38,7 @@ void GameState::tick(){
     //create the world if not done already
     if(!worldIsLoaded){
         world.loadWorld();
+        worldIsLoaded = true;
     }
     
     this->physicsUpdate();

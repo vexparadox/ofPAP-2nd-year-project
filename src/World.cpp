@@ -48,10 +48,15 @@ void World::updateWorld(){
             Sprite::getTexture(worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
+
     worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
 }
 
 void World::display(){
-        worldImg.draw(0, 0);
-    std::cout << worldImg.getWidth();
+    ofPushMatrix();
+    ofRotate(180);
+    ofTranslate(-ofGetWidth(), -ofGetHeight());
+    worldImg.draw(0, 0);
+    ofPopMatrix();
+
 }
