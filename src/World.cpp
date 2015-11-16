@@ -9,9 +9,13 @@
 #include "World.hpp"
 
 vector<int> World::worldMatrix;
+ofImage World::worldImg;
+int World::xSize;
+int World::ySize;
 
-World::World(std::string path, int xSize, int ySize): xSize(xSize), ySize(ySize), path(path){
-    this->loadWorld();
+World::World(std::string path, int xSize, int ySize):path(path){
+    this->xSize = xSize;
+    this->ySize = ySize;
 }
 
 void World::loadWorld(){
@@ -24,7 +28,6 @@ void World::loadWorld(){
             for(int i = 0; i <= str.length(); i+=2){
                 //convert the string into an int
                 int tempInt;
-                std::cout << str[i];
                 try{
                     tempInt = boost::lexical_cast<int>(str[i]);
                 }
@@ -34,15 +37,21 @@ void World::loadWorld(){
                 }
                 worldMatrix.push_back(tempInt);
             }
-            std::cout << std::endl;
         }
     }
+    this -> updateWorld();
 }
 
-void World::display(){
+void World::updateWorld(){
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
             Sprite::getTexture(worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
+    worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+}
+
+void World::display(){
+        worldImg.draw(0, 0);
+    std::cout << worldImg.getWidth();
 }

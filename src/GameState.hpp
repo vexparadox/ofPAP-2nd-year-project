@@ -20,6 +20,8 @@
 //the gamestate is the state that is run when the gmae is running
 //here the render and tick fucntions hold the data of the game
 class GameState : public State{
+private:
+    bool worldIsLoaded = false;
 public:
     GameState();
     vector<BasicZombie> basicE;
@@ -30,7 +32,6 @@ public:
     void render();
     void tick();
     void physicsUpdate();
-    
 };
 
 #endif /* GameState_hpp */

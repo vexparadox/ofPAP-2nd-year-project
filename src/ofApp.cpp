@@ -2,12 +2,12 @@
 
 void ofApp::setup(){
     //create basic zombies
-    ofSetFrameRate(60);
+    ofSetFrameRate(30);
     //set the current state to gameState
     State::setState(gameState);
     //this loads all the games textures at a set size of 50, 50
     //most likely to be changed when all the textures are the right size
-    Sprite::loadTextures(50, 50);
+    Sprite::loadTextures();
 }
 
 void ofApp::update(){

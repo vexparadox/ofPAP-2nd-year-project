@@ -37,7 +37,7 @@ enum spriteCodes{
 class Sprite{
 public:
     static ofImage textures[END_SPRITE];
-    static void loadTextures(int w, int h);
+    static void loadTextures();
     static ofImage getTexture(int i);
     static float getWidth(int i);
     static float getHeight(int i);

@@ -10,11 +10,11 @@
 
 ofImage Sprite::textures[END_SPRITE];
 
-void Sprite::loadTextures(int w, int h){
+void Sprite::loadTextures(){
     //load all the textures
     for(int i = 0; i < END_SPRITE; i++){
         textures[i].load(std::to_string(i)+".png");
-        textures[i].resize(w,h);
+        textures[i].resize(SPRITE_SIZE, SPRITE_SIZE);
     }
 }
 
