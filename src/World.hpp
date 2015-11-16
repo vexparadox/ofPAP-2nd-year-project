@@ -12,13 +12,9 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include <fstream>
+#include "Sprite.hpp"
 #include <boost/lexical_cast.hpp>
 #include <vector>
-
-enum worldCodes{
-    GRASS_Tile = 0;
-    END_Tile = 1;
-};
 
 class World{
 public:
@@ -26,7 +22,8 @@ public:
     std::string path;
     World(std::string path, int xScale, int yScale);
     void loadWorld();
-    vector< vector<int> > worldMatrix;
+    void display();
+    static vector<int> worldMatrix;
 };
 
 #endif /* World_hpp */

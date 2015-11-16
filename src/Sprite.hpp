@@ -13,22 +13,26 @@
 #include <vector>
 #include "ofMain.h"
 
-enum spriteCodes{
-    PLAYER = 0,
-    stdBULLET = 1,
-    BasicZOMBIE = 2,
-    END_SPRITE = 3
-};
-
 /*his function loads and holds all the sprites that will be used in the game
-it's beneficial to do this because there ever only needs to be one instance of the loaded texture for each object in the game
-
-If BasicZombie is made and shown 100 times in once scene, it's pointless to hold 100 ofImages in 100 classes. Using one static array and calling like
+ it's beneficial to do this because there ever only needs to be one instance of the loaded texture for each object in the game
+ 
+ If BasicZombie is made and shown 100 times in once scene, it's pointless to hold 100 ofImages in 100 classes. Using one static array and calling like
  Sprite::getTexture(ENUM_CODE)->draw();
  
  Each enum-code relates to a place in the array and a specific texture, these are kept the same by naming the files i.jpg and using a for loop. As long as there are no changes to the enum values, there is no chance of unexpected results.
  
  */
+
+enum spriteCodes{
+    SKY = 0,
+    GRASS_TOP = 1,
+    DIRT_CENTER = 2,
+    PLAYER = 3,
+    BasicZOMBIE = 4,
+    stdBULLET = 5,
+    END_SPRITE = 6,
+    SPRITE_SIZE = 50
+};
 
 class Sprite{
 public:

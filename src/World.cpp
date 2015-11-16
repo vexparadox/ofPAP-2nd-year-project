@@ -8,6 +8,8 @@
 
 #include "World.hpp"
 
+vector<int> World::worldMatrix;
+
 World::World(std::string path, int xSize, int ySize): xSize(xSize), ySize(ySize), path(path){
     this->loadWorld();
 }
@@ -18,23 +20,29 @@ void World::loadWorld(){
     {
         string str; //declare a string for storage
         while (getline(textfile, str)){ //get a line from the file, put in the string
-            
-            //loop through skipping all the spaces
-            //i holds the place in the line that's being parsed
-            int i = 0;
-            vector<int> tempRow;
-            while(i <= str.length()){
+
+            for(int i = 0; i <= str.length(); i+=2){
                 //convert the string into an int
-                int tempInt = boost::lexical_cast<int>(str[i]);
-                //push into a temp row
-                tempRow.push_back(tempInt);
-                //incrememnt through the line
-                i+=2;
+                int tempInt;
+                std::cout << str[i];
+                try{
+                    tempInt = boost::lexical_cast<int>(str[i]);
+                }
+                catch(boost::bad_lexical_cast const& e)
+                {
+                    std::cout << "Error: " << e.what() << "\n";
+                }
+                worldMatrix.push_back(tempInt);
             }
-            //push the row into the world matrix
-            worldMatrix.push_back(tempRow);
             std::cout << std::endl;
         }
     }
-    
+}
+
+void World::display(){
+    for(int i = 0; i < xSize; i++){
+        for(int j = 0; j < ySize; j++){
+            Sprite::getTexture(worldMatrix[i*xSize + j]).draw(i*SPRITE_SIZE, j*SPRITE_SIZE);
+        }
+    }
 }

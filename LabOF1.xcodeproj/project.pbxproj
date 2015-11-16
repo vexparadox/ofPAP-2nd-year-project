@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C23260491BF9D28B00B894D1 /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23260471BF9D28B00B894D1 /* Tile.cpp */; settings = {ASSET_TAGS = (); }; };
-		C232604D1BF9DB6400B894D1 /* Grass-Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C232604B1BF9DB6400B894D1 /* Grass-Tile.cpp */; settings = {ASSET_TAGS = (); }; };
 		C23B51C41BF133A10093ED9A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23B51C21BF133A10093ED9A /* Player.cpp */; settings = {ASSET_TAGS = (); }; };
 		C23B51C81BF1349E0093ED9A /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23B51C61BF1349E0093ED9A /* Keyboard.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D317F1BEA369B00AFA04C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D317D1BEA369B00AFA04C /* State.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -57,10 +55,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C23260471BF9D28B00B894D1 /* Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
-		C23260481BF9D28B00B894D1 /* Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
-		C232604B1BF9DB6400B894D1 /* Grass-Tile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Grass-Tile.cpp"; sourceTree = "<group>"; };
-		C232604C1BF9DB6400B894D1 /* Grass-Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "Grass-Tile.hpp"; sourceTree = "<group>"; };
 		C23B51C21BF133A10093ED9A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		C23B51C31BF133A10093ED9A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		C23B51C61BF1349E0093ED9A /* Keyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
@@ -121,17 +115,6 @@
 			children = (
 			);
 			name = addons;
-			sourceTree = "<group>";
-		};
-		C232604A1BF9D2D800B894D1 /* Tile */ = {
-			isa = PBXGroup;
-			children = (
-				C23260471BF9D28B00B894D1 /* Tile.cpp */,
-				C232604B1BF9DB6400B894D1 /* Grass-Tile.cpp */,
-				C232604C1BF9DB6400B894D1 /* Grass-Tile.hpp */,
-				C23260481BF9D28B00B894D1 /* Tile.hpp */,
-			);
-			name = Tile;
 			sourceTree = "<group>";
 		};
 		C23B51C51BF133A50093ED9A /* Player */ = {
@@ -257,7 +240,6 @@
 				C2C148121BF6664F001C4D23 /* Collider.hpp */,
 				C2C148141BF79DAB001C4D23 /* World.cpp */,
 				C2C148151BF79DAB001C4D23 /* World.hpp */,
-				C232604A1BF9D2D800B894D1 /* Tile */,
 			);
 			name = World;
 			sourceTree = "<group>";
@@ -399,8 +381,6 @@
 				C23B51C81BF1349E0093ED9A /* Keyboard.cpp in Sources */,
 				C2C148101BF4F169001C4D23 /* Sprite.cpp in Sources */,
 				C2B094751BF37E1000245E1E /* StandardBullet.cpp in Sources */,
-				C23260491BF9D28B00B894D1 /* Tile.cpp in Sources */,
-				C232604D1BF9DB6400B894D1 /* Grass-Tile.cpp in Sources */,
 				C2C828D91BD2B0FF001B5145 /* BasicZombie.cpp in Sources */,
 				C23B51C41BF133A10093ED9A /* Player.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,

@@ -15,9 +15,11 @@ GameState::GameState(){
     for(int i =0; i < maxBasic; i++){
         basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()), 0.001, 100, 5, true));
     }
+
 }
 
 void GameState::render(){
+        world.display();
     for(auto e : basicE){
         //display the enemies
         e.display();
