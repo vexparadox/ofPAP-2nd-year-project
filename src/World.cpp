@@ -10,8 +10,8 @@
 
 vector<int> World::worldMatrix;
 ofImage World::worldImg;
-int World::xSize;
-int World::ySize;
+int World::xSize = 0;
+int World::ySize = 0;
 
 
 //load the txt file and make the world vector
@@ -20,7 +20,6 @@ void World::loadWorld(){
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
-        xSize = str.length();
         while (getline(textfile, str)){ //get a line from the file, put in the string
             //loop through and push all the ints to a vector
             for(int i = 0; i <= str.length(); i+=2){
@@ -34,10 +33,18 @@ void World::loadWorld(){
                     std::cout << "Error: " << e.what() << "\n";
                 }
                 worldMatrix.push_back(tempInt);
+                std::cout << xSize << std::endl;
+                xSize++;
             }
+            //count how many lines there are
             ySize++;
+
         }
+        //xSize will end up being xSize*number of lines
+        //so fix that
+        xSize = xSize/ySize;
     }
+    //update the world
     World::updateWorldImg();
 }
 //get a new version of worldImg

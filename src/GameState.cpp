@@ -19,7 +19,7 @@ GameState::GameState(){
 }
 
 void GameState::render(){
-    world.display();
+    World::display();
     for(auto e : basicE){
         //display the enemies
         e.display();
@@ -37,7 +37,7 @@ void GameState::physicsUpdate(){
 void GameState::tick(){
     //create the world if not done already
     if(!worldIsLoaded){
-        world.loadWorld();
+        World::loadWorld();
         worldIsLoaded = true;
     }
     
