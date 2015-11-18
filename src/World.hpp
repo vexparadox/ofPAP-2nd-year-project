@@ -24,6 +24,7 @@ public:
     static ofImage worldImg;
     static void updateWorldImg();
     static vector<int> worldMatrix;
+    static int numFlips;
 };
 
 #endif /* World_hpp */

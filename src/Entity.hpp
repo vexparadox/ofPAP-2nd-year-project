@@ -13,6 +13,7 @@
 #include "ofMain.h"
 #include "Sprite.hpp"
 #include "Collider.hpp"
+#include "World.hpp"
 
 class Entity{
 private:
@@ -22,6 +23,7 @@ public:
     Collider collider;
     Entity(float x, float y, float w, float h);
     bool onScreen();
+    bool worldCollide();
 };
 
 #endif /* Entity_hpp */

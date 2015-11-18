@@ -23,6 +23,7 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     //this passes the key that's been pressed to the keyboard handler
     Keyboard::keyDown(key);
+    World::updateWorldImg();
 }
 
 void ofApp::keyReleased(int key){

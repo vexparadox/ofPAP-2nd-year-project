@@ -12,6 +12,7 @@ vector<int> World::worldMatrix;
 ofImage World::worldImg;
 int World::xSize = 0;
 int World::ySize = 0;
+int World::numFlips =0;
 
 
 //load the txt file and make the world vector
@@ -33,7 +34,6 @@ void World::loadWorld(){
                     std::cout << "Error: " << e.what() << "\n";
                 }
                 worldMatrix.push_back(tempInt);
-                std::cout << xSize << std::endl;
                 xSize++;
             }
             //count how many lines there are
@@ -49,20 +49,26 @@ void World::loadWorld(){
 }
 //get a new version of worldImg
 void World::updateWorldImg(){
+    numFlips++;
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
-            Sprite::getTexture(worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
+            Sprite::getTexture(World::worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
-    worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+    World::worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+    World::worldImg.save("Screen.jpg");
 }
 
 //display the worldImg
 void World::display(){
-    ofPushMatrix();
-    ofRotate(180);
-    ofTranslate(-ofGetWidth(), -ofGetHeight());
-    World::worldImg.draw(0, 0);
-    ofPopMatrix();
+//    if(numFlips < 2) {
+//    ofPushMatrix();
+//    ofRotate(180);
+//    ofTranslate(-ofGetWidth(), -ofGetHeight());
+//    worldImg.draw(0, 0);
+//    ofPopMatrix();
+//    }else{
+        worldImg.draw(0, 0);
+//§    }
 
 }

@@ -27,3 +27,9 @@ bool Entity::onScreen(){
     }
     return true;
 }
+
+bool Entity::worldCollide(){
+    for(auto w : World::worldMatrix){
+        
+    }
+}

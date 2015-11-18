@@ -36,11 +36,11 @@ void GameState::physicsUpdate(){
 
 void GameState::tick(){
     //create the world if not done already
+    //it has to be called here because of constructors and things
     if(!worldIsLoaded){
         World::loadWorld();
         worldIsLoaded = true;
     }
-    
     this->physicsUpdate();
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
