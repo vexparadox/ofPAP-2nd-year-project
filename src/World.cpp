@@ -9,15 +9,20 @@
 #include "World.hpp"
 
 vector<int> World::worldMatrix;
+vector<Tile> World::tiles;
 ofImage World::worldImg;
 int World::xSize = 0;
 int World::ySize = 0;
 int World::numFlips =0;
 
 
+void World::loadTiles(){
+    
+}
+
 //load the txt file and make the world vector
 void World::loadWorld(){
-    std::ifstream textfile ("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
@@ -43,6 +48,9 @@ void World::loadWorld(){
         //xSize will end up being xSize*number of lines
         //so fix that
         xSize = xSize/ySize;
+    }
+    else{
+        std::cout << "File could not be loaded" << std::endl;
     }
     //update the world
     World::updateWorldImg();

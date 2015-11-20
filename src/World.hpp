@@ -15,6 +15,7 @@
 #include "Sprite.hpp"
 #include <boost/lexical_cast.hpp>
 #include <vector>
+#include "Tile.hpp"
 
 class World{
 public:
@@ -24,7 +25,9 @@ public:
     static ofImage worldImg;
     static void updateWorldImg();
     static vector<int> worldMatrix;
+    static vector<Tile> tiles;
     static int numFlips;
+    static void loadTiles();
 };
 
 #endif /* World_hpp */
