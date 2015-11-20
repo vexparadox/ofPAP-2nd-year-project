@@ -61,14 +61,5 @@ void World::updateWorldImg(){
 
 //display the worldImg
 void World::display(){
-//    if(numFlips < 2) {
-//    ofPushMatrix();
-//    ofRotate(180);
-//    ofTranslate(-ofGetWidth(), -ofGetHeight());
-//    worldImg.draw(0, 0);
-//    ofPopMatrix();
-//    }else{
-        worldImg.draw(0, 0);
-//§    }
-
+    worldImg.draw(0, 0);
 }
