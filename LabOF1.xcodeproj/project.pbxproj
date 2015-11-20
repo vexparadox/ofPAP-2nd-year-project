@@ -178,6 +178,15 @@
 			name = Amunition;
 			sourceTree = "<group>";
 		};
+		C2B612981BFF80430052416B /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				C2B612951BFF7FC40052416B /* Tile.cpp */,
+				C2B612961BFF7FC40052416B /* Tile.hpp */,
+			);
+			name = Tiles;
+			sourceTree = "<group>";
+		};
 		C2C40C4B1BD15CC8009AFB1C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,8 +251,7 @@
 				C2C148111BF6664F001C4D23 /* Collider.cpp */,
 				C2C148121BF6664F001C4D23 /* Collider.hpp */,
 				C2C148141BF79DAB001C4D23 /* World.cpp */,
-				C2B612951BFF7FC40052416B /* Tile.cpp */,
-				C2B612961BFF7FC40052416B /* Tile.hpp */,
+				C2B612981BFF80430052416B /* Tiles */,
 				C2C148151BF79DAB001C4D23 /* World.hpp */,
 			);
 			name = World;

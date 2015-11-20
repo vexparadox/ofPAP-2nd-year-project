@@ -11,4 +11,12 @@
 
 #include <stdio.h>
 
+class Tile{
+private:
+    int enumValue;
+    bool solid;
+public:
+    Tile(int enumValue, bool solid);
+};
+
 #endif /* Tile_hpp */
