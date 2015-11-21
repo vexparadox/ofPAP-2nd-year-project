@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "ofMain.h"
-#include "Sprite.hpp"
+#include "Texture.hpp"
 #include "Collider.hpp"
 #include "World.hpp"
 

@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "Keyboard.hpp"
 #include "GameState.hpp"
-#include "Sprite.hpp"
+#include "Texture.hpp"
 
 #include "MenuState.hpp"
 

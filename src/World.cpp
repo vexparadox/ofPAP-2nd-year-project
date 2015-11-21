@@ -22,7 +22,7 @@ void World::loadTiles(){
 
 //load the txt file and make the world vector
 void World::loadWorld(){
-    std::ifstream textfile("data/test.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
@@ -60,7 +60,7 @@ void World::updateWorldImg(){
     numFlips++;
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
-            Sprite::getTexture(World::worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
+            Texture::getTile(World::worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
     World::worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());

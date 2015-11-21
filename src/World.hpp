@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include <fstream>
-#include "Sprite.hpp"
+#include "Texture.hpp"
 #include <boost/lexical_cast.hpp>
 #include <vector>
 #include "Tile.hpp"
