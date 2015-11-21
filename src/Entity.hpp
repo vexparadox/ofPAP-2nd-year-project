@@ -23,7 +23,7 @@ public:
     Collider collider;
     Entity(float x, float y, float w, float h);
     bool onScreen();
-    bool worldCollide();
+    bool worldCollide(int x, int y);
 };
 
 #endif /* Entity_hpp */

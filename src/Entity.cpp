@@ -28,8 +28,14 @@ bool Entity::onScreen(){
     return true;
 }
 
-bool Entity::worldCollide(){
+bool Entity::worldCollide(int x, int y){
+    int bottomX = position.x + size.x/2 + x;
+    int bottomY = position.y + size.y + y;
+    int gridX = bottomX/TILE_SIZE;
+    int gridY = bottomY/TILE_SIZE;
+    std::cout << gridX << " " << gridY << std::endl;
     for(auto w : World::worldMatrix){
+        
         
     }
 }
