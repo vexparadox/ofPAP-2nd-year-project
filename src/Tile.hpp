@@ -13,10 +13,9 @@
 
 class Tile{
 private:
-    int enumValue;
     bool solid;
 public:
-    Tile(int enumValue, bool solid);
+    Tile(bool solid);
 };
 
 #endif /* Tile_hpp */

@@ -1,0 +1,3 @@
+0 //sky
+1 //grass-top
+1 //dirt-center

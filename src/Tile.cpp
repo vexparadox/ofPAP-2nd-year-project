@@ -9,6 +9,6 @@
 #include "Tile.hpp"
 
 
-Tile::Tile(int enumValue, bool solid): enumValue(enumValue), solid(solid){
+Tile::Tile(bool solid): solid(solid){
 
 }

@@ -17,7 +17,24 @@ int World::numFlips =0;
 
 
 void World::loadTiles(){
-    
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/tiles.txt", std::ios::in); //declare a file stream
+    if(textfile.is_open())
+    {
+        string str;
+        while (getline(textfile, str)){
+            bool temp;
+            str.resize(1);
+            if(str == "0"){
+                temp = false;
+            }else{
+                temp = true;
+            }
+            tiles.push_back(Tile(temp));
+        }
+        
+    }else{
+        std::cout << "File could not be loaded";
+    }
 }
 
 //load the txt file and make the world vector
@@ -36,7 +53,7 @@ void World::loadWorld(){
                 }
                 catch(boost::bad_lexical_cast const& e)
                 {
-                    std::cout << "Error: " << e.what() << "\n";
+                    std::cout << "Error on " << str[i] << e.what() << "\n";
                 }
                 worldMatrix.push_back(tempInt);
                 xSize++;

@@ -4,6 +4,7 @@
 #include "Keyboard.hpp"
 #include "GameState.hpp"
 #include "Texture.hpp"
+#include "World.hpp"
 
 #include "MenuState.hpp"
 

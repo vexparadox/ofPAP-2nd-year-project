@@ -8,6 +8,7 @@ void ofApp::setup(){
     //this loads all the games textures at a set size of 50, 50
     //most likely to be changed when all the textures are the right size
     Texture::loadAll(false);
+    World::loadTiles();
 }
 
 void ofApp::update(){
