@@ -54,5 +54,4 @@ void GameState::tick(){
     //check for out-of-screen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.onScreen();}), stdBullet.end());
     player.action();
-    player.worldCollide();
 }

@@ -15,17 +15,23 @@ Player::Player(float x, float y, float movementSpeed, int health, bool visible, 
 void Player::action(){
     //keyboard controls
     if (Keyboard::getRIGHT()) {
-        position.x+=movementSpeed;
-    }
+        if(this->worldCollide(movementSpeed, 0)){
+            position.x += movementSpeed;
+        }    }
     if(Keyboard::getLEFT()){
-        position.x-=movementSpeed;
+        if(this->worldCollide(-movementSpeed, 0)){
+            position.x -= movementSpeed;
+        }
     }
     if(Keyboard::getUP()){
-        position.y-=movementSpeed;
+        if(this->worldCollide(0, -movementSpeed)){
+            position.y -= movementSpeed;
+        }
     }
     if(Keyboard::getDOWN()){
-        position.y+=movementSpeed;
-    }
+        if(this->worldCollide(0, movementSpeed)){
+            position.y += movementSpeed;
+        }    }
     if(Keyboard::getMOUSE1()){
         this->fire();
     }

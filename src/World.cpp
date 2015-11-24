@@ -17,7 +17,7 @@ int World::numFlips =0;
 
 
 void World::loadTiles(){
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/tiles.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/tiles.txt", std::ios::in); //declare a file stream
     if(textfile.is_open())
     {
         string str;
@@ -39,7 +39,7 @@ void World::loadTiles(){
 
 //load the txt file and make the world vector
 void World::loadWorld(){
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/test.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
@@ -81,7 +81,6 @@ void World::updateWorldImg(){
         }
     }
     World::worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
-    World::worldImg.save("Screen.jpg");
 }
 
 //display the worldImg

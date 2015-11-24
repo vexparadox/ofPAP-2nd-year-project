@@ -28,22 +28,36 @@ bool Entity::onScreen(){
     return true;
 }
 
-bool Entity::worldCollide(int vx, int vy){
+bool Entity::worldCollide(float vx, float vy){
     float xBound, yBound;
     if(vx > 0){
-        xBound = position.x + vx + size.x/2;
-    }else{
-        xBound = position.x - vx -size.x/2;
+        //if it's going forwards
+        xBound = position.x + vx + w;
+    }else if(vx < 0){
+        //if it's going backwards
+        xBound = position.x - vx;
+    }else if (vx == 0){
+        //if x is 0, thus no x movement
+        xBound = position.x + w/2;
     }
+
     if(vy > 0){
-        yBound = position.y + vy + size.y/2;
-    }else{
-        yBound = position.y - vy -size.y/2;
+        //if it's going down
+        yBound = position.y + vy + h;
+    }else if (vy < 0){
+        //if it's going up
+        yBound = position.y - vy + h;
+    } else if (vy == 0){
+        //if y is 0, thus no y movement
+        yBound = position.y + h;
     }
     
     ofPoint gridPos = ofPoint((int)xBound/TILE_SIZE, (int)yBound/TILE_SIZE);
-    if(World::tiles[World::worldMatrix[World::xSize * gridPos.x + gridPos.y]].isSolid()){
+    std::cout << gridPos << std::endl;
+    int tileType = World::worldMatrix[gridPos.x + gridPos.y * World::ySize];
+    std::cout << tileType;
+ if(!World::tiles[tileType].isSolid()){
         return true;
-    }
+ }
     return false;
 }
