@@ -28,14 +28,22 @@ bool Entity::onScreen(){
     return true;
 }
 
-bool Entity::worldCollide(int x, int y){
-    int bottomX = position.x + size.x/2 + x;
-    int bottomY = position.y + size.y + y;
-    int gridX = bottomX/TILE_SIZE;
-    int gridY = bottomY/TILE_SIZE;
-    std::cout << gridX << " " << gridY << std::endl;
-    for(auto w : World::worldMatrix){
-        
-        
+bool Entity::worldCollide(int vx, int vy){
+    float xBound, yBound;
+    if(vx > 0){
+        xBound = position.x + vx + size.x/2;
+    }else{
+        xBound = position.x - vx -size.x/2;
     }
+    if(vy > 0){
+        yBound = position.y + vy + size.y/2;
+    }else{
+        yBound = position.y - vy -size.y/2;
+    }
+    
+    ofPoint gridPos = ofPoint((int)xBound/TILE_SIZE, (int)yBound/TILE_SIZE);
+    if(World::tiles[World::worldMatrix[World::xSize * gridPos.x + gridPos.y]].isSolid()){
+        return true;
+    }
+    return false;
 }

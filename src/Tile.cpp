@@ -12,3 +12,7 @@
 Tile::Tile(bool solid): solid(solid){
 
 }
+
+bool Tile::isSolid(){
+    return solid;
+}

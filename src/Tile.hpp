@@ -16,6 +16,7 @@ private:
     bool solid;
 public:
     Tile(bool solid);
+    bool isSolid();
 };
 
 #endif /* Tile_hpp */
