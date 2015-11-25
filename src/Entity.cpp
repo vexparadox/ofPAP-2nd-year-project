@@ -18,6 +18,8 @@ Entity::Entity(float x, float y, float w, float h){
     position.y = y;
     size.x = w;
     size.y = h;
+    velocity.x = 0;
+    velocity.y = 0;
 }
 
 //returns if the Entitiy is on screen or not
@@ -27,7 +29,7 @@ bool Entity::onScreen(){
     }
     return true;
 }
-//apply 
+//apply
 void Entity::gravity(){
     if(worldCollide(0, gravityValue)){
         position.y+=gravityValue;
@@ -61,7 +63,9 @@ bool Entity::worldCollide(float vx, float vy){
     ofPoint gridPos = ofPoint((int)xBound/TILE_SIZE, (int)yBound/TILE_SIZE);
     
     int tileType = World::worldMatrix[gridPos.x + gridPos.y * World::ySize];
-    
+    if(gridPos.x < 0 || gridPos.y < 0){
+        return false;
+    }
     if(!World::tiles[tileType].isSolid()){
         return true;
     }

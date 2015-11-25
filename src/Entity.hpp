@@ -17,8 +17,8 @@
 
 class Entity{
 public:
-    float gravityValue = 6;
-    ofPoint position, size;
+    float gravityValue = 10;
+    ofPoint position, size, velocity;
     Entity(float x, float y, float w, float h);
     bool onScreen();
     bool worldCollide(float vx, float vy);
