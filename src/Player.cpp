@@ -9,10 +9,11 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, Texture::getSpriteWidth(PLAYER), Texture::getSpriteHeight(PLAYER), movementSpeed, health), visible(visible), bullets(bullets){
+Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health), visible(visible), bullets(bullets){
 }
 
 void Player::action(){
+    this->gravity();
     //keyboard controls
     if (Keyboard::getRIGHT()) {
         if(this->worldCollide(movementSpeed, 0)){

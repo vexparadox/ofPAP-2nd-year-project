@@ -39,6 +39,10 @@ void GameState::physicsUpdate(){
 }
 
 void GameState::tick(){
+    //dont do anything until the world is loaded dammit
+    if(!worldIsLoaded){
+        return;
+    }
     //create the world if not done already
     //it has to be called here because of constructors and things
     this->physicsUpdate();

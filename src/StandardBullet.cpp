@@ -7,7 +7,7 @@
 //
 
 #include "StandardBullet.hpp"
-StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible = true) : Entity(position.x, position.y, Texture::getSpriteWidth(stdBULLET), Texture::getSpriteHeight(stdBULLET)), movementSpeed(movementSpeed), visible(visible), target(target){
+StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible = true) : Entity(position.x, position.y, SPRITE_SIZE, SPRITE_SIZE), movementSpeed(movementSpeed), visible(visible), target(target){
 
     velocity.x = (target.x - position.x)*movementSpeed;
     velocity.y = (target.y - position.y)*movementSpeed;

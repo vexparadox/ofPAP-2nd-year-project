@@ -16,14 +16,14 @@
 #include "World.hpp"
 
 class Entity{
-private:
-    float x, y, w, h;
 public:
+    float gravityValue = 6;
     ofPoint position, size;
-    Collider collider;
     Entity(float x, float y, float w, float h);
     bool onScreen();
     bool worldCollide(float vx, float vy);
+    void gravity();
 };
+
 
 #endif /* Entity_hpp */
