@@ -20,8 +20,12 @@ void Creature::takeDamage(int dmg){
 void Creature::moveTo(float mX, float mY){
     float tempX = mX-position.x;
     float tempY = mY-position.y;
-    position.x += tempX*movementSpeed;
-    position.y += tempY*movementSpeed;
+    if(worldCollide(tempX*movementSpeed, 0)){
+        position.x += tempX*movementSpeed;
+    }
+    if(worldCollide(0, tempY*movementSpeed)){
+        position.y += tempY*movementSpeed;
+    }
 }
 
 bool Creature::collide(vector<Entity> &v){

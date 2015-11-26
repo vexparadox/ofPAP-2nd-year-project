@@ -63,6 +63,7 @@ bool Entity::worldCollide(float vx, float vy){
     ofPoint gridPos = ofPoint((int)xBound/TILE_SIZE, (int)yBound/TILE_SIZE);
     
     int tileType = World::worldMatrix[gridPos.x + gridPos.y * World::ySize];
+    
     if(gridPos.x < 0 || gridPos.y < 0){
         return false;
     }

@@ -24,15 +24,11 @@ void Player::action(){
             position.x -= movementSpeed;
         }
     }
-    if(Keyboard::getUP()){
+    if(Keyboard::getSPACE()){
         if(this->worldCollide(0, -movementSpeed*3)){
             position.y -= movementSpeed*3;
         }
     }
-//    if(Keyboard::getDOWN()){
-//        if(this->worldCollide(0, movementSpeed)){
-//            position.y += movementSpeed;
-//        }    }
     if(Keyboard::getMOUSE1()){
         this->fire();
     }
