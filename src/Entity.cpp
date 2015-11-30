@@ -60,6 +60,10 @@ void Entity::setVisible(bool set){
     visible = set;
 }
 
+bool Entity::isVisible(){
+    return visible;
+}
+
 //calls world collision with a vector
 bool Entity::worldCollide(ofPoint velocity){
     return this->worldCollide(velocity.x, velocity.y);

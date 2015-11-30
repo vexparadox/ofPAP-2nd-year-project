@@ -28,6 +28,7 @@ public:
     bool entityCollide(const Entity &entity);
     void gravity(bool collision);
     void setVisible(bool set);
+    bool isVisible();
 };
 
 

@@ -48,20 +48,26 @@ void GameState::tick(){
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
     }
+    //make the bullets update
     for(auto &b : stdBullet){
+        //loop through enemies for bullet collision
         for(auto &e : basicE){
+            //if there's a collision, take damage and set bullets to invisible
             if(e.entityCollide(b)){
                 e.takeDamage(b.getDamage());
-                if(e.isDead()){
-                    e.setVisible(false);
-                }
+                b.setVisible(false);
             }
         }
+        //erase enemies if they're dead
+        basicE.erase(std::remove_if(basicE.begin(), basicE.end(), [this](BasicZombie e){return e.isDead();}), basicE.end());
         b.update();
     }
-    
-    
-    //check for out-of-screen bullets
+    //erase for out-of-screen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.onScreen();}), stdBullet.end());
+    
+    //erase for non-visible bullets
+    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.isVisible();}), stdBullet.end());
+    //call player actions
     player.action();
 }
+
