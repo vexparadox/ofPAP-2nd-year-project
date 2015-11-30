@@ -9,29 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/Creature.cpp"
-            timestampString = "470587684.8176"
+            filePath = "src/Entity.cpp"
+            timestampString = "470590059.301797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "Creature::moveTo(float mX, float mY)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Creature.cpp"
-            timestampString = "470587684.8176"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "Creature::moveTo(float mX, float mY)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "Entity::entityCollide(const Entity &amp;entity)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

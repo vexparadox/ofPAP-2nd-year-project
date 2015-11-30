@@ -7,7 +7,7 @@
 //
 
 #include "StandardBullet.hpp"
-StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible = true) : Entity(position.x, position.y, SPRITE_SIZE, SPRITE_SIZE), movementSpeed(movementSpeed), visible(visible), target(target){
+StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage = 0) : Entity(position.x, position.y, SPRITE_SIZE, SPRITE_SIZE, visible), movementSpeed(movementSpeed), damage(damage), target(target){
     direction = (target - position);
     direction.normalize();
 }
@@ -21,4 +21,8 @@ void StandardBullet::display(){
     if(visible){
         Texture::getSprite(stdBULLET).draw(position);
     }
+}
+
+float StandardBullet::getDamage(){
+    return damage;
 }

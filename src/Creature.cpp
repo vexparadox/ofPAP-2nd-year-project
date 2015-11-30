@@ -9,11 +9,11 @@
 #include "Creature.hpp"
 
 //the Creature class holds the Health, Speed, damage etc of the creature
-Creature::Creature(float x, float y, float w, float h, float movementSpeed, int health):Entity(x, y, w, h), health(health), movementSpeed(movementSpeed){
+Creature::Creature(float x, float y, float w, float h, float movementSpeed, float health, bool visible):Entity(x, y, w, h, visible), health(health), movementSpeed(movementSpeed){
     
 }
 
-void Creature::takeDamage(int dmg){
+void Creature::takeDamage(float dmg){
     health -= dmg;
 }
 
@@ -22,6 +22,9 @@ void Creature::moveTo(ofPoint target){
 }
 
 void Creature::moveTo(float mX, float mY){
+    if(!visible){
+        return;
+    }
     ofPoint target = ofPoint(mX, mY);
     ofPoint direction = target - position;
     direction.normalize();
@@ -32,7 +35,9 @@ void Creature::moveTo(float mX, float mY){
     }
 }
 
-bool Creature::collide(vector<Entity> &v){
-    //collision code goes here
-    return true;
+bool Creature::isDead(){
+    if(health <= 0){
+        return true;
+    }
+    return false;
 }

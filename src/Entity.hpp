@@ -16,14 +16,18 @@
 #include "World.hpp"
 
 class Entity{
+protected:
+    bool visible;
 public:
     float gravityValue = 10;
     ofPoint position, size, velocity;
-    Entity(float x, float y, float w, float h);
+    Entity(float x, float y, float w, float h, bool visible);
     bool onScreen();
     bool worldCollide(float vx, float vy);
     bool worldCollide(ofPoint velocity);
-    void gravity();
+    bool entityCollide(const Entity &entity);
+    void gravity(bool collision);
+    void setVisible(bool set);
 };
 
 

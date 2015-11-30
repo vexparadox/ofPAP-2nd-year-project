@@ -9,11 +9,11 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(float x, float y, float movementSpeed, int health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health), visible(visible), bullets(bullets){
+Player::Player(float x, float y, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets) : Creature(x, y, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health, visible), bullets(bullets){
 }
 
 void Player::action(){
-    this->gravity();
+    this->gravity(true);
     //keyboard controls
     if (Keyboard::getRIGHT()) {
         if(this->worldCollide(movementSpeed, 0)){
@@ -44,6 +44,6 @@ void Player::display(){
 //create a new bullet
 void Player::fire(){
     if(bullets.size() <= ammo){
-        bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true));
+        bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true, 10));
     }
 }

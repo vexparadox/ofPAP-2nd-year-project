@@ -12,7 +12,7 @@
 
 
 //the Entity class holds the position and visibility of the entity
-Entity::Entity(float x, float y, float w, float h){
+Entity::Entity(float x, float y, float w, float h, bool visible): visible(visible) {
     //set the position of the entitiy
     position.x = x;
     position.y = y;
@@ -29,11 +29,35 @@ bool Entity::onScreen(){
     }
     return true;
 }
-//apply
-void Entity::gravity(){
-    if(worldCollide(0, gravityValue)){
-        position.y+=gravityValue;
+//apply gravity to the entity with/without checks
+void Entity::gravity(bool collision){
+    if(collision) {
+        if(worldCollide(0, gravityValue)){
+            position.y+=gravityValue;
+        }
     }
+    else{
+        position.y+=gravityValue;
+
+    }
+}
+
+bool Entity::entityCollide(const Entity &entity){
+    //only do the calculations if it's visible
+    if(!visible){
+        return false;
+    }
+    
+    //do entity collision
+    if(entity.position.x+size.x/2 > position.x && entity.position.x+size.x/2 < position.x+size.x
+       && entity.position.y+size.y/2 > position.y && entity.position.y+size.y/2 > position.y+size.y){
+        return true;
+    }
+    return false;
+}
+
+void Entity::setVisible(bool set){
+    visible = set;
 }
 
 bool Entity::worldCollide(ofPoint velocity){

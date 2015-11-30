@@ -15,15 +15,14 @@
 //creatures are any organic entity in the game
 class Creature : public Entity{
 public:
-    int health;
+    float health;
     float movementSpeed;
-    Creature(float x, float y, float w, float h, float movementSpeed, int health);
+    Creature(float x, float y, float w, float h, float movementSpeed, float health, bool visible);
     int getHealth();
-    void takeDamage(int dmg);
+    bool isDead();
+    void takeDamage(float dmg);
     void moveTo(float x, float y);
     void moveTo(ofPoint target);
-    bool collide(vector<Entity> &v);
-    
 };
 
 #endif /* Creature_hpp */
