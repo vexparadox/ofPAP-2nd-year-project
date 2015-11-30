@@ -12,6 +12,7 @@ BasicZombie::BasicZombie(float x, float y, float movementSpeed, float health, in
     
 }
 
+//display the item
 void BasicZombie::display(){
     if(visible){
         Texture::getSprite(BasicZOMBIE).draw(position);

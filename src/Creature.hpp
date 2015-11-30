@@ -14,9 +14,10 @@
 #include <math.h>
 //creatures are any organic entity in the game
 class Creature : public Entity{
-public:
+protected:
     float health;
     float movementSpeed;
+public:
     Creature(float x, float y, float w, float h, float movementSpeed, float health, bool visible);
     int getHealth();
     bool isDead();

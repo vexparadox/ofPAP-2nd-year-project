@@ -60,10 +60,11 @@ void Entity::setVisible(bool set){
     visible = set;
 }
 
+//calls world collision with a vector
 bool Entity::worldCollide(ofPoint velocity){
     return this->worldCollide(velocity.x, velocity.y);
 }
-
+//checks world collision at a certain point, use 0, 0 if you want to compare the entitys current position
 bool Entity::worldCollide(float vx, float vy){
     float xBound, yBound;
     if(vx > 0){

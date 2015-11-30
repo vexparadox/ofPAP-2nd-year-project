@@ -13,7 +13,7 @@
 #include "Entity.hpp"
 
 class StandardBullet : public Entity{
-private:
+protected:
     float movementSpeed;
     float damage;
     ofPoint target, velocity, direction;

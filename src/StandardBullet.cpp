@@ -13,7 +13,9 @@ StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementS
 }
 //update the bullets position and pull towards the target
 void StandardBullet::update(){
-    position += direction*(movementSpeed);
+    if(visible){
+        position += direction*(movementSpeed);
+    }
 }
 
 //display the bullet
