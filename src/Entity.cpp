@@ -50,7 +50,7 @@ bool Entity::entityCollide(const Entity &entity){
     
     //do entity collision
     if(entity.position.x+size.x/2 > position.x && entity.position.x+size.x/2 < position.x+size.x
-       && entity.position.y+size.y/2 > position.y && entity.position.y+size.y/2 > position.y+size.y){
+       && entity.position.y+size.y/2 > position.y && entity.position.y+size.y/2 < position.y+size.y){
         return true;
     }
     return false;
