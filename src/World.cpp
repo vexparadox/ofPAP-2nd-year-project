@@ -49,6 +49,8 @@ void World::loadTiles(){
 
 //load the txt file and make the world vector
 void World::loadWorld(){
+    //clear incase of reset
+    worldMatrix.clear();
     std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {

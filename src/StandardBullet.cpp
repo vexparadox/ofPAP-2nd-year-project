@@ -32,7 +32,7 @@ float StandardBullet::getDamage(){
 bool StandardBullet::bulletWorldCollide(){
     float tempX = position.x + size.x/2;
     float tempY = position.y + size.y/2;
-    ofPoint gridPos = ofPoint(tempX/TILE_SIZE, tempY/TILE_SIZE);
+    ofPoint gridPos = ofPoint((int)tempX/TILE_SIZE, (int)tempY/TILE_SIZE);
     if(World::worldMatrix[gridPos.x + gridPos.y * World::getySize()].isSolid()){
         World::worldMatrix[gridPos.x + gridPos.y * World::getySize()].damageTile();
         return true;
