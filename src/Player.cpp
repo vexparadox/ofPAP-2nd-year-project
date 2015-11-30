@@ -24,7 +24,7 @@ void Player::action(){
             position.x -= movementSpeed;
         }
     }
-    if(Keyboard::getSPACE()){
+    if(Keyboard::getUP()){
         if(this->worldCollide(0, -movementSpeed*3)){
             position.y -= movementSpeed*3;
         }
@@ -44,6 +44,6 @@ void Player::display(){
 //create a new bullet
 void Player::fire(){
     if(bullets.size() <= ammo){
-    bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 0.1, true));
+        bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true));
     }
 }

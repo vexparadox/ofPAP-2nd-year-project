@@ -36,6 +36,10 @@ void Entity::gravity(){
     }
 }
 
+bool Entity::worldCollide(ofPoint velocity){
+    return this->worldCollide(velocity.x, velocity.y);
+}
+
 bool Entity::worldCollide(float vx, float vy){
     float xBound, yBound;
     if(vx > 0){

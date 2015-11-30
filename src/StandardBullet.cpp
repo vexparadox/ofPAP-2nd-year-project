@@ -8,14 +8,12 @@
 
 #include "StandardBullet.hpp"
 StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible = true) : Entity(position.x, position.y, SPRITE_SIZE, SPRITE_SIZE), movementSpeed(movementSpeed), visible(visible), target(target){
-
-    velocity.x = (target.x - position.x)*movementSpeed;
-    velocity.y = (target.y - position.y)*movementSpeed;
+    direction = (target - position);
+    direction.normalize();
 }
 //update the bullets position and pull towards the target
 void StandardBullet::update(){
-    position.x += velocity.x;
-    position.y += velocity.y;
+    position += direction*(movementSpeed);
 }
 
 //display the bullet

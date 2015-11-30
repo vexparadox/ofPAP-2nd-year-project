@@ -18,13 +18,13 @@ void Creature::takeDamage(int dmg){
 }
 
 void Creature::moveTo(float mX, float mY){
-    float tempX = mX-position.x;
-    float tempY = mY-position.y;
-    if(worldCollide(tempX*movementSpeed, 0)){
-        position.x += tempX*movementSpeed;
-    }
-    if(worldCollide(0, tempY*movementSpeed)){
-        position.y += tempY*movementSpeed;
+    ofPoint target = ofPoint(mX, mY);
+    ofPoint direction = target - position;
+    direction.normalize();
+    position += direction*(movementSpeed);
+
+    if(worldCollide(direction*movementSpeed)){
+        position += direction*movementSpeed;
     }
 }
 

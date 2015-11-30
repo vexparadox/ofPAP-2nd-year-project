@@ -16,7 +16,7 @@ class StandardBullet : public Entity{
 private:
     int movementSpeed;
     bool visible;
-    ofPoint target, velocity;
+    ofPoint target, velocity, direction;
     float rotationAngle;
     //this is a standard bullet
 public:

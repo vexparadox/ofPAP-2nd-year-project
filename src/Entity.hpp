@@ -22,6 +22,7 @@ public:
     Entity(float x, float y, float w, float h);
     bool onScreen();
     bool worldCollide(float vx, float vy);
+    bool worldCollide(ofPoint velocity);
     void gravity();
 };
 

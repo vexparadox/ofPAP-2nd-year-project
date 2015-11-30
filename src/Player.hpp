@@ -21,7 +21,7 @@ private:
     vector<StandardBullet> &bullets;
     bool visible;
 public:
-    int ammo = 5;
+    int ammo = 10;
     Player(float x, float y, float movementSpeed, int health, bool visible,vector<StandardBullet> &bullets);
     void action();
     void fire();

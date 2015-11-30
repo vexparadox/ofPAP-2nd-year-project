@@ -13,9 +13,8 @@ GameState::GameState(){
     //create basic zombies
     int maxBasic = 10;
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 0.001, 100, 5, true));
+        basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
     }
-    
 }
 
 void GameState::render(){
