@@ -47,10 +47,19 @@ void GameState::push_basicEnemy(){
 }
 
 void GameState::tick(){
+
+    
     //dont do anything until the world is loaded dammit
     if(!worldIsLoaded){
         return;
     }
+    //remove degraded tiles to air
+    for(auto &w : World::worldMatrix){
+        if(w.getDamageLevel() >=10){
+            w = World::tiles[0];
+        }
+    }
+    
     if(player.getHealth() < 0){
         this->reset();
         return;

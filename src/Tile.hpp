@@ -15,10 +15,13 @@ class Tile{
 private:
     bool solid;
     int textureNum;
+    int damageLevel = 0;
 public:
     Tile(bool solid, int textureNum);
     bool isSolid();
     int getTextureNum();
+    int getDamageLevel();
+    void damageTile();
 };
 
 #endif /* Tile_hpp */

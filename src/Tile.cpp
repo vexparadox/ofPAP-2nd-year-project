@@ -20,3 +20,11 @@ bool Tile::isSolid(){
 int Tile::getTextureNum(){
     return textureNum;
 }
+
+int Tile::getDamageLevel(){
+    return damageLevel;
+}
+
+void Tile::damageTile(){
+    damageLevel++;
+}
