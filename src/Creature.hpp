@@ -21,6 +21,7 @@ public:
     int getHealth();
     void takeDamage(int dmg);
     void moveTo(float x, float y);
+    void moveTo(ofPoint target);
     bool collide(vector<Entity> &v);
     
 };

@@ -17,6 +17,10 @@ void Creature::takeDamage(int dmg){
     health -= dmg;
 }
 
+void Creature::moveTo(ofPoint target){
+    this -> moveTo(target.x, target.y);
+}
+
 void Creature::moveTo(float mX, float mY){
     ofPoint target = ofPoint(mX, mY);
     ofPoint direction = target - position;
