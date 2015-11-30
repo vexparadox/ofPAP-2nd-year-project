@@ -10,10 +10,19 @@
 
 
 GameState::GameState(){
+    this->reset();
+}
+
+void GameState::reset(){
+    player.position = ofPoint(2, 2);
+    player.setHealth(200);
+    stdBullet.clear();
+    basicE.clear();
     //create basic zombies
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
+        basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1.5, 100, 5, true));
     }
+
 }
 
 void GameState::render(){
@@ -39,9 +48,13 @@ void GameState::tick(){
     if(!worldIsLoaded){
         return;
     }
+    if(player.getHealth() < 0){
+        return;
+    }
+    
     if(basicE.size() < maxBasic){
         for(int i=0; i < (maxBasic-basicE.size());i++){
-            basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 2, 100, 5, true));
+            basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1.5, 100, 5, true));
         }
     }
 
@@ -49,6 +62,9 @@ void GameState::tick(){
     //it has to be called here because of constructors and things
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
+        if(e.entityCollide(player)){
+            player.takeDamage(e.attackDamage);
+        }
     }
     //make the bullets update
     for(auto &b : stdBullet){

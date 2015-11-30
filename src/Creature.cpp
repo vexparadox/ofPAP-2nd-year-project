@@ -41,6 +41,10 @@ float Creature::getHealth(){
     return health;
 }
 
+void Creature::setHealth(float h){
+    health = h;
+}
+
 //returns if the creature is dead or not
 bool Creature::isDead(){
     if(health <= 0){

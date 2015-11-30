@@ -33,6 +33,7 @@ public:
     UI jetFuelUI = UI(ofPoint(20, 20), ofPoint(0, 25), "Fuel", ofPoint(255, 0, 0));
     UI healthUI = UI(ofPoint(20, 50), ofPoint(0, 25), "Health", ofPoint(0, 255, 0));
     void render();
+    void reset();
     void tick();
 };
 

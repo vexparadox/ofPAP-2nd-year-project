@@ -23,6 +23,7 @@ public:
     void takeDamage(float dmg);
     void moveTo(float x, float y);
     void moveTo(ofPoint target);
+    void setHealth(float h);
     float getHealth();
 };
 
