@@ -49,6 +49,7 @@ void GameState::tick(){
         return;
     }
     if(player.getHealth() < 0){
+        this->reset();
         return;
     }
     
