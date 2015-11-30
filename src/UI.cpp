@@ -9,14 +9,14 @@
 #include "UI.hpp"
 
 
-UI::UI(ofPoint position, ofPoint size, std::string value):position(position), size(size){
+UI::UI(ofPoint position, ofPoint size, std::string value, ofPoint colour):position(position), size(size), colour(colour){
 
     rect = ofRectangle(position, size.x, size.y);
     
 }
 
 void UI::display(){
-    ofColor(255, 0, 0);
+    ofColor(colour.x, colour.y, colour.z);
     ofDrawRectangle(rect);
 }
 

@@ -21,6 +21,7 @@
 //here the render and tick fucntions hold the data of the game
 class GameState : public State{
 private:
+    int maxBasic = 10;
     bool worldIsLoaded = false;
 public:
     GameState();
@@ -30,7 +31,6 @@ public:
     Player player = Player(2, 2, 10, 200, true, stdBullet);
     void render();
     void tick();
-    void physicsUpdate();
 };
 
 #endif /* GameState_hpp */

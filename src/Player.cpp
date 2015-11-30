@@ -13,6 +13,10 @@ Player::Player(float x, float y, float movementSpeed, float health, bool visible
 }
 
 void Player::action(){
+    std::cout << jetPackFuel;
+    if(jetPackFuel < 15){
+        jetPackFuel+= 0.2;
+    }
     this->gravity(true);
     //keyboard controls
     if (Keyboard::getRIGHT()) {
@@ -25,8 +29,11 @@ void Player::action(){
         }
     }
     if(Keyboard::getUP()){
-        if(this->worldCollide(0, -movementSpeed*3)){
-            position.y -= movementSpeed*3;
+        if(jetPackFuel > 0){
+            if(this->worldCollide(0, -movementSpeed*3)){
+                position.y -= movementSpeed*3;
+                jetPackFuel -= 1;
+            }
         }
     }
     if(Keyboard::getMOUSE1()){

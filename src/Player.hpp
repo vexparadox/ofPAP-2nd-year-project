@@ -20,6 +20,7 @@ class Player : public Creature{
 private:
     vector<StandardBullet> &bullets;
 public:
+    float jetPackFuel = 10;
     int ammo = 10;
     Player(float x, float y, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets);
     void action();
