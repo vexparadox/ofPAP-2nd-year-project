@@ -10,16 +10,20 @@
 
 
 UI::UI(ofPoint position, ofPoint size, std::string value, ofPoint colour):position(position), size(size), colour(colour){
-
     rect = ofRectangle(position, size.x, size.y);
-    
 }
 
 void UI::display(){
-    ofColor(colour.x, colour.y, colour.z);
+    ofSetColor(colour.x, colour.y, colour.z);
     ofDrawRectangle(rect);
+    //back to white for images
+    ofSetColor(255, 255, 255);
 }
 
 bool UI::isClicked(int mousex, int mousey){
     return rect.inside(mousex, mousey);
+}
+
+void UI::setWidth(float w){
+    rect.setWidth(w);
 }

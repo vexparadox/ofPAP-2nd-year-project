@@ -37,6 +37,10 @@ void Creature::moveTo(float mX, float mY){
     }
 }
 
+float Creature::getHealth(){
+    return health;
+}
+
 //returns if the creature is dead or not
 bool Creature::isDead(){
     if(health <= 0){

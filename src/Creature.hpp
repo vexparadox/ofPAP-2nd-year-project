@@ -19,11 +19,11 @@ protected:
     float movementSpeed;
 public:
     Creature(float x, float y, float w, float h, float movementSpeed, float health, bool visible);
-    int getHealth();
     bool isDead();
     void takeDamage(float dmg);
     void moveTo(float x, float y);
     void moveTo(ofPoint target);
+    float getHealth();
 };
 
 #endif /* Creature_hpp */

@@ -18,7 +18,6 @@ class MenuState : public State{
 public:
     void tick();
     void render();
-    UI ui = UI(ofPoint(0, 0), ofPoint(50,50), "Hello");
 
 };
 

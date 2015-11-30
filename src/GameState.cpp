@@ -30,19 +30,21 @@ void GameState::render(){
         b.display();
     }
     player.display();
+    jetFuelUI.display();
+    healthUI.display();
 }
 
 void GameState::tick(){
-    if(basicE.size() < maxBasic){
-        for(int i=0; i < (maxBasic-basicE.size());i++){
-            basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
-        }
-    }
-    
     //dont do anything until the world is loaded dammit
     if(!worldIsLoaded){
         return;
     }
+    if(basicE.size() < maxBasic){
+        for(int i=0; i < (maxBasic-basicE.size());i++){
+            basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 2, 100, 5, true));
+        }
+    }
+
     //create the world if not done already
     //it has to be called here because of constructors and things
     for(auto &e : basicE){
@@ -69,5 +71,13 @@ void GameState::tick(){
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.isVisible();}), stdBullet.end());
     //call player actions
     player.action();
+    //set the UI to the new jetPackFuel
+    if(player.jetPackFuel < 0){
+        jetFuelUI.setWidth(0);
+    }else{
+        jetFuelUI.setWidth(player.jetPackFuel*20);
+    }
+    healthUI.setWidth(player.getHealth()*2);
+    
 }
 

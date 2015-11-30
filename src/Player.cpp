@@ -13,8 +13,8 @@ Player::Player(float x, float y, float movementSpeed, float health, bool visible
 }
 
 void Player::action(){
-    std::cout << jetPackFuel;
-    if(jetPackFuel < 15){
+
+    if(jetPackFuel < 20){
         jetPackFuel+= 0.2;
     }
     this->gravity(true);

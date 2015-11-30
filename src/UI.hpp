@@ -21,6 +21,7 @@ public:
     UI(ofPoint position, ofPoint size, std::string value, ofPoint colour);
     void display();
     bool isClicked(int mousex, int mousey);
+    void setWidth(float w);
     ofPoint position;
     ofPoint size;
 };
