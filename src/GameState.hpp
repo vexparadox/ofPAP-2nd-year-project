@@ -24,6 +24,7 @@ class GameState : public State{
 private:
     int maxBasic = 10;
     bool worldIsLoaded = false;
+    bool worldNeedUpdate = false;
 public:
     GameState();
     vector<BasicZombie> basicE;

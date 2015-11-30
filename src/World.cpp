@@ -87,10 +87,13 @@ void World::updateWorldImg(){
     numFlips++;
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
+            //set the alpha to damage
+            ofSetColor(255,255,255, World::worldMatrix[i*xSize + j].getDamageLevel()*10);
             //get the texture number to load and draw it
             Texture::getTile(World::worldMatrix[i*xSize + j].getTextureNum()).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
+    ofSetColor(255, 255, 255, 0);
     World::worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
 }
 

@@ -29,6 +29,10 @@ void GameState::render(){
         World::loadWorld();
         worldIsLoaded = true;
     }
+    if(worldNeedUpdate){
+        World::updateWorldImg();
+        worldNeedUpdate = false;
+    }
     World::display();
     for(auto e : basicE){
         //display the enemies
@@ -47,23 +51,23 @@ void GameState::push_basicEnemy(){
 }
 
 void GameState::tick(){
-
-    
     //dont do anything until the world is loaded dammit
     if(!worldIsLoaded){
         return;
     }
-    //remove degraded tiles to air
-    for(auto &w : World::worldMatrix){
-        if(w.getDamageLevel() >=10){
-            w = World::tiles[0];
-        }
-    }
-    
     if(player.getHealth() < 0){
         this->reset();
         return;
     }
+    //remove filly degraded tiles to air
+    for(auto &w : World::worldMatrix){
+        if(w.getDamageLevel() >=10){
+            w = World::tiles[0];
+            //set world to be updated
+            worldNeedUpdate = true;
+        }
+    }
+    
     
     if(basicE.size() < maxBasic){
         for(int i=0; i < (maxBasic-basicE.size());i++){
@@ -81,6 +85,9 @@ void GameState::tick(){
     }
     //make the bullets update
     for(auto &b : stdBullet){
+        if(b.bulletWorldCollide()){
+            b.setVisible(false);
+        }
         //loop through enemies for bullet collision
         for(auto &e : basicE){
             //if there's a collision, take damage and set bullets to invisible

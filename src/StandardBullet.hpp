@@ -22,6 +22,7 @@ public:
     void update();
     float getDamage();
     void display();
+    bool bulletWorldCollide();
 };
 
 
