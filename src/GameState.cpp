@@ -20,9 +20,8 @@ void GameState::reset(){
     basicE.clear();
     //create basic zombies
     for(int i =0; i < maxBasic; i++){
-        basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1.5, 100, 5, true));
+        this->push_basicEnemy();
     }
-
 }
 
 void GameState::render(){
@@ -43,6 +42,10 @@ void GameState::render(){
     healthUI.display();
 }
 
+void GameState::push_basicEnemy(){
+    basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
+}
+
 void GameState::tick(){
     //dont do anything until the world is loaded dammit
     if(!worldIsLoaded){
@@ -55,7 +58,7 @@ void GameState::tick(){
     
     if(basicE.size() < maxBasic){
         for(int i=0; i < (maxBasic-basicE.size());i++){
-            basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1.5, 100, 5, true));
+            this->push_basicEnemy();
         }
     }
 

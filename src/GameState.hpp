@@ -35,6 +35,7 @@ public:
     void render();
     void reset();
     void tick();
+    void push_basicEnemy();
 };
 
 #endif /* GameState_hpp */

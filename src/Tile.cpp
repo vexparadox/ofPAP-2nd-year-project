@@ -9,10 +9,14 @@
 #include "Tile.hpp"
 
 
-Tile::Tile(bool solid): solid(solid){
+Tile::Tile(bool solid, int textureNum): solid(solid), textureNum(textureNum){
 
 }
 
 bool Tile::isSolid(){
     return solid;
+}
+
+int Tile::getTextureNum(){
+    return textureNum;
 }

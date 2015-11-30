@@ -18,16 +18,19 @@
 #include "Tile.hpp"
 
 class World{
-public:
+private:
     static int xSize, ySize;
+public:
     static void loadWorld();
     static void display();
     static ofImage worldImg;
     static void updateWorldImg();
-    static vector<int> worldMatrix;
+    static vector<Tile> worldMatrix;
     static vector<Tile> tiles;
     static int numFlips;
     static void loadTiles();
+    static int getxSize();
+    static int getySize();
 };
 
 #endif /* World_hpp */

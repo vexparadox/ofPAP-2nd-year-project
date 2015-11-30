@@ -14,9 +14,11 @@
 class Tile{
 private:
     bool solid;
+    int textureNum;
 public:
-    Tile(bool solid);
+    Tile(bool solid, int textureNum);
     bool isSolid();
+    int getTextureNum();
 };
 
 #endif /* Tile_hpp */

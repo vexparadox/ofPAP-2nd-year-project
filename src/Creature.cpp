@@ -30,10 +30,11 @@ void Creature::moveTo(float mX, float mY){
     ofPoint target = ofPoint(mX, mY);
     ofPoint direction = target - position;
     direction.normalize();
-    position += direction*(movementSpeed);
 
     if(worldCollide(direction*movementSpeed)){
-        position += direction*movementSpeed;
+        position += direction*(movementSpeed);
+    }else{
+        position += direction*(movementSpeed/4);
     }
 }
 

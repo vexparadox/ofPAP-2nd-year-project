@@ -8,7 +8,7 @@
 
 #include "World.hpp"
 
-vector<int> World::worldMatrix;
+vector<Tile> World::worldMatrix;
 vector<Tile> World::tiles;
 ofImage World::worldImg;
 int World::xSize = 0;
@@ -16,11 +16,20 @@ int World::ySize = 0;
 int World::numFlips =0;
 
 
+int World::getxSize(){
+    return xSize;
+}
+
+int World::getySize(){
+    return ySize;
+}
+
 void World::loadTiles(){
     std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/tiles.txt", std::ios::in); //declare a file stream
     if(textfile.is_open())
     {
         string str;
+        int counter = 0;
         while (getline(textfile, str)){
             bool temp;
             str.resize(1);
@@ -29,7 +38,8 @@ void World::loadTiles(){
             }else{
                 temp = true;
             }
-            tiles.push_back(Tile(temp));
+            tiles.push_back(Tile(temp, counter));
+            counter++;
         }
         
     }else{
@@ -55,7 +65,7 @@ void World::loadWorld(){
                 {
                     std::cout << "Error on " << str[i] << e.what() << "\n";
                 }
-                worldMatrix.push_back(tempInt);
+                worldMatrix.push_back(tiles[tempInt]);
                 xSize++;
             }
             //count how many lines there are
@@ -77,7 +87,8 @@ void World::updateWorldImg(){
     numFlips++;
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
-            Texture::getTile(World::worldMatrix[i*xSize + j]).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
+            //get the texture number to load and draw it
+            Texture::getTile(World::worldMatrix[i*xSize + j].getTextureNum()).draw(j*SPRITE_SIZE, i*SPRITE_SIZE);
         }
     }
     World::worldImg.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
