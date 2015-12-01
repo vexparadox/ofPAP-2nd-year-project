@@ -14,6 +14,7 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
+    items.push_back(StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
     gameScore = 0;
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
@@ -56,6 +57,10 @@ void GameState::render(){
     for(auto b : stdBullet){
         b.display();
     }
+    
+    for(auto i : items){
+        i.display();
+    }
     player.display();
     jetFuelUI.display();
     healthUI.display();
@@ -77,6 +82,13 @@ void GameState::tick(){
             //set world to be updated
             worldNeedUpdate = true;
         }
+    }
+    int rndItem = (int)ofRandom(0, 40);
+    switch(rndItem){
+        case 10:
+          //
+        break;
+            
     }
     
     //respawn all dead BasicZombies

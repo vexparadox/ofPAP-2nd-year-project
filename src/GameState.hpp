@@ -18,7 +18,7 @@
 #include "StandardBullet.hpp"
 #include "World.hpp"
 #include "UI.hpp"
-
+#include "StimPack.hpp"
 //the gamestate is the state that is run when the gmae is running
 //here the render and tick fucntions hold the data of the game
 class GameState : public State{
@@ -31,6 +31,7 @@ private:
 public:
     GameState();
     vector<BasicZombie> basicE;
+    vector<Item> items;
     vector<BigZombie> bigE;
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way

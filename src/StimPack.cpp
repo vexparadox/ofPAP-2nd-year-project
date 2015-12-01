@@ -16,3 +16,7 @@ StimPack::StimPack(ofPoint position, bool visible) : Item(position, visible){
 void StimPack::itemAction(Player &p){
     
 }
+
+void StimPack::display(){
+   
+}

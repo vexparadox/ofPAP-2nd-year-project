@@ -11,3 +11,11 @@
 Item::Item(ofPoint position, bool visible) : Entity(position, SPRITE_SIZE, SPRITE_SIZE, visible){
     
 }
+
+void Item::itemAction(){
+    
+}
+
+void Item::display(){
+    
+}

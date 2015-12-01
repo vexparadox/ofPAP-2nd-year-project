@@ -14,6 +14,7 @@
 #include "Player.hpp"
 
 class StimPack : public Item{
+public:
     StimPack(ofPoint position, bool visible);
     void display();
     void itemAction(Player &p);
