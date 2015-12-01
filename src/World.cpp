@@ -35,12 +35,10 @@ void World::loadTiles(){
             int solidInt, healthInt;
             // cast to int
             try{
-                string temp1;
-                textfile >> temp1;
+                string temp1 = str.substr(0, 1);
                 solidInt = boost::lexical_cast<int>(temp1);
                 //get the health it's been given
-                string temp2;
-                textfile >> temp2;
+                string temp2 = str.substr(2, 2);
                 healthInt = boost::lexical_cast<int>(temp2);
             }
             catch(boost::bad_lexical_cast const& e)
