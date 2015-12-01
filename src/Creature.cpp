@@ -10,7 +10,6 @@
 
 //the Creature class holds the Health, Speed, damage etc of the creature
 Creature::Creature(float x, float y, float w, float h, float movementSpeed, float health, bool visible):Entity(x, y, w, h, visible), health(health), movementSpeed(movementSpeed){
-    
 }
 //the creature takes damage
 void Creature::takeDamage(float dmg){
@@ -41,7 +40,6 @@ void Creature::moveTo(float mX, float mY){
 float Creature::getHealth(){
     return health;
 }
-
 void Creature::setHealth(float h){
     health = h;
 }

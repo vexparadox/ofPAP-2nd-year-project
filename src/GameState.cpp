@@ -39,6 +39,12 @@ void GameState::render(){
         worldNeedUpdate = false;
     }
     World::display();
+    
+    //Do any rendering under HERE!
+    ofSetColor(0, 0, 0);
+    ofDrawBitmapString("Score: "+std::to_string(gameScore), ofGetWidth()-100,20);
+    ofSetColor(255, 255, 255);
+    
     for(auto e : basicE){
         //display the enemies
         e.display();
@@ -116,14 +122,18 @@ void GameState::tick(){
         for(auto &e : basicE){
             //if there's a collision, take damage and set bullets to invisible
             if(e.entityCollide(b)){
-                e.takeDamage(b.getDamage());
+                float damage = b.getDamage();
+                e.takeDamage(damage);
+                gameScore += damage;
                 b.setVisible(false);
             }
         }
         for(auto &e : bigE){
             //if there's a collision, take damage and set bullets to invisible
             if(e.entityCollide(b)){
-                e.takeDamage(b.getDamage());
+                float damage = b.getDamage();
+                e.takeDamage(damage);
+                gameScore += damage;
                 b.setVisible(false);
             }
         }
