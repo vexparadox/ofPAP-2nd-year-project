@@ -9,6 +9,10 @@
 #include "StimPack.hpp"
 
 
-StimPack::StimPack(ofPoint position, bool visible):Entity(position, SPRITE_SIZE, SPRITE_SIZE, visible){
+StimPack::StimPack(ofPoint position, bool visible) : Item(position, visible){
+    
+}
+
+void StimPack::itemAction(Player &p){
     
 }

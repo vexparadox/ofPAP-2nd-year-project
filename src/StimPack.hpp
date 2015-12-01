@@ -10,9 +10,12 @@
 #define StimPack_hpp
 
 #include <stdio.h>
-#include "Entity.hpp"
+#include "Item.hpp"
+#include "Player.hpp"
 
-class StimPack : public Entity{
+class StimPack : public Item{
     StimPack(ofPoint position, bool visible);
+    void display();
+    void itemAction(Player &p);
 };
 #endif /* StimPack_hpp */
