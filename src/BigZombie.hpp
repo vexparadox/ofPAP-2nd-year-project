@@ -16,7 +16,7 @@ class BigZombie :public Creature{
     
 public:
     float attackDamage;
-    BigZombie(float x, float y, float movementSpeed, float health, float attackDamage, bool visible);
+    BigZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible);
     void display();
 
 };

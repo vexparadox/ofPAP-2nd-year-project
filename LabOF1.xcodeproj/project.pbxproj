@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C23B51C41BF133A10093ED9A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23B51C21BF133A10093ED9A /* Player.cpp */; settings = {ASSET_TAGS = (); }; };
 		C23B51C81BF1349E0093ED9A /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C23B51C61BF1349E0093ED9A /* Keyboard.cpp */; settings = {ASSET_TAGS = (); }; };
+		C2737D9C1C0DF95F0089A453 /* StimPack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2737D9A1C0DF95F0089A453 /* StimPack.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D317F1BEA369B00AFA04C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D317D1BEA369B00AFA04C /* State.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31801BEA36E100AFA04C /* GameState.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D31861BEA3A4600AFA04C /* MenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D31841BEA3A4600AFA04C /* MenuState.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -60,6 +61,8 @@
 		C23B51C31BF133A10093ED9A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		C23B51C61BF1349E0093ED9A /* Keyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
 		C23B51C71BF1349E0093ED9A /* Keyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
+		C2737D9A1C0DF95F0089A453 /* StimPack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StimPack.cpp; sourceTree = "<group>"; };
+		C2737D9B1C0DF95F0089A453 /* StimPack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StimPack.hpp; sourceTree = "<group>"; };
 		C27D317D1BEA369B00AFA04C /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		C27D317E1BEA369B00AFA04C /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
 		C27D31801BEA36E100AFA04C /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		C2C828D51BD28E62001B5145 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				C2737D9A1C0DF95F0089A453 /* StimPack.cpp */,
+				C2737D9B1C0DF95F0089A453 /* StimPack.hpp */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				C29FDAFF1C0DBAA70029F892 /* BigZombie.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				C27D317F1BEA369B00AFA04C /* State.cpp in Sources */,
+				C2737D9C1C0DF95F0089A453 /* StimPack.cpp in Sources */,
 				C2C148161BF79DAB001C4D23 /* World.cpp in Sources */,
 				C2C828D31BD28926001B5145 /* Entity.cpp in Sources */,
 				C27D31861BEA3A4600AFA04C /* MenuState.cpp in Sources */,

@@ -16,7 +16,7 @@
 class BasicZombie : public Creature{
 public:
     float attackDamage;
-    BasicZombie(float x, float y, float movementSpeed, float health, float attackDamage, bool visible);
+    BasicZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible);
     void display();
 };
 

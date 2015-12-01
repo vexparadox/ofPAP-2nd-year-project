@@ -22,7 +22,7 @@ private:
 public:
     float jetPackFuel = 10;
     int ammo = 10;
-    Player(float x, float y, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets);
+    Player(ofPoint position, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets);
     void action();
     void fire();
     void display();

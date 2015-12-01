@@ -155,11 +155,11 @@ void GameState::tick(){
 
 
 void GameState::push_basicEnemy(){
-    basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
+    basicE.push_back(BasicZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 3, 100, 5, true));
 }
 
 void GameState::push_bigEnemy(){
-    bigE.push_back(BigZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1, 300, 10, true));
+    bigE.push_back(BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 300, 10, true));
 }
 
 

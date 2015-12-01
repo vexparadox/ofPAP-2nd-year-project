@@ -25,7 +25,7 @@ int World::getySize(){
 }
 
 void World::loadTiles(){
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/tiles.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/tiles.txt", std::ios::in); //declare a file stream
     if(textfile.is_open())
     {
         string str;
@@ -69,7 +69,7 @@ void World::loadTiles(){
 void World::loadWorld(){
     //clear incase of reset
     worldMatrix.clear();
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/Project/bin/data/test.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage
@@ -92,6 +92,7 @@ void World::loadWorld(){
             ySize++;
 
         }
+        
         //xSize will end up being xSize*number of lines
         //so fix that
         xSize = xSize/ySize;
