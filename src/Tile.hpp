@@ -18,9 +18,9 @@ private:
     int damageLevel = 0;
     int health;
 public:
-    Tile(bool solid, int textureNum);
+    Tile(bool solid, int textureNum, int health);
     bool isSolid();
-
+    int getHealth();
     int getTextureNum();
     int getDamageLevel();
     void damageTile();

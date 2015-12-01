@@ -38,7 +38,7 @@ void World::loadTiles(){
             }else{
                 temp = true;
             }
-            tiles.push_back(Tile(temp, counter));
+            tiles.push_back(Tile(temp, counter, 5));
             counter++;
         }
         

@@ -9,7 +9,7 @@
 #include "Tile.hpp"
 
 
-Tile::Tile(bool solid, int textureNum): solid(solid), textureNum(textureNum){
+Tile::Tile(bool solid, int textureNum, int health): solid(solid), textureNum(textureNum), health(health){
 
 }
 
@@ -27,4 +27,8 @@ int Tile::getDamageLevel(){
 
 void Tile::damageTile(){
     damageLevel++;
+}
+
+int Tile::getHealth(){
+    return health;
 }

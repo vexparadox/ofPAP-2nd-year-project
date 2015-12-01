@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Creature.hpp"
-#include "ofMain.h"
 
 //this holds the basic zombie creature
 class BasicZombie : public Creature{

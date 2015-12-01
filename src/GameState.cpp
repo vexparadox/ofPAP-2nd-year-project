@@ -14,6 +14,7 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
+    gameScore = 0;
     player.position = ofPoint(2, 2);
     player.setHealth(200);
     stdBullet.clear();
@@ -22,6 +23,10 @@ void GameState::reset(){
     for(int i =0; i < maxBasic; i++){
         this->push_basicEnemy();
     }
+    for(int i =0; i < maxBig; i++){
+        this->push_bigEnemy();
+    }
+    
 }
 
 void GameState::render(){
@@ -38,6 +43,11 @@ void GameState::render(){
         //display the enemies
         e.display();
     }
+    for(auto e : bigE){
+        //display the enemies
+        e.display();
+    }
+
     for(auto b : stdBullet){
         b.display();
     }
@@ -48,6 +58,10 @@ void GameState::render(){
 
 void GameState::push_basicEnemy(){
     basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
+}
+
+void GameState::push_bigEnemy(){
+    bigE.push_back(BigZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1, 300, 10, true));
 }
 
 void GameState::tick(){
@@ -61,28 +75,38 @@ void GameState::tick(){
     }
     //remove filly degraded tiles to air
     for(auto &w : World::worldMatrix){
-        if(w.getDamageLevel() >=10){
+        if(w.getDamageLevel() >=w.getHealth()){
             w = World::tiles[0];
             //set world to be updated
             worldNeedUpdate = true;
         }
     }
     
-    
+    //respawn all dead BasicZombies
     if(basicE.size() < maxBasic){
         for(int i=0; i < (maxBasic-basicE.size());i++){
             this->push_basicEnemy();
         }
     }
+    if(bigE.size() < maxBig){
+        for(int i=0; i < (maxBig-bigE.size());i++){
+            this->push_bigEnemy();
+        }
+    }
 
-    //create the world if not done already
-    //it has to be called here because of constructors and things
     for(auto &e : basicE){
         e.moveTo(player.position.x, player.position.y);
         if(e.entityCollide(player)){
             player.takeDamage(e.attackDamage);
         }
     }
+    for(auto &e : bigE){
+        e.moveTo(player.position.x, player.position.y);
+        if(e.entityCollide(player)){
+            player.takeDamage(e.attackDamage);
+        }
+    }
+
     //make the bullets update
     for(auto &b : stdBullet){
         if(b.bulletWorldCollide()){
@@ -96,8 +120,17 @@ void GameState::tick(){
                 b.setVisible(false);
             }
         }
+        for(auto &e : bigE){
+            //if there's a collision, take damage and set bullets to invisible
+            if(e.entityCollide(b)){
+                e.takeDamage(b.getDamage());
+                b.setVisible(false);
+            }
+        }
+        
         //erase enemies if they're dead
         basicE.erase(std::remove_if(basicE.begin(), basicE.end(), [this](BasicZombie e){return e.isDead();}), basicE.end());
+        bigE.erase(std::remove_if(bigE.begin(), bigE.end(), [this](BigZombie e){return e.isDead();}), bigE.end());
         b.update();
     }
     //erase for out-of-screen bullets
@@ -105,8 +138,10 @@ void GameState::tick(){
     
     //erase for non-visible bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.isVisible();}), stdBullet.end());
+    
     //call player actions
     player.action();
+    
     //set the UI to the new jetPackFuel
     if(player.jetPackFuel < 0){
         jetFuelUI.setWidth(0);
