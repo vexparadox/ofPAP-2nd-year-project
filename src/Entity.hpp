@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include "Texture.hpp"
-#include "Collider.hpp"
 #include "World.hpp"
 
 class Entity{

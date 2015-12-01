@@ -16,7 +16,6 @@
 		C2B094751BF37E1000245E1E /* StandardBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2B094731BF37E1000245E1E /* StandardBullet.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2B612971BFF7FC40052416B /* Tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2B612951BFF7FC40052416B /* Tile.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C148101BF4F169001C4D23 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C1480E1BF4F169001C4D23 /* Texture.cpp */; settings = {ASSET_TAGS = (); }; };
-		C2C148131BF6664F001C4D23 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C148111BF6664F001C4D23 /* Collider.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C148161BF79DAB001C4D23 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C148141BF79DAB001C4D23 /* World.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C40C471BD156A9009AFB1C /* Creature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C40C451BD156A9009AFB1C /* Creature.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2C828D31BD28926001B5145 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C828D11BD28926001B5145 /* Entity.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -75,8 +74,6 @@
 		C2B612961BFF7FC40052416B /* Tile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
 		C2C1480E1BF4F169001C4D23 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		C2C1480F1BF4F169001C4D23 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
-		C2C148111BF6664F001C4D23 /* Collider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
-		C2C148121BF6664F001C4D23 /* Collider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
 		C2C148141BF79DAB001C4D23 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		C2C148151BF79DAB001C4D23 /* World.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = World.hpp; sourceTree = "<group>"; };
 		C2C40C451BD156A9009AFB1C /* Creature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Creature.cpp; sourceTree = "<group>"; };
@@ -253,8 +250,6 @@
 		C2D242C11BF9352F00C9F746 /* World */ = {
 			isa = PBXGroup;
 			children = (
-				C2C148111BF6664F001C4D23 /* Collider.cpp */,
-				C2C148121BF6664F001C4D23 /* Collider.hpp */,
 				C2C148141BF79DAB001C4D23 /* World.cpp */,
 				C2C148151BF79DAB001C4D23 /* World.hpp */,
 				C2B612981BFF80430052416B /* Tile */,
@@ -393,7 +388,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C40C471BD156A9009AFB1C /* Creature.cpp in Sources */,
-				C2C148131BF6664F001C4D23 /* Collider.cpp in Sources */,
 				C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */,
 				C2C828DD1BD2B199001B5145 /* UI.cpp in Sources */,
 				C23B51C81BF1349E0093ED9A /* Keyboard.cpp in Sources */,

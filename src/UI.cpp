@@ -9,12 +9,12 @@
 #include "UI.hpp"
 
 
-UI::UI(ofPoint position, ofPoint size, std::string value, ofPoint colour):position(position), size(size), colour(colour){
+UI::UI(ofPoint position, ofPoint size, std::string value, float r, float g, float b, float a):position(position), size(size), r(r), g(g), b(b), a(a){
     rect = ofRectangle(position, size.x, size.y);
 }
 
 void UI::display(){
-    ofSetColor(colour.x, colour.y, colour.z);
+    ofSetColor(r, g, b, a);
     ofDrawRectangle(rect);
     //back to white for images
     ofSetColor(255, 255, 255);

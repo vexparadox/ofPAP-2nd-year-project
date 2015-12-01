@@ -34,10 +34,10 @@ public:
     vector<BigZombie> bigE;
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way
-    Player player = Player(2, 2, 10, 200, true, stdBullet);
+    Player player = Player(0, 0, 10, 200, true, stdBullet);
     
-    UI jetFuelUI = UI(ofPoint(20, 20), ofPoint(0, 25), "Fuel", ofPoint(255, 0, 0));
-    UI healthUI = UI(ofPoint(20, 50), ofPoint(0, 25), "Health", ofPoint(0, 255, 0));
+    UI jetFuelUI = UI(ofPoint(20, 20), ofPoint(0, 25), "Fuel", 255, 0, 0, 200);
+    UI healthUI = UI(ofPoint(20, 50), ofPoint(0, 25), "Health", 0, 255, 0, 200);
     
     void render();
     void reset();

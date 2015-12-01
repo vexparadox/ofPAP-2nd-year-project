@@ -15,7 +15,7 @@ GameState::GameState(){
 
 void GameState::reset(){
     gameScore = 0;
-    player.position = ofPoint(2, 2);
+    player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
     stdBullet.clear();
     basicE.clear();
@@ -26,7 +26,6 @@ void GameState::reset(){
     for(int i =0; i < maxBig; i++){
         this->push_bigEnemy();
     }
-    
 }
 
 void GameState::render(){
@@ -62,14 +61,6 @@ void GameState::render(){
     healthUI.display();
 }
 
-void GameState::push_basicEnemy(){
-    basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
-}
-
-void GameState::push_bigEnemy(){
-    bigE.push_back(BigZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1, 300, 10, true));
-}
-
 void GameState::tick(){
     //dont do anything until the world is loaded dammit
     if(!worldIsLoaded){
@@ -81,7 +72,7 @@ void GameState::tick(){
     }
     //remove filly degraded tiles to air
     for(auto &w : World::worldMatrix){
-        if(w.getDamageLevel() >=w.getHealth()){
+        if(w.getDamageLevel() >= w.getHealth()){
             w = World::tiles[0];
             //set world to be updated
             worldNeedUpdate = true;
@@ -115,14 +106,15 @@ void GameState::tick(){
 
     //make the bullets update
     for(auto &b : stdBullet){
+        float damage = b.getDamage();
         if(b.bulletWorldCollide()){
+            gameScore += damage;
             b.setVisible(false);
         }
         //loop through enemies for bullet collision
         for(auto &e : basicE){
             //if there's a collision, take damage and set bullets to invisible
             if(e.entityCollide(b)){
-                float damage = b.getDamage();
                 e.takeDamage(damage);
                 gameScore += damage;
                 b.setVisible(false);
@@ -131,7 +123,6 @@ void GameState::tick(){
         for(auto &e : bigE){
             //if there's a collision, take damage and set bullets to invisible
             if(e.entityCollide(b)){
-                float damage = b.getDamage();
                 e.takeDamage(damage);
                 gameScore += damage;
                 b.setVisible(false);
@@ -161,4 +152,14 @@ void GameState::tick(){
     healthUI.setWidth(player.getHealth()*2);
     
 }
+
+
+void GameState::push_basicEnemy(){
+    basicE.push_back(BasicZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 3, 100, 5, true));
+}
+
+void GameState::push_bigEnemy(){
+    bigE.push_back(BigZombie(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3), 1, 300, 10, true));
+}
+
 

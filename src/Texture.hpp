@@ -36,7 +36,8 @@ enum tileCodes{
     SKY = 0,
     GRASS_TOP = 1,
     DIRT_CENTER = 2,
-    END_TILE = 3,
+    STONE = 3,
+    END_TILE = 4,
     TILE_SIZE = 50
 };
 

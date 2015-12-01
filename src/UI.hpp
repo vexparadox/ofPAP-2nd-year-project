@@ -16,9 +16,9 @@ class UI{
 private:
     std::string value;
     ofRectangle rect;
-    ofPoint colour;
+    float r, g, b, a;
 public:
-    UI(ofPoint position, ofPoint size, std::string value, ofPoint colour);
+    UI(ofPoint position, ofPoint size, std::string value, float r, float g, float b, float a);
     void display();
     bool isClicked(int mousex, int mousey);
     void setWidth(float w);

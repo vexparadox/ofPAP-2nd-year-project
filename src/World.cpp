@@ -31,18 +31,38 @@ void World::loadTiles(){
         string str;
         int counter = 0;
         while (getline(textfile, str)){
-            bool temp;
-            str.resize(1);
-            if(str == "0"){
-                temp = false;
-            }else{
-                temp = true;
+            bool tempSolid;
+            int solidInt, healthInt;
+            // cast to int
+            try{
+                string temp1;
+                textfile >> temp1;
+                solidInt = boost::lexical_cast<int>(temp1);
+                //get the health it's been given
+                string temp2;
+                textfile >> temp2;
+                healthInt = boost::lexical_cast<int>(temp2);
             }
-            tiles.push_back(Tile(temp, counter, 5));
+            catch(boost::bad_lexical_cast const& e)
+            {
+                std::cout << "Error on " << str[0] << e.what() << "\n";
+            }
+            //if the file says the tile is solid or not
+            switch(solidInt){
+                case 0:
+                    tempSolid = false;
+                    break;
+                case 1:
+                    tempSolid = true;
+                    break;
+            }
+            //add a tile
+            tiles.push_back(Tile(tempSolid, counter, healthInt));
+            //add to the counter
             counter++;
         }
-        
     }else{
+        //if the file couldn't be loaded
         std::cout << "File could not be loaded";
     }
 }
