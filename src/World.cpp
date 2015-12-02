@@ -13,7 +13,6 @@ vector<Tile> World::tiles;
 ofImage World::worldImg;
 int World::xSize = 0;
 int World::ySize = 0;
-int World::numFlips =0;
 
 
 int World::getxSize(){
@@ -105,7 +104,8 @@ void World::loadWorld(){
 }
 //get a new version of worldImg
 void World::updateWorldImg(){
-    numFlips++;
+    //clear the image to stop memory gain
+    World::worldImg.clear();
     for(int i = 0; i < xSize; i++){
         for(int j = 0; j < ySize; j++){
             //get the texture number to load and draw it

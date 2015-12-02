@@ -140,7 +140,7 @@ void GameState::tick(){
                 //delete the data stored at e
                 //and remove the object sorted at point itE
                 if(e->isDead()){
-                    delete e;
+                    delete *itE;
                     enemies.erase(itE);
                     //lower enemy count
                     currentEnemies--;
@@ -195,7 +195,7 @@ void GameState::spawnEnemies(){
     //push back into the enemies array
     while(currentEnemies < maxEnemies){
         int random = (int)ofRandom(0, maxEnemies);
-        if(random > 4){
+        if(random > 3){
             this->push_basicEnemy();
         }else{
             this->push_bigEnemy();

@@ -16,7 +16,9 @@
 class BasicZombie : public Enemy{
 public:
     BasicZombie(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage);
+    ~BasicZombie(){};
     void display();
+    
 };
 
 #endif /* BasicZombie_hpp */

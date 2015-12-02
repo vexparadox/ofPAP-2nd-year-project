@@ -15,6 +15,7 @@
 class BigZombie :public Enemy{
 public:
     BigZombie(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage);
+    ~BigZombie(){};
     void display();
 
 };
