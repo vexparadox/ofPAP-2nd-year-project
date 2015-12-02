@@ -28,17 +28,9 @@ void GameState::reset(){
     
     stdBullet.clear();
     
-    currentBasic = 0;
-    currentBig = 0;
-    //push back into the enemies array
-    while(currentBasic < maxBasic){
-        this->push_basicEnemy();
-        currentBasic++;
-    }
-    while(currentBig < maxBig){
-        this->push_bigEnemy();
-        currentBig++;
-    }
+    currentEnemies = 0;
+    
+    this->spawnEnemies();
 }
 
 void GameState::render(){
@@ -95,14 +87,7 @@ void GameState::tick(){
     this->rndItemDrop();
     
     //replace dead enemies
-    while(currentBasic < maxBasic){
-        this->push_basicEnemy();
-        currentBasic++;
-    }
-    while(currentBig < maxBig){
-        this->push_bigEnemy();
-        currentBig++;
-    }
+    this->spawnEnemies();
     
     //call the update on items
     for(auto it = items.begin(); it != items.end(); it++){
@@ -157,6 +142,8 @@ void GameState::tick(){
                 if(e->isDead()){
                     delete e;
                     enemies.erase(itE);
+                    //lower enemy count
+                    currentEnemies--;
                     //then tell the loop not to iterate
                     //this stops nasty mid-delete-loop errors
                     isADelete = true;
@@ -204,5 +191,15 @@ void GameState::rndItemDrop(){
     }
 }
 
-
-
+void GameState::spawnEnemies(){
+    //push back into the enemies array
+    while(currentEnemies < maxEnemies){
+        int random = (int)ofRandom(0, maxEnemies);
+        if(random > 4){
+            this->push_basicEnemy();
+        }else{
+            this->push_bigEnemy();
+        }
+        currentEnemies++;
+    }
+}

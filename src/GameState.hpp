@@ -24,10 +24,8 @@
 //here the render and tick fucntions hold the data of the game
 class GameState : public State{
 private:
-    int maxBasic = 10;
-    int maxBig = 2;
-    int currentBig = 0;
-    int currentBasic = 0;
+    int maxEnemies = 14;
+    int currentEnemies = 0;
     int gameScore = 0;
     bool worldIsLoaded = false;
     bool worldNeedUpdate = false;
@@ -47,6 +45,7 @@ public:
     void tick();
     void push_basicEnemy();
     void push_bigEnemy();
+    void spawnEnemies();
     void rndItemDrop();
     
 };
