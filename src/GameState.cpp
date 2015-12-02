@@ -95,11 +95,18 @@ void GameState::tick(){
     this->rndItemDrop();
     
     //call the update on items
-    for(auto i : items){
+    for(auto it = items.begin(); it != items.end(); it++){
+        auto i = *it;
         i->update();
         if(i->entityCollide(player)){
             if(i->itemAction(player)){
              //remove the item from array
+                delete i;
+                items.erase(it);
+                //delete the item and erase it from the list
+                //we can break here because there's rarely going to be more than
+                //one object in Item, a skipped update will be okay
+                break;
             }
         }
     }
@@ -109,7 +116,7 @@ void GameState::tick(){
         e->moveTo(player.position);
     }
     
-    //enemy collision
+    //enemy collision with the player
     for(auto &e : enemies){
         if(e->entityCollide(player)){
             player.takeDamage(e->getAttackDamage());
@@ -138,9 +145,13 @@ void GameState::tick(){
     //erase for non-visible and offscreen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return (!b.isVisible() || !b.onScreen());}), stdBullet.end());
     
+    //find the dead enemy it and remove them
     auto it = std::find_if (enemies.begin(), enemies.end(), [this](Enemy* e){return e->isDead();});
+    //make sure it's actually found them
     if(it != enemies.end()){
+        //if it has call the iteratorClear in memory
         Memory<Enemy*>::iteratorClear(it.operator->());
+        //then remove the pointer from the vector
         enemies.erase(it);
     }
     
