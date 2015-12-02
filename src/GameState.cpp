@@ -99,9 +99,9 @@ void GameState::tick(){
         i->update();
     }
     
-    //call the update on enemies
+    //call the moveTo on enemies
     for(auto e : enemies){
-        e->update(player);
+        e->moveTo(player.position);
     }
     
     //enemy collision

@@ -21,8 +21,6 @@ public:
     Creature(ofPoint position, float w, float h, float movementSpeed, float health, bool visible);
     bool isDead();
     void takeDamage(float dmg);
-    void moveTo(float x, float y);
-    void moveTo(ofPoint target);
     void setHealth(float h);
     void gainHealth(float h);
     float getHealth();

@@ -16,6 +16,22 @@ float Enemy::getAttackDamage(){
     return attackDamage;
 }
 
-void Enemy::update(Player &p){
-    this->moveTo(p.position);
+//the default for enemy update
+//although nothing technically overides this, it can be at a later date
+void Enemy::update(){
+}
+
+//will move towards an x and y point with the movement speed
+void Enemy::moveTo(ofPoint target){
+    if(!visible){
+        return;
+    }
+    ofPoint direction = target - position;
+    direction.normalize();
+    
+    if(worldCollide(direction*movementSpeed)){
+        position += direction*(movementSpeed);
+    }else{
+        position += direction*(movementSpeed/4);
+    }
 }

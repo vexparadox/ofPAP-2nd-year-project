@@ -18,7 +18,8 @@ private:
 public:
     Enemy(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage);
     virtual void display(){};
-    virtual void update(Player &p);
+    virtual void update();
     float getAttackDamage();
+    void moveTo(ofPoint target);
 };
 #endif /* Enemy_hpp */
