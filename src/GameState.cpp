@@ -14,7 +14,8 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
-    items.push_back(StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
+//    Item
+    items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
     gameScore = 0;
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
@@ -59,7 +60,7 @@ void GameState::render(){
     }
     
     for(auto i : items){
-        i.display();
+        i->display();
     }
     player.display();
     jetFuelUI.display();

@@ -31,7 +31,7 @@ private:
 public:
     GameState();
     vector<BasicZombie> basicE;
-    vector<Item> items;
+    vector<Item*> items;
     vector<BigZombie> bigE;
     vector<StandardBullet> stdBullet;
     //THE PLAYER OBJECT uses movement speed in a different way

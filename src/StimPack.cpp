@@ -18,5 +18,7 @@ void StimPack::itemAction(Player &p){
 }
 
 void StimPack::display(){
-   
+    if(visible){
+        Texture::getSprite(PLAYER).draw(position);
+    }
 }

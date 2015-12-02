@@ -16,6 +16,7 @@
 class StimPack : public Item{
 public:
     StimPack(ofPoint position, bool visible);
+    ~StimPack(){};
     void display();
     void itemAction(Player &p);
 };
