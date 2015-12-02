@@ -15,8 +15,7 @@
 //this holds the basic zombie creature
 class BasicZombie : public Enemy{
 public:
-    float attackDamage;
-    BasicZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible);
+    BasicZombie(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage);
     void display();
 };
 

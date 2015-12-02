@@ -9,7 +9,7 @@
 #include "BigZombie.hpp"
 
 
-BigZombie::BigZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible): Enemy(position, movementSpeed, health, visible),  attackDamage(attackDamage){
+BigZombie::BigZombie(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage): Enemy(position, movementSpeed, health, visible, attackDamage){
 }
 
 void BigZombie::display(){

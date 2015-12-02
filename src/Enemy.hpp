@@ -12,8 +12,12 @@
 #include <stdio.h>
 #include "Creature.hpp"
 class Enemy : public Creature{
+private:
+    float attackDamage;
 public:
-    Enemy(ofPoint position, float movementSpeed, float health, bool visible);
+    Enemy(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage);
     virtual void display(){};
+    virtual void update(){};
+    float getAttackDamage();
 };
 #endif /* Enemy_hpp */

@@ -9,5 +9,10 @@
 #include "Enemy.hpp"
 
 
-Enemy::Enemy(ofPoint position, float movementSpeed, float health, bool visible): Creature(position, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health, visible){
+Enemy::Enemy(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage): Creature(position, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health, visible), attackDamage(attackDamage){
 }
+
+float Enemy::getAttackDamage(){
+    return attackDamage;
+}
+

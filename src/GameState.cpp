@@ -17,12 +17,12 @@ void GameState::reset(){
     
     Memory< vector<Item*> >::vectorClear(items);
     //lol
+    Memory< vector<Enemy*> >::vectorClear(enemies);
     items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 20));
     gameScore = 0;
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
     stdBullet.clear();
-    basicE.clear();
     //create basic zombies
     for(int i =0; i < maxBasic; i++){
         this->push_basicEnemy();
@@ -48,13 +48,9 @@ void GameState::render(){
     ofDrawBitmapString("Score: "+std::to_string(gameScore), ofGetWidth()-100,20);
     ofSetColor(255, 255, 255);
     
-    for(auto e : basicE){
+    for(auto e : enemies){
         //display the enemies
-        e.display();
-    }
-    for(auto e : bigE){
-        //display the enemies
-        e.display();
+        e->display();
     }
 
     for(auto b : stdBullet){
@@ -97,28 +93,15 @@ void GameState::tick(){
     for(auto i : items){
         i->update();
     }
-    //respawn all dead BasicZombies
-    if(basicE.size() < maxBasic){
-        for(int i=0; i < (maxBasic-basicE.size());i++){
-            this->push_basicEnemy();
-        }
+    
+    for(auto e : enemies){
+        e->update();
     }
-    if(bigE.size() < maxBig){
-        for(int i=0; i < (maxBig-bigE.size());i++){
-            this->push_bigEnemy();
-        }
-    }
-
-    for(auto &e : basicE){
-        e.moveTo(player.position.x, player.position.y);
-        if(e.entityCollide(player)){
-            player.takeDamage(e.attackDamage);
-        }
-    }
-    for(auto &e : bigE){
-        e.moveTo(player.position.x, player.position.y);
-        if(e.entityCollide(player)){
-            player.takeDamage(e.attackDamage);
+    
+    for(auto &e : enemies){
+        e->moveTo(player.position.x, player.position.y);
+        if(e->entityCollide(player)){
+            player.takeDamage(e->getAttackDamage());
         }
     }
 
@@ -130,33 +113,19 @@ void GameState::tick(){
             b.setVisible(false);
         }
         //loop through enemies for bullet collision
-        for(auto &e : basicE){
+        for(auto &e : enemies){
             //if there's a collision, take damage and set bullets to invisible
-            if(e.entityCollide(b)){
-                e.takeDamage(damage);
-                gameScore += damage;
-                b.setVisible(false);
-            }
-        }
-        for(auto &e : bigE){
-            //if there's a collision, take damage and set bullets to invisible
-            if(e.entityCollide(b)){
-                e.takeDamage(damage);
+            if(e->entityCollide(b)){
+                e->takeDamage(damage);
                 gameScore += damage;
                 b.setVisible(false);
             }
         }
         
-        //erase enemies if they're dead
-        basicE.erase(std::remove_if(basicE.begin(), basicE.end(), [this](BasicZombie e){return e.isDead();}), basicE.end());
-        bigE.erase(std::remove_if(bigE.begin(), bigE.end(), [this](BigZombie e){return e.isDead();}), bigE.end());
         b.update();
     }
-    //erase for out-of-screen bullets
-    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.onScreen();}), stdBullet.end());
-    
-    //erase for non-visible bullets
-    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return !b.isVisible();}), stdBullet.end());
+    //erase for non-visible and offscreen bullets
+    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return (!b.isVisible() || !b.onScreen());}), stdBullet.end());
     
     //call player actions
     player.action();
@@ -168,16 +137,15 @@ void GameState::tick(){
         jetFuelUI.setWidth(player.jetPackFuel*20);
     }
     healthUI.setWidth(player.getHealth()*2);
-    
 }
 
 
 void GameState::push_basicEnemy(){
-    basicE.push_back(BasicZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 3, 100, 5, true));
+ //   basicE.push_back(BasicZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 3, 100, 5, true));
 }
 
 void GameState::push_bigEnemy(){
-    bigE.push_back(BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 300, 10, true));
+  //  bigE.push_back(BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 300, 10, true));
 }
 
 
