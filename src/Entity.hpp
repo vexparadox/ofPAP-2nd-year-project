@@ -20,7 +20,7 @@ protected:
 public:
     float gravityValue = 10;
     ofPoint position, size, velocity;
-    Entity(ofPoint position, float w, float h, bool visible);
+    Entity(ofPoint position, bool visible);
     bool onScreen();
     bool worldCollide(float vx, float vy);
     bool worldCollide(ofPoint velocity);

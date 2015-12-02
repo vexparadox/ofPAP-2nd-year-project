@@ -12,10 +12,10 @@
 
 
 //the Entity class holds the position and visibility of the entity
-Entity::Entity(ofPoint position, float w, float h, bool visible): visible(visible), position(position){
+Entity::Entity(ofPoint position, bool visible): visible(visible), position(position){
     //set the position of the entitiy
-    size.x = w;
-    size.y = h;
+    size.x = SPRITE_SIZE;
+    size.y = SPRITE_SIZE;
     velocity.x = 0;
     velocity.y = 0;
 }

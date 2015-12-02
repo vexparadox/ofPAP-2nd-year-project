@@ -18,7 +18,7 @@ protected:
     float health, maxHealth;
     float movementSpeed;
 public:
-    Creature(ofPoint position, float w, float h, float movementSpeed, float health, bool visible);
+    Creature(ofPoint position, float movementSpeed, float health, bool visible);
     bool isDead();
     void takeDamage(float dmg);
     void setHealth(float h);

@@ -7,7 +7,7 @@
 //
 
 #include "StandardBullet.hpp"
-StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage = 0) : Entity(position, SPRITE_SIZE, SPRITE_SIZE, visible), movementSpeed(movementSpeed), damage(damage), target(target){
+StandardBullet::StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage = 0) : Entity(position, visible), movementSpeed(movementSpeed), damage(damage), target(target){
     direction = (target - position);
     direction.normalize();
 }

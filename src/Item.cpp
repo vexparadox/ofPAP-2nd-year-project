@@ -8,4 +8,4 @@
 
 #include "Item.hpp"
 
-Item::Item(ofPoint position, bool visible) : Entity(position, SPRITE_SIZE, SPRITE_SIZE, visible){}
+Item::Item(ofPoint position, bool visible) : Entity(position, visible){}

@@ -9,7 +9,7 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(ofPoint position, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets) : Creature(position, SPRITE_SIZE, SPRITE_SIZE, movementSpeed, health, visible), bullets(bullets){
+Player::Player(ofPoint position, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets) : Creature(position, movementSpeed, health, visible), bullets(bullets){
 }
 
 void Player::action(){
