@@ -14,6 +14,11 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
+    //because items is a vector of pointers, you must clear the memory at each adress THEN clear the vector of objects
+    for (auto it = items.begin(); it != items.end(); ++it){
+        delete *it;
+    }
+    items.clear();
 //    Item
     items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
     gameScore = 0;
