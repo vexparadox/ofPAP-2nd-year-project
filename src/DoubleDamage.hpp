@@ -14,9 +14,8 @@
 #include "Player.hpp"
 
 class DoubleDamage : public Item{
-    float ability;
 public:
-    DoubleDamage(ofPoint position, bool visible, float ability);
+    DoubleDamage(ofPoint position, bool visible);
     ~DoubleDamage(){};
     void display();
     bool itemAction(Player &p);

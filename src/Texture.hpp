@@ -30,7 +30,8 @@ enum spriteCodes{
     stdBULLET = 3,
     ddBULLET = 4,
     item_STIMPACK = 5,
-    END_SPRITE = 6,
+    item_DD = 6,
+    END_SPRITE = 7,
     SPRITE_SIZE = 50
 };
 

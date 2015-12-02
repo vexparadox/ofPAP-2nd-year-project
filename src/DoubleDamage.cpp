@@ -8,7 +8,7 @@
 
 #include "DoubleDamage.hpp"
 
-DoubleDamage::DoubleDamage(ofPoint position, bool visible, float ability) : Item(position, visible), ability(ability){
+DoubleDamage::DoubleDamage(ofPoint position, bool visible) : Item(position, visible){
     
 }
 
@@ -18,7 +18,7 @@ bool DoubleDamage::itemAction(Player &p){
 
 void DoubleDamage::display(){
     if(visible){
-        Texture::getSprite(item_STIMPACK).draw(position);
+        Texture::getSprite(item_DD).draw(position);
     }
 }
 

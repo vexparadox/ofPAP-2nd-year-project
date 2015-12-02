@@ -204,6 +204,9 @@ void GameState::rndItemDrop(){
         case 50:
             items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 20));
             break;
+        case 56:
+            items.push_back(new DoubleDamage(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
+            break;
     }
 }
 
