@@ -10,10 +10,9 @@
 #define BigZombie_hpp
 
 #include <stdio.h>
-#include "Creature.hpp"
+#include "Enemy.hpp"
 
-class BigZombie :public Creature{
-    
+class BigZombie :public Enemy{
 public:
     float attackDamage;
     BigZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible);

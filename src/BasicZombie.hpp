@@ -10,10 +10,10 @@
 #define BasicZombie_hpp
 
 #include <stdio.h>
-#include "Creature.hpp"
+#include "Enemy.hpp"
 
 //this holds the basic zombie creature
-class BasicZombie : public Creature{
+class BasicZombie : public Enemy{
 public:
     float attackDamage;
     BasicZombie(ofPoint position, float movementSpeed, float health, float attackDamage, bool visible);
