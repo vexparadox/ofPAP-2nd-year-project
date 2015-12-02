@@ -24,7 +24,7 @@
 //here the render and tick fucntions hold the data of the game
 class GameState : public State{
 private:
-    int maxBasic = 0;
+    int maxBasic = 10;
     int maxBig = 2;
     int currentBig = 0;
     int currentBasic = 0;

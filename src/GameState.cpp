@@ -31,11 +31,11 @@ void GameState::reset(){
     currentBasic = 0;
     currentBig = 0;
     //push back into the enemies array
-    while(currentBasic <= maxBasic){
+    while(currentBasic < maxBasic){
         this->push_basicEnemy();
         currentBasic++;
     }
-    while(currentBig <= maxBig){
+    while(currentBig < maxBig){
         this->push_bigEnemy();
         currentBig++;
     }
@@ -94,11 +94,22 @@ void GameState::tick(){
     //this will create a random item drop at a set rate
     this->rndItemDrop();
     
+    //replace dead enemies
+    while(currentBasic < maxBasic){
+        this->push_basicEnemy();
+        currentBasic++;
+    }
+    while(currentBig < maxBig){
+        this->push_bigEnemy();
+        currentBig++;
+    }
+    
     //call the update on items
     for(auto it = items.begin(); it != items.end(); it++){
         auto i = *it;
         i->update();
         if(i->entityCollide(player)){
+            //boolean in case there's one which cannot be done for some reason
             if(i->itemAction(player)){
              //remove the item from array
                 delete i;
@@ -126,17 +137,35 @@ void GameState::tick(){
     //make the bullets update
     for(auto &b : stdBullet){
         float damage = b.getDamage();
+        //check the collision with the world
         if(b.bulletWorldCollide()){
             gameScore += damage;
             b.setVisible(false);
         }
         //loop through enemies for bullet collision
-        for(auto &e : enemies){
+        for(auto itE = enemies.begin(); itE != enemies.end();){
+            auto e = *itE;
+            bool isADelete = false;
+            
             //if there's a collision, take damage and set bullets to invisible
             if(e->entityCollide(b)){
                 e->takeDamage(damage);
                 gameScore += damage;
+                //if the enemy is now dead
+                //delete the data stored at e
+                //and remove the object sorted at point itE
+                if(e->isDead()){
+                    delete e;
+                    enemies.erase(itE);
+                    //then tell the loop not to iterate
+                    //this stops nasty mid-delete-loop errors
+                    isADelete = true;
+                }
                 b.setVisible(false);
+            }
+            //only iterate if one wasn't deleted
+            if(!isADelete){
+                itE++;
             }
         }
         b.update();
@@ -144,16 +173,6 @@ void GameState::tick(){
     
     //erase for non-visible and offscreen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return (!b.isVisible() || !b.onScreen());}), stdBullet.end());
-    
-    //find the dead enemy it and remove them
-    auto it = std::find_if (enemies.begin(), enemies.end(), [this](Enemy* e){return e->isDead();});
-    //make sure it's actually found them
-    if(it != enemies.end()){
-        //if it has call the iteratorClear in memory
-        Memory<Enemy*>::iteratorClear(it.operator->());
-        //then remove the pointer from the vector
-        enemies.erase(it);
-    }
     
     //call player actionss
     player.action();
