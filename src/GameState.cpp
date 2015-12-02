@@ -97,6 +97,9 @@ void GameState::tick(){
     //call the update on items
     for(auto i : items){
         i->update();
+        if(i->entityCollide(player)){
+            i->itemAction(player);
+        }
     }
     
     //call the moveTo on enemies

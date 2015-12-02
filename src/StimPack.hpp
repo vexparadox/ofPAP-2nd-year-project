@@ -11,8 +11,6 @@
 
 #include <stdio.h>
 #include "Item.hpp"
-#include "Player.hpp"
-
 class StimPack : public Item{
     float ability;
 public:

@@ -11,10 +11,12 @@
 
 #include <stdio.h>
 #include "Entity.hpp"
+#include "Player.hpp"
+
 class Item : public Entity{
 public:
     Item(ofPoint position, bool visible);
-    virtual void itemAction(){};
+    virtual void itemAction(Player &p){};
     virtual ~Item(){};
     virtual void display(){};
     virtual void update(){};

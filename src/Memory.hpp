@@ -27,6 +27,10 @@ public:
         //it can be used as such
         v.clear();
     }
+    
+    static void iteratorClear(T* p){
+        delete *p;
+    }
 };
 
 #endif /* Memory_hpp */
