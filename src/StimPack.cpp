@@ -9,16 +9,20 @@
 #include "StimPack.hpp"
 
 
-StimPack::StimPack(ofPoint position, bool visible) : Item(position, visible){
+StimPack::StimPack(ofPoint position, bool visible, float ability) : Item(position, visible), ability(ability){
     
 }
 
 void StimPack::itemAction(Player &p){
-    
+    p.gainHealth(ability);
 }
 
 void StimPack::display(){
     if(visible){
-        Texture::getSprite(PLAYER).draw(position);
+        Texture::getSprite(item_STIMPACK).draw(position);
     }
+}
+
+void StimPack::update(){
+    this->gravity(true);
 }

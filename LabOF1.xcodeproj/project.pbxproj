@@ -148,6 +148,15 @@
 			name = Handlers;
 			sourceTree = "<group>";
 		};
+		C26AA64F1C0F0FA800A36946 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				C2737D9A1C0DF95F0089A453 /* StimPack.cpp */,
+				C2737D9B1C0DF95F0089A453 /* StimPack.hpp */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
 		C27D317C1BEA35F100AFA04C /* States */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +211,7 @@
 				C2C828D21BD28926001B5145 /* Entity.hpp */,
 				C2B094721BF37E0400245E1E /* Amunition */,
 				C2C828D41BD28E56001B5145 /* Creatures */,
-				C2C828D51BD28E62001B5145 /* Items */,
+				C2C828D51BD28E62001B5145 /* Item */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -211,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -222,24 +231,23 @@
 			children = (
 				C2C40C451BD156A9009AFB1C /* Creature.cpp */,
 				C2C40C461BD156A9009AFB1C /* Creature.hpp */,
-				C2C828D61BD28FAD001B5145 /* Enemies */,
+				C2C828D61BD28FAD001B5145 /* Enemy */,
 				C23B51C51BF133A50093ED9A /* Player */,
 			);
 			name = Creatures;
 			sourceTree = "<group>";
 		};
-		C2C828D51BD28E62001B5145 /* Items */ = {
+		C2C828D51BD28E62001B5145 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				C2737D9A1C0DF95F0089A453 /* StimPack.cpp */,
-				C2737D9B1C0DF95F0089A453 /* StimPack.hpp */,
 				C2737D9D1C0DFCB40089A453 /* Item.cpp */,
 				C2737D9E1C0DFCB40089A453 /* Item.hpp */,
+				C26AA64F1C0F0FA800A36946 /* Items */,
 			);
-			name = Items;
+			name = Item;
 			sourceTree = "<group>";
 		};
-		C2C828D61BD28FAD001B5145 /* Enemies */ = {
+		C2C828D61BD28FAD001B5145 /* Enemy */ = {
 			isa = PBXGroup;
 			children = (
 				C2C828D71BD2B0FF001B5145 /* BasicZombie.cpp */,
@@ -247,7 +255,7 @@
 				C29FDAFD1C0DBAA70029F892 /* BigZombie.cpp */,
 				C29FDAFE1C0DBAA70029F892 /* BigZombie.hpp */,
 			);
-			name = Enemies;
+			name = Enemy;
 			sourceTree = "<group>";
 		};
 		C2C828DA1BD2B183001B5145 /* UI */ = {

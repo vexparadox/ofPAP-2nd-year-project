@@ -14,8 +14,9 @@
 class Item : public Entity{
 public:
     Item(ofPoint position, bool visible);
-    virtual void itemAction();
+    virtual void itemAction(){};
     virtual ~Item(){};
     virtual void display(){};
+    virtual void update(){};
 };
 #endif /* Item_hpp */

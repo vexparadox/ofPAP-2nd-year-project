@@ -14,10 +14,12 @@
 #include "Player.hpp"
 
 class StimPack : public Item{
+    float ability;
 public:
-    StimPack(ofPoint position, bool visible);
+    StimPack(ofPoint position, bool visible, float ability);
     ~StimPack(){};
     void display();
     void itemAction(Player &p);
+    void update();
 };
 #endif /* StimPack_hpp */

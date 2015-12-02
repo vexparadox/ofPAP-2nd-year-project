@@ -17,7 +17,7 @@ void GameState::reset(){
     
     Memory< vector<Item*> >::vectorClear(items);
     //lol
-    items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
+    items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 20));
     gameScore = 0;
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
@@ -94,6 +94,9 @@ void GameState::tick(){
             
     }
     
+    for(auto i : items){
+        i->update();
+    }
     //respawn all dead BasicZombies
     if(basicE.size() < maxBasic){
         for(int i=0; i < (maxBasic-basicE.size());i++){
