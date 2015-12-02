@@ -19,6 +19,8 @@
 class Player : public Creature{
 private:
     vector<StandardBullet> &bullets;
+    bool doubleDamage;
+    int doubleDamageShot = 0;
 public:
     float jetPackFuel = 10;
     int ammo = 10;
@@ -26,6 +28,7 @@ public:
     void action();
     void fire();
     void display();
+    void setDoubleDamage();
 };
 
 #endif /* Player_hpp */

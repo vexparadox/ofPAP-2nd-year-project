@@ -22,7 +22,7 @@ void Enemy::update(){
 }
 
 //will move towards an x and y point with the movement speed
-void Enemy::moveTo(ofPoint target){
+void Enemy::moveTo(const ofPoint &target){
     if(!visible){
         return;
     }

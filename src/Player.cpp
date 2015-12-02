@@ -13,7 +13,11 @@ Player::Player(ofPoint position, float movementSpeed, float health, bool visible
 }
 
 void Player::action(){
-
+    //only have 40 shots
+    if(doubleDamageShot > 40){
+        this->setDoubleDamage();
+    }
+    
     if(jetPackFuel < 20){
         jetPackFuel+= 0.2;
     }
@@ -48,9 +52,19 @@ void Player::display(){
     }
 }
 
+void Player::setDoubleDamage(){
+    doubleDamage = !doubleDamage;
+    doubleDamageShot = 0;
+}
+
 //create a new bullet
 void Player::fire(){
     if(bullets.size() <= ammo){
+        if(doubleDamage){
+            
+            doubleDamageShot++;
+            return;
+        }
         bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true, 10));
     }
 }

@@ -20,6 +20,6 @@ public:
     virtual void display(){};
     virtual void update();
     float getAttackDamage();
-    void moveTo(ofPoint target);
+    void moveTo(const ofPoint &target);
 };
 #endif /* Enemy_hpp */
