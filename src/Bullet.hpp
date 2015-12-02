@@ -19,9 +19,10 @@ protected:
     ofPoint target, velocity, direction;
 public:
     Bullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage);
+    virtual ~Bullet(){};
     virtual void update();
     virtual bool bulletWorldCollide();
-    virtual void display();
+    virtual void display(){};
     float getDamage();
 
 };

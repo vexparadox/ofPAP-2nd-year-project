@@ -33,9 +33,9 @@ public:
     GameState();
     vector<Enemy*> enemies;
     vector<Item*> items;
-    vector<StandardBullet> stdBullet;
+    vector<Bullet*> bullets;
     //THE PLAYER OBJECT uses movement speed in a different way
-    Player player = Player(ofPoint(0,0), 10, 200, true, stdBullet);
+    Player player = Player(ofPoint(0,0), 10, 200, true, bullets);
     
     UI jetFuelUI = UI(ofPoint(20, 20), ofPoint(0, 25), "Fuel", 255, 0, 0, 200);
     UI healthUI = UI(ofPoint(20, 50), ofPoint(0, 25), "Health", 0, 255, 0, 200);

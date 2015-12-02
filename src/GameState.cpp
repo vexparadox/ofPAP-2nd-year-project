@@ -18,6 +18,7 @@ void GameState::reset(){
     //reset pointer vectors using templated memory clear
     Memory< vector<Item*> >::vectorClear(items);
     Memory< vector<Enemy*> >::vectorClear(enemies);
+    Memory< vector<Bullet*> >::vectorClear(bullets);
     
     //reset gameScore
     gameScore = 0;
@@ -25,8 +26,6 @@ void GameState::reset(){
     //reset player
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
-    
-    stdBullet.clear();
     
     currentEnemies = 0;
     
@@ -54,13 +53,14 @@ void GameState::render(){
         e->display();
     }
 
-    for(auto b : stdBullet){
-        b.display();
+    for(auto b : bullets){
+        b->display();
     }
     
     for(auto i : items){
         i->display();
     }
+    
     player.display();
     jetFuelUI.display();
     healthUI.display();
@@ -83,6 +83,9 @@ void GameState::tick(){
             worldNeedUpdate = true;
         }
     }
+    //call player actionss
+    player.action();
+    
     //this will create a random item drop at a set rate
     this->rndItemDrop();
     
@@ -120,23 +123,20 @@ void GameState::tick(){
     }
 
     //make the bullets update
-    for(auto &b : stdBullet){
-        float damage = b.getDamage();
-        //check the collision with the world
-        if(b.bulletWorldCollide()){
-            gameScore += damage;
-            b.setVisible(false);
-        }
+    for(auto itB = bullets.begin(); itB != bullets.end();){
+        auto b = *itB;
+        bool isBulletDelete = false;
+        b->update();
+        float damage = b->getDamage();
         //loop through enemies for bullet collision
         for(auto itE = enemies.begin(); itE != enemies.end();){
             auto e = *itE;
-            bool isADelete = false;
-            
+            bool isEnemyDelete = false;
             //if there's a collision, take damage and set bullets to invisible
-            if(e->entityCollide(b)){
+            if(e->entityCollide(*b)){
                 e->takeDamage(damage);
                 gameScore += damage;
-                //if the enemy is now dead
+                //if the enemy is now sdead
                 //delete the data stored at e
                 //and remove the object sorted at point itE
                 if(e->isDead()){
@@ -146,23 +146,39 @@ void GameState::tick(){
                     currentEnemies--;
                     //then tell the loop not to iterate
                     //this stops nasty mid-delete-loop errors
-                    isADelete = true;
+                    isEnemyDelete = true;
                 }
-                b.setVisible(false);
+                b->setVisible(false);
+                delete *itB;
+                bullets.erase(itB);
+                isBulletDelete = true;
+                //you need to break here otherwise further enemies will be compared against an already deleted bullet
+                break;
             }
             //only iterate if one wasn't deleted
-            if(!isADelete){
+            if(!isEnemyDelete){
                 itE++;
             }
         }
-        b.update();
+        if(!isBulletDelete){
+            itB++;
+        }
     }
-    
-    //erase for non-visible and offscreen bullets
-    stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return (!b.isVisible() || !b.onScreen());}), stdBullet.end());
-    
-    //call player actionss
-    player.action();
+    //seperate loop for world collide because otherwise deletion mid loop gets confusing
+    for(auto itB = bullets.begin(); itB != bullets.end();){
+        auto b = *itB;
+        bool isBulletDelete = false;
+        //check the collision with the world
+        if(b->bulletWorldCollide()){
+            b->setVisible(false);
+            delete *itB;
+            bullets.erase(itB);
+            isBulletDelete = true;
+        }
+        if(!isBulletDelete){
+            itB++;
+        }
+    }
     
     //set the UI to the new jetPackFuel
     if(player.jetPackFuel < 0){

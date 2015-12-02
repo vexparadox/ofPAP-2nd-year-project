@@ -21,6 +21,7 @@ public:
     float gravityValue = 10;
     ofPoint position, size, velocity;
     Entity(ofPoint position, bool visible);
+    ~Entity(){};
     bool onScreen();
     bool worldCollide(float vx, float vy);
     bool worldCollide(ofPoint velocity);

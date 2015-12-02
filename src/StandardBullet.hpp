@@ -15,6 +15,7 @@
 class StandardBullet : public Bullet{
 public:
     StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage);
+    ~StandardBullet(){};
     void display();
 };
 

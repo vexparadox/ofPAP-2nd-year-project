@@ -9,7 +9,7 @@
 #include "Player.hpp"
 ofImage texture;
 
-Player::Player(ofPoint position, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets) : Creature(position, movementSpeed, health, visible), bullets(bullets){
+Player::Player(ofPoint position, float movementSpeed, float health, bool visible, vector<Bullet*> &bullets) : Creature(position, movementSpeed, health, visible), bullets(bullets){
 }
 
 void Player::action(){
@@ -65,6 +65,6 @@ void Player::fire(){
             doubleDamageShot++;
             return;
         }
-        bullets.push_back(StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true, 10));
+        bullets.push_back(new StandardBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true, 10));
     }
 }

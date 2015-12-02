@@ -14,17 +14,18 @@
 #include "Keyboard.hpp"
 #include "StandardBullet.hpp"
 
+
 #include <vector>
 
 class Player : public Creature{
 private:
-    vector<StandardBullet> &bullets;
+    vector<Bullet*> &bullets;
     bool doubleDamage;
     int doubleDamageShot = 0;
 public:
     float jetPackFuel = 10;
     int ammo = 10;
-    Player(ofPoint position, float movementSpeed, float health, bool visible, vector<StandardBullet> &bullets);
+    Player(ofPoint position, float movementSpeed, float health, bool visible, vector<Bullet*> &bullets);
     void action();
     void fire();
     void display();
