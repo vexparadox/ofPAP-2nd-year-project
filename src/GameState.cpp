@@ -98,7 +98,9 @@ void GameState::tick(){
     for(auto i : items){
         i->update();
         if(i->entityCollide(player)){
-            i->itemAction(player);
+            if(i->itemAction(player)){
+             //remove the item from array
+            }
         }
     }
     
@@ -136,7 +138,13 @@ void GameState::tick(){
     //erase for non-visible and offscreen bullets
     stdBullet.erase(std::remove_if(stdBullet.begin(), stdBullet.end(), [this](StandardBullet b){return (!b.isVisible() || !b.onScreen());}), stdBullet.end());
     
-    //call player actions
+    auto it = std::find_if (enemies.begin(), enemies.end(), [this](Enemy* e){return e->isDead();});
+    if(it != enemies.end()){
+        Memory<Enemy*>::iteratorClear(it.operator->());
+        enemies.erase(it);
+    }
+    
+    //call player actionss
     player.action();
     
     //set the UI to the new jetPackFuel
@@ -163,7 +171,6 @@ void GameState::rndItemDrop(){
         case 50:
             items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 20));
             break;
-            
     }
 }
 

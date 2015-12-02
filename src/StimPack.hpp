@@ -17,7 +17,7 @@ public:
     StimPack(ofPoint position, bool visible, float ability);
     ~StimPack(){};
     void display();
-    void itemAction(Player &p);
+    bool itemAction(Player &p);
     void update();
 };
 #endif /* StimPack_hpp */

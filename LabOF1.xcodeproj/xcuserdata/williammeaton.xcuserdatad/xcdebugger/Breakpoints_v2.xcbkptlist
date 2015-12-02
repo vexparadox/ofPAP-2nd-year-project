@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Entity.cpp"
-            timestampString = "470678561.037428"
+            timestampString = "470754985.452326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "Entity::worldCollide(float vx, float vy)"
             landmarkType = "5">
          </BreakpointContent>
@@ -167,22 +167,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/GameState.cpp"
-            timestampString = "470753086.734358"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "GameState::render()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "src/Memory.hpp"
             timestampString = "470750483.193053"
             startingColumnNumber = "9223372036854775807"
@@ -215,13 +199,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/BasicZombie.cpp"
-            timestampString = "470751954.294919"
+            filePath = "src/GameState.cpp"
+            timestampString = "470753100.186405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "BasicZombie::BasicZombie(ofPoint position, float movementSpeed, float health, bool visible, float attackDamage)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "GameState::reset()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -232,13 +216,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/GameState.cpp"
-            timestampString = "470753100.186405"
+            timestampString = "470756306.068245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "GameState::reset()"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "GameState::tick()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GameState::tick()"
+                  moduleName = "LabOF1Debug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/src/GameState.cpp"
+                  timestampString = "470756043.684934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "4401">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GameState::tick()::$_1::operator()(Enemy*) const"
+                  moduleName = "LabOF1Debug"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/src/GameState.cpp"
+                  timestampString = "470756043.685199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

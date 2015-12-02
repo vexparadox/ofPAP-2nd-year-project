@@ -10,7 +10,9 @@
 #define Tile_hpp
 
 #include <stdio.h>
-
+//This is just a data class
+//the worldMatrix is made up of Tile objects
+//each tile holds it's current health, solid status and texture number
 class Tile{
 private:
     bool solid;

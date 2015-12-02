@@ -33,8 +33,7 @@ void Entity::gravity(bool collision){
         if(worldCollide(0, gravityValue)){
             position.y+=gravityValue;
         }
-    }
-    else{
+    }else{
         position.y+=gravityValue;
 
     }
