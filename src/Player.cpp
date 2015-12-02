@@ -61,7 +61,7 @@ void Player::setDoubleDamage(){
 void Player::fire(){
     if(bullets.size() <= ammo){
         if(doubleDamage){
-            
+            bullets.push_back(new DoubleBullet(position, ofPoint(ofGetMouseX(),ofGetMouseY()), 20, true, 20));
             doubleDamageShot++;
             return;
         }

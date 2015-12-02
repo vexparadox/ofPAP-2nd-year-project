@@ -12,6 +12,7 @@
 		C26AA6521C0F169A00A36946 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C26AA6501C0F169A00A36946 /* Enemy.cpp */; settings = {ASSET_TAGS = (); }; };
 		C26AA6561C0F3E0700A36946 /* DoubleDamage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C26AA6541C0F3E0700A36946 /* DoubleDamage.cpp */; settings = {ASSET_TAGS = (); }; };
 		C26AA65A1C0F410800A36946 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C26AA6581C0F410800A36946 /* Bullet.cpp */; settings = {ASSET_TAGS = (); }; };
+		C26AA65F1C0F5FD900A36946 /* DoubleBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C26AA65D1C0F5FD900A36946 /* DoubleBullet.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2737D9C1C0DF95F0089A453 /* StimPack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2737D9A1C0DF95F0089A453 /* StimPack.cpp */; settings = {ASSET_TAGS = (); }; };
 		C2737D9F1C0DFCB40089A453 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2737D9D1C0DFCB40089A453 /* Item.cpp */; settings = {ASSET_TAGS = (); }; };
 		C27D317F1BEA369B00AFA04C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27D317D1BEA369B00AFA04C /* State.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -72,6 +73,8 @@
 		C26AA6551C0F3E0700A36946 /* DoubleDamage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleDamage.hpp; sourceTree = "<group>"; };
 		C26AA6581C0F410800A36946 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		C26AA6591C0F410800A36946 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		C26AA65D1C0F5FD900A36946 /* DoubleBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleBullet.cpp; sourceTree = "<group>"; };
+		C26AA65E1C0F5FD900A36946 /* DoubleBullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleBullet.hpp; sourceTree = "<group>"; };
 		C2737D9A1C0DF95F0089A453 /* StimPack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StimPack.cpp; sourceTree = "<group>"; };
 		C2737D9B1C0DF95F0089A453 /* StimPack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StimPack.hpp; sourceTree = "<group>"; };
 		C2737D9D1C0DFCB40089A453 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 			children = (
 				C2B094731BF37E1000245E1E /* StandardBullet.cpp */,
 				C2B094741BF37E1000245E1E /* StandardBullet.hpp */,
+				C26AA65D1C0F5FD900A36946 /* DoubleBullet.cpp */,
+				C26AA65E1C0F5FD900A36946 /* DoubleBullet.hpp */,
 			);
 			name = Bullets;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 			files = (
 				C2737D9F1C0DFCB40089A453 /* Item.cpp in Sources */,
 				C2C40C471BD156A9009AFB1C /* Creature.cpp in Sources */,
+				C26AA65F1C0F5FD900A36946 /* DoubleBullet.cpp in Sources */,
 				C27D31821BEA36E100AFA04C /* GameState.cpp in Sources */,
 				C2C828DD1BD2B199001B5145 /* UI.cpp in Sources */,
 				C23B51C81BF1349E0093ED9A /* Keyboard.cpp in Sources */,

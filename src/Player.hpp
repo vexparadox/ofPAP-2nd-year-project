@@ -13,6 +13,7 @@
 #include "Creature.hpp"
 #include "Keyboard.hpp"
 #include "StandardBullet.hpp"
+#include "DoubleBullet.hpp"
 
 
 #include <vector>
