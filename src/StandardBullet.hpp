@@ -10,19 +10,12 @@
 #define StandardBullet_hpp
 
 #include <stdio.h>
-#include "Entity.hpp"
+#include "Bullet.hpp"
 
-class StandardBullet : public Entity{
-protected:
-    float movementSpeed;
-    float damage;
-    ofPoint target, velocity, direction;
+class StandardBullet : public Bullet{
 public:
     StandardBullet(ofPoint position, ofPoint target, float movementSpeed, bool visible, float damage);
-    void update();
-    float getDamage();
     void display();
-    bool bulletWorldCollide();
 };
 
 

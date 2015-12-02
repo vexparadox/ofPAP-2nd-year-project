@@ -28,8 +28,9 @@ enum spriteCodes{
     BasicZOMBIE = 1,
     BigZOMBIE = 2,
     stdBULLET = 3,
-    item_STIMPACK = 4,
-    END_SPRITE = 5,
+    ddBULLET = 4,
+    item_STIMPACK = 5,
+    END_SPRITE = 6,
     SPRITE_SIZE = 50
 };
 
