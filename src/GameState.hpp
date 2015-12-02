@@ -17,6 +17,7 @@
 #include "Player.hpp"
 #include "StandardBullet.hpp"
 #include "World.hpp"
+#include "Memory.hpp"
 #include "UI.hpp"
 #include "StimPack.hpp"
 //the gamestate is the state that is run when the gmae is running

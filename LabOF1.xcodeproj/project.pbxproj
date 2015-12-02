@@ -62,6 +62,7 @@
 		C23B51C31BF133A10093ED9A /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		C23B51C61BF1349E0093ED9A /* Keyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
 		C23B51C71BF1349E0093ED9A /* Keyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
+		C26AA64D1C0F095E00A36946 /* Memory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Memory.hpp; sourceTree = "<group>"; };
 		C2737D9A1C0DF95F0089A453 /* StimPack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StimPack.cpp; sourceTree = "<group>"; };
 		C2737D9B1C0DF95F0089A453 /* StimPack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StimPack.hpp; sourceTree = "<group>"; };
 		C2737D9D1C0DFCB40089A453 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				C23B51C71BF1349E0093ED9A /* Keyboard.hpp */,
 				C2C1480E1BF4F169001C4D23 /* Texture.cpp */,
 				C2C1480F1BF4F169001C4D23 /* Texture.hpp */,
+				C26AA64D1C0F095E00A36946 /* Memory.hpp */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";

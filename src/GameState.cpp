@@ -14,12 +14,9 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
-    //because items is a vector of pointers, you must clear the memory at each adress THEN clear the vector of objects
-    for (auto it = items.begin(); it != items.end(); ++it){
-        delete *it;
-    }
-    items.clear();
-//    Item
+    
+    Memory< vector<Item*> >::vectorClear(items);
+    //lol
     items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
     gameScore = 0;
     player.position = ofPoint(ofGetWidth()/2, 2);
@@ -179,5 +176,7 @@ void GameState::push_basicEnemy(){
 void GameState::push_bigEnemy(){
     bigE.push_back(BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 300, 10, true));
 }
+
+
 
 
