@@ -47,6 +47,7 @@ public:
     void tick();
     void push_basicEnemy();
     void push_bigEnemy();
+    void rndItemDrop();
     
 };
 

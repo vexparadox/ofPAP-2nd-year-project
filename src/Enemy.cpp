@@ -16,3 +16,6 @@ float Enemy::getAttackDamage(){
     return attackDamage;
 }
 
+void Enemy::update(Player &p){
+    this->moveTo(p.position);
+}
