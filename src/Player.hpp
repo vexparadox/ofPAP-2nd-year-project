@@ -23,6 +23,7 @@ private:
     vector<Bullet*> &bullets;
     bool doubleDamage;
     int doubleDamageShot = 0;
+    int maxDoubleDamageShot = 50;
     float jetPackFuelMax = 20;
     float jetPackFuelMaxMaximum = 40;
     float jetPackFuel = 10;

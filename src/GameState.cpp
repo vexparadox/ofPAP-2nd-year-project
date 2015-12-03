@@ -154,7 +154,7 @@ void GameState::tick(){
                 delete *itB;
                 bullets.erase(itB);
                 isBulletDelete = true;
-                //you need to break here otherwise further enemies will be compared against an already deleted bullet
+                //you need to bareak here otherwise further enemies will be compared against an already deleted bullet
                 break;
             }
             //only iterate if one wasn't deleted
@@ -167,11 +167,12 @@ void GameState::tick(){
         }
     }
     //seperate loop for world collide because otherwise deletion mid loop gets confusing
+    //delete bullets offscreen
     for(auto itB = bullets.begin(); itB != bullets.end();){
         auto b = *itB;
         bool isBulletDelete = false;
         //check the collision with the world
-        if(b->bulletWorldCollide()){
+        if(b->bulletWorldCollide() || !b->onScreen()){
             b->setVisible(false);
             delete *itB;
             bullets.erase(itB);

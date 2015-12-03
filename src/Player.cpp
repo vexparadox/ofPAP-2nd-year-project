@@ -14,8 +14,9 @@ Player::Player(ofPoint position, float movementSpeed, float health, bool visible
 
 void Player::action(){
     //only have 40 shots
-    if(doubleDamageShot > 100){
-        this->setDoubleDamage();
+    if(doubleDamageShot > maxDoubleDamageShot){
+        doubleDamage = false;
+        doubleDamageShot = 0;
     }
     
     if(jetPackFuel < jetPackFuelMax){
@@ -75,7 +76,11 @@ void Player::setDoubleDamageShot(int s){
 }
 
 void Player::setDoubleDamage(){
-    doubleDamage = !doubleDamage;
+    //incase you pick up two at once
+    if(!doubleDamage){
+        doubleDamage = true;
+    }
+    //reset the damage shot anyways
     doubleDamageShot = 0;
 }
 
