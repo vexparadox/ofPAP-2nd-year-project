@@ -199,7 +199,9 @@ void GameState::push_bigEnemy(){
 }
 
 void GameState::rndItemDrop(){
-    int rndItem = (int)ofRandom(0, 500);
+    int rndItem = (int)ofRandom(0, 400);
+    //case of 1 in 400
+    //spawn a random item
     switch(rndItem){
         case 50:
             items.push_back(new StimPack(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 20));
