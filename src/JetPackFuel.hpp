@@ -13,7 +13,10 @@
 #include "Item.hpp"
 
 class JetPackFuel : Item{
-    JetPackFuel(ofPoint position, bool visible);
+private:
+    float ability;
+public:
+    JetPackFuel(ofPoint position, bool visible, float ability);
     bool itemAction(Player &p);
     void display();
     void update();

@@ -8,12 +8,12 @@
 
 #include "JetPackFuel.hpp"
 
-JetPackFuel::JetPackFuel(ofPoint position, bool visible) : Item(position, visible){
+JetPackFuel::JetPackFuel(ofPoint position, bool visible, float ability) : Item(position, visible), ability(ability){
     
 }
 
 bool JetPackFuel::itemAction(Player &p){
-    p.setDoubleDamage();
+    p.addJetPackMax(ability);
 }
 
 void JetPackFuel::display(){

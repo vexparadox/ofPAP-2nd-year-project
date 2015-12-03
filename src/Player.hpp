@@ -23,14 +23,19 @@ private:
     vector<Bullet*> &bullets;
     bool doubleDamage;
     int doubleDamageShot = 0;
-public:
+    float jetPackFuelMax = 10;
     float jetPackFuel = 10;
     int ammo = 10;
+public:
     Player(ofPoint position, float movementSpeed, float health, bool visible, vector<Bullet*> &bullets);
     void action();
     void fire();
     void display();
     void setDoubleDamage();
+    
+    void addJetPackMax(float j);
+    float getJetPackMax();
+    float getJetPackCurrent();
 };
 
 #endif /* Player_hpp */

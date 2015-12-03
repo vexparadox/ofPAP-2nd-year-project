@@ -46,6 +46,18 @@ void Player::action(){
 
 }
 
+float Player::getJetPackMax(){
+    return jetPackFuelMax;
+}
+
+float Player::getJetPackCurrent(){
+    return jetPackFuel;
+}
+
+void Player::addJetPackMax(float j){
+    jetPackFuelMax += j;
+}
+
 void Player::display(){
     if(visible){
         Texture::getSprite(PLAYER).draw(position);
