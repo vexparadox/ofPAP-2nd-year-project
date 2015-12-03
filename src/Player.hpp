@@ -23,7 +23,8 @@ private:
     vector<Bullet*> &bullets;
     bool doubleDamage;
     int doubleDamageShot = 0;
-    float jetPackFuelMax = 10;
+    float jetPackFuelMax = 20;
+    float jetPackFuelMaxMaximum = 40;
     float jetPackFuel = 10;
     int ammo = 10;
 public:
@@ -32,7 +33,7 @@ public:
     void fire();
     void display();
     void setDoubleDamage();
-    
+    void setDoubleDamageShot(int s);
     void addJetPackMax(float j);
     void setJetPackMax(float j);
     float getJetPackMax();

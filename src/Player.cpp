@@ -45,6 +45,11 @@ void Player::action(){
     }
 
 }
+void Player::display(){
+    if(visible){
+        Texture::getSprite(PLAYER).draw(position);
+    }
+}
 
 float Player::getJetPackMax(){
     return jetPackFuelMax;
@@ -55,16 +60,18 @@ float Player::getJetPackCurrent(){
 }
 
 void Player::addJetPackMax(float j){
+    if(jetPackFuelMax+j > jetPackFuelMaxMaximum){
+        jetPackFuelMax = jetPackFuelMaxMaximum;;
+        return;
+    }
     jetPackFuelMax += j;
 }
 void Player::setJetPackMax(float j){
     jetPackFuelMax = j;
 }
 
-void Player::display(){
-    if(visible){
-        Texture::getSprite(PLAYER).draw(position);
-    }
+void setDoubleDamageShot(int s){
+    doubleDamageShot = s;
 }
 
 void Player::setDoubleDamage(){
