@@ -197,7 +197,7 @@ void GameState::push_basicEnemy(){
 }
 
 void GameState::push_bigEnemy(){
-    enemies.push_back(new BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 300, true, 10));
+    enemies.push_back(new BigZombie(ofPoint(ofRandom(0, ofGetWidth()), ofRandom(0,ofGetHeight()/3)), 1, 200, true, 10));
 }
 
 void GameState::rndItemDrop(){

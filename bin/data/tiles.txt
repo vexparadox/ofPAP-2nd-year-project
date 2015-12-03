@@ -1,4 +1,4 @@
 0 01 //sky, has to be 1 health because otherwise the “dead tile comparison” breaks
-1 10 //grass-top
-1 08 //dirt-center
+1 07 //grass-top
+1 05 //dirt-center
 1 20 //Stone

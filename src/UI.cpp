@@ -16,8 +16,8 @@ UI::UI(ofPoint position, ofPoint size, std::string value, float r, float g, floa
 void UI::display(){
     ofSetColor(r, g, b, a);
     ofDrawRectangle(rect);
-    //back to white for images
     ofSetColor(255, 255, 255);
+    ofDrawBitmapString(value, position.x+size.x/2,position.y+size.y/2);
 }
 
 bool UI::isClicked(int mousex, int mousey){

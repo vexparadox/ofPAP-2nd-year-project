@@ -8,13 +8,22 @@
 
 #include "MenuState.hpp"
 
-
 void MenuState::tick(){
     if(Keyboard::getMOUSE1()){
-        State::setState(gameState);
+        this->mouse1Pressed();
     }
+    
+    
 }
 
 void MenuState::render(){
+    ofBackground(255);
 
+    playBtn.display();
+}
+
+void MenuState::mouse1Pressed(){
+    if(playBtn.isClicked(ofGetMouseX(), ofGetMouseY())){
+        State::setState(gameState);
+    }
 }
