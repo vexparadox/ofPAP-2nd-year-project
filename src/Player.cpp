@@ -70,7 +70,7 @@ void Player::setJetPackMax(float j){
     jetPackFuelMax = j;
 }
 
-void setDoubleDamageShot(int s){
+void Player::setDoubleDamageShot(int s){
     doubleDamageShot = s;
 }
 
