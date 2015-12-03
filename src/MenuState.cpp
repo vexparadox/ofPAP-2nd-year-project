@@ -10,7 +10,11 @@
 
 
 void MenuState::tick(){
+    if(Keyboard::getMOUSE1()){
+        State::setState(gameState);
+    }
 }
 
 void MenuState::render(){
+
 }

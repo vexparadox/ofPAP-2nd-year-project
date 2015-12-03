@@ -5,7 +5,6 @@
 #include "GameState.hpp"
 #include "Texture.hpp"
 #include "World.hpp"
-
 #include "MenuState.hpp"
 
 
@@ -35,6 +34,6 @@ class ofApp : public ofBaseApp{
 		void keyPressed(int key);
 		void keyReleased(int key);
         //two instances of the current states
-        GameState gameState;
+        //GameState gameState;
         MenuState menuState;
 };

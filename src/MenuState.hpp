@@ -13,11 +13,13 @@
 #include "State.hpp"
 #include "Keyboard.hpp"
 #include "UI.hpp"
+#include "GameState.hpp"
  //this class is what is called when the program is in menu state 
 class MenuState : public State{
 public:
     void tick();
     void render();
+    GameState gameState;
 
 };
 
