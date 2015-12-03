@@ -181,10 +181,10 @@ void GameState::tick(){
     }
     
     //set the UI to the new jetPackFuel
-    if(player.jetPackFuel < 0){
+    if(player.getJetPackCurrent() < 0){
         jetFuelUI.setWidth(0);
     }else{
-        jetFuelUI.setWidth(player.jetPackFuel*20);
+        jetFuelUI.setWidth(player.getJetPackCurrent()*20);
     }
     healthUI.setWidth(player.getHealth()*2);
 }
