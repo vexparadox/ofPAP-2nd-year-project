@@ -12,11 +12,12 @@
 #include <stdio.h>
 #include "Item.hpp"
 
-class JetPackFuel : Item{
+class JetPackFuel :public Item{
 private:
     float ability;
 public:
     JetPackFuel(ofPoint position, bool visible, float ability);
+    ~JetPackFuel(){};
     bool itemAction(Player &p);
     void display();
     void update();

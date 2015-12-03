@@ -209,6 +209,9 @@ void GameState::rndItemDrop(){
         case 56:
             items.push_back(new DoubleDamage(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
             break;
+        case 60:
+            items.push_back(new JetPackFuel(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 40));
+            break;
     }
 }
 

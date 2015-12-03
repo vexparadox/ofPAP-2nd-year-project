@@ -14,11 +14,11 @@ Player::Player(ofPoint position, float movementSpeed, float health, bool visible
 
 void Player::action(){
     //only have 40 shots
-    if(doubleDamageShot > 40){
+    if(doubleDamageShot > 100){
         this->setDoubleDamage();
     }
     
-    if(jetPackFuel < 20){
+    if(jetPackFuel < jetPackFuelMax){
         jetPackFuel+= 0.2;
     }
     this->gravity(true);

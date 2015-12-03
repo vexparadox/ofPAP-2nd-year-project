@@ -18,7 +18,7 @@ bool JetPackFuel::itemAction(Player &p){
 
 void JetPackFuel::display(){
     if(visible){
-        Texture::getSprite(item_DD).draw(position);
+        Texture::getSprite(item_JETPACK).draw(position);
     }
 }
 

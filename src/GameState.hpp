@@ -16,6 +16,7 @@
 #include "BigZombie.hpp"
 #include "StandardBullet.hpp"
 #include "DoubleDamage.hpp"
+#include "JetPackFuel.hpp"
 #include "Player.hpp"
 #include "World.hpp"
 #include "Memory.hpp"
