@@ -34,6 +34,7 @@ public:
     void setDoubleDamage();
     
     void addJetPackMax(float j);
+    void setJetPackMax(float j);
     float getJetPackMax();
     float getJetPackCurrent();
 };

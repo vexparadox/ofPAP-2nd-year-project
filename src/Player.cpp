@@ -57,6 +57,9 @@ float Player::getJetPackCurrent(){
 void Player::addJetPackMax(float j){
     jetPackFuelMax += j;
 }
+void Player::setJetPackMax(float j){
+    jetPackFuelMax = j;
+}
 
 void Player::display(){
     if(visible){

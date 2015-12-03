@@ -24,6 +24,7 @@ void GameState::reset(){
     gameScore = 0;
     
     //reset player
+    player.setJetPackMax(10);
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);
     
@@ -199,8 +200,8 @@ void GameState::push_bigEnemy(){
 }
 
 void GameState::rndItemDrop(){
-    int rndItem = (int)ofRandom(0, 400);
-    //case of 1 in 400
+    int rndItem = (int)ofRandom(0, 500);
+    //case of 1 in 500
     //spawn a random item
     switch(rndItem){
         case 50:
@@ -210,7 +211,7 @@ void GameState::rndItemDrop(){
             items.push_back(new DoubleDamage(ofPoint(ofRandom(0, ofGetWidth()), 0), true));
             break;
         case 60:
-            items.push_back(new JetPackFuel(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 40));
+            items.push_back(new JetPackFuel(ofPoint(ofRandom(0, ofGetWidth()), 0), true, 5));
             break;
     }
 }
