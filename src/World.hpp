@@ -20,6 +20,7 @@
 class World{
 private:
     static int xSize, ySize;
+    static std::string path;
 public:
     static void loadWorld();
     static void display();

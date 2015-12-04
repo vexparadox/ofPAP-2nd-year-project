@@ -13,6 +13,7 @@ vector<Tile> World::tiles;
 ofImage World::worldImg;
 int World::xSize = 0;
 int World::ySize = 0;
+std::string World::path = "/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/";
 
 
 int World::getxSize(){
@@ -24,7 +25,7 @@ int World::getySize(){
 }
 
 void World::loadTiles(){
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/tiles.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile(path+"tiles.txt", std::ios::in); //declare a file stream
     if(textfile.is_open())
     {
         string str;
@@ -68,7 +69,7 @@ void World::loadTiles(){
 void World::loadWorld(){
     //clear incase of reset
     worldMatrix.clear();
-    std::ifstream textfile("/Users/williammeaton/Desktop/openFrameworks/apps/myApps/PAPProject/bin/data/test.txt", std::ios::in); //declare a file stream
+    std::ifstream textfile(path+"test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {
         string str; //declare a string for storage

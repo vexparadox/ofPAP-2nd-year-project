@@ -6,12 +6,9 @@
 #include "World.hpp"
 #include "MenuState.hpp"
 
-//So far I have made the base of a game but little is being displayed.
-//TODO
-/*
- -Add transform movement - player is central with the map around them
- -Other things
- */
+//PLEASE NOTE, YOU WILL GET ERRORS!
+//getting errors on loading files or issues with bad Access with tiles is because I cannot get OF to find my text files, I've tried for hours and no luck
+//In the World.cpp there is a path defined, please change that to the path of this current project
 
 using std::vector;
 
