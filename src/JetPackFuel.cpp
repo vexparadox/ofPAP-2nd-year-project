@@ -13,7 +13,7 @@ JetPackFuel::JetPackFuel(ofPoint position, bool visible, float ability) : Item(p
 }
 
 bool JetPackFuel::itemAction(Player &p){
-    p.addJetPackMax(ability);
+    return p.addJetPackMax(ability);
 }
 
 void JetPackFuel::display(){

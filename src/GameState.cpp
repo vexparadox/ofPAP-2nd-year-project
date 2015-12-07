@@ -25,6 +25,7 @@ void GameState::reset(){
     
     //reset player
     player.setJetPackMax(20);
+    player.setJetPackFuel(0);
     player.setDoubleDamageShot(0);
     player.position = ofPoint(ofGetWidth()/2, 2);
     player.setHealth(200);

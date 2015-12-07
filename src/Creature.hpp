@@ -22,7 +22,7 @@ public:
     bool isDead();
     void takeDamage(float dmg);
     void setHealth(float h);
-    void gainHealth(float h);
+    bool gainHealth(float h);
     float getHealth();
 };
 

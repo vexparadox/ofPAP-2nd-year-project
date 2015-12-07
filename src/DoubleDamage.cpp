@@ -14,6 +14,7 @@ DoubleDamage::DoubleDamage(ofPoint position, bool visible) : Item(position, visi
 
 bool DoubleDamage::itemAction(Player &p){
     p.setDoubleDamage();
+    return true;
 }
 
 void DoubleDamage::display(){

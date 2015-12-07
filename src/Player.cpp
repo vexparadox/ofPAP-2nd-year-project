@@ -56,18 +56,48 @@ float Player::getJetPackMax(){
     return jetPackFuelMax;
 }
 
+void Player::setJetPackFuel(float f){
+    //if you're trying to set it higher than the maximum
+    if(f > jetPackFuelMax){
+        jetPackFuel = jetPackFuelMax;
+        return;
+    }
+    jetPackFuel = f;
+}
+
 float Player::getJetPackCurrent(){
     return jetPackFuel;
 }
 
-void Player::addJetPackMax(float j){
-    if(jetPackFuelMax+j > jetPackFuelMaxMaximum){
-        jetPackFuelMax = jetPackFuelMaxMaximum;;
-        return;
+bool Player::addJetPackMax(float j){
+    //if it's already at the maximum
+    if(jetPackFuelMax == jetPackFuelMaxMaximum){
+        //check to see if you can add some on to the fuel isntead of expanding the capcity
+        if(jetPackFuel+j > jetPackFuelMax){
+            //if it's going to overflow just set it to max
+            jetPackFuel = jetPackFuelMax;
+            return true;
+        }
+        //else just addit
+        jetPackFuel += j;
+        return true;
     }
+    //if the max+j is greater then the max-capacity
+    if(jetPackFuelMax+j > jetPackFuelMaxMaximum){
+        //just set it to max
+        jetPackFuelMax = jetPackFuelMaxMaximum;
+        return true;
+    }
+    //just to the maximum capcity
     jetPackFuelMax += j;
+    return true;
 }
 void Player::setJetPackMax(float j){
+    //make sure you're not setting it above max capacity
+    if(j > jetPackFuelMaxMaximum){
+        jetPackFuel = jetPackFuelMaxMaximum;
+        return;
+    }
     jetPackFuelMax = j;
 }
 

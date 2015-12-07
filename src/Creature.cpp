@@ -26,13 +26,17 @@ void Creature::setHealth(float h){
     health = h;
 }
 
-void Creature::gainHealth(float h){
+bool Creature::gainHealth(float h){
+    if(health == maxHealth){
+        return false;
+    }
     //don't allow more than max health
     if(health+h > maxHealth){
         health = maxHealth;
-        return;
+        return true;
     }
     health+=h;
+    return true;
 }
 
 //returns if the creature is dead or not

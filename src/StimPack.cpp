@@ -14,7 +14,7 @@ StimPack::StimPack(ofPoint position, bool visible, float ability) : Item(positio
 }
 
 bool StimPack::itemAction(Player &p){
-    p.gainHealth(ability);
+    return p.gainHealth(ability);
 }
 
 void StimPack::display(){

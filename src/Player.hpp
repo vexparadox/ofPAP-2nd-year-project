@@ -35,8 +35,9 @@ public:
     void display();
     void setDoubleDamage();
     void setDoubleDamageShot(int s);
-    void addJetPackMax(float j);
+    bool addJetPackMax(float j);
     void setJetPackMax(float j);
+    void setJetPackFuel(float f);
     float getJetPackMax();
     float getJetPackCurrent();
 };
