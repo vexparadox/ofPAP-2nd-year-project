@@ -69,6 +69,8 @@ void World::loadTiles(){
 void World::loadWorld(){
     //clear incase of reset
     worldMatrix.clear();
+    xSize = 0;
+    ySize = 0;
     std::ifstream textfile(path+"test.txt", std::ios::in); //declare a file stream
     if (textfile.is_open()) //checks if the file is open??
     {

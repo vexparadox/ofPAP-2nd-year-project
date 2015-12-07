@@ -32,5 +32,4 @@ public:
         delete *p;
     }
 };
-
 #endif /* Memory_hpp */

@@ -14,7 +14,7 @@ GameState::GameState(){
 }
 
 void GameState::reset(){
-    
+    worldIsLoaded = false;
     //reset pointer vectors using templated memory clear
     Memory< vector<Item*> >::vectorClear(items);
     Memory< vector<Enemy*> >::vectorClear(enemies);
